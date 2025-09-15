@@ -1,0 +1,21 @@
+meta {
+  name: Get Script Content
+  type: http
+  seq: 14
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/workers/dispatch/namespaces/:dispatch_namespace/scripts/:script_name/content
+  body: none
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  dispatch_namespace: 
+  script_name: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

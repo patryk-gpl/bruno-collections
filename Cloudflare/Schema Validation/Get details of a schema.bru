@@ -1,0 +1,19 @@
+meta {
+  name: Get details of a schema
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/schema_validation/schemas/:schema_id
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~omit_source: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

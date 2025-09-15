@@ -1,0 +1,54 @@
+meta {
+  name: Update waiting room
+  type: http
+  seq: 7
+}
+
+put {
+  url: {{baseUrl}}/zones/:zone_id/waiting_rooms/:waiting_room_id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  waiting_room_id: 
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "additional_routes": [
+      {
+        "host": "",
+        "path": ""
+      }
+    ],
+    "cookie_attributes": {
+      "samesite": "",
+      "secure": ""
+    },
+    "cookie_suffix": "",
+    "custom_page_html": "",
+    "default_template_language": "",
+    "description": "",
+    "disable_session_renewal": false,
+    "enabled_origin_commands": [],
+    "host": "",
+    "json_response_enabled": false,
+    "name": "",
+    "new_users_per_minute": 0,
+    "path": "",
+    "queue_all": false,
+    "queueing_method": "",
+    "queueing_status_code": 0,
+    "session_duration": 0,
+    "suspended": false,
+    "total_active_users": 0,
+    "turnstile_action": "",
+    "turnstile_mode": ""
+  }
+}

@@ -1,0 +1,45 @@
+meta {
+  name: Put Object Lifecycle Rules
+  type: http
+  seq: 21
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/r2/buckets/:bucket_name/lifecycle
+  body: json
+  auth: bearer
+}
+
+params:path {
+  bucket_name: 
+  account_id: 
+}
+
+headers {
+  ~cf-r2-jurisdiction: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "rules": [
+      {
+        "abortMultipartUploadsTransition": {
+          "condition": ""
+        },
+        "conditions": {
+          "prefix": ""
+        },
+        "deleteObjectsTransition": {
+          "condition": ""
+        },
+        "enabled": false,
+        "id": "",
+        "storageClassTransitions": []
+      }
+    ]
+  }
+}

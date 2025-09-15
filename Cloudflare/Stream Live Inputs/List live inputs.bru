@@ -1,0 +1,29 @@
+meta {
+  name: List live inputs
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/stream/live_inputs
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~include_counts: 
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

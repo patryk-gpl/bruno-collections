@@ -1,0 +1,29 @@
+meta {
+  name: Model Search
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/ai/models/search
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~per_page: 
+  ~page: 
+  ~task: 
+  ~author: 
+  ~source: 
+  ~hide_experimental: 
+  ~search: 
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

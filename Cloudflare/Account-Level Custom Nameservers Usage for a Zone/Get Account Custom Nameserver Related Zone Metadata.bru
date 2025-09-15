@@ -1,0 +1,19 @@
+meta {
+  name: Get Account Custom Nameserver Related Zone Metadata
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/custom_ns
+  body: none
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

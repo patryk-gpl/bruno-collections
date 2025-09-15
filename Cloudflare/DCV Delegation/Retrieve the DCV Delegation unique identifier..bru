@@ -1,0 +1,25 @@
+meta {
+  name: Retrieve the DCV Delegation unique identifier.
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/dcv_delegation/uuid
+  body: none
+  auth: apikey
+}
+
+params:path {
+  zone_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

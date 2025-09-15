@@ -1,0 +1,39 @@
+meta {
+  name: Create Keyless SSL Configuration
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/zones/:zone_id/keyless_certificates
+  body: json
+  auth: apikey
+}
+
+params:path {
+  zone_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "bundle_method": "",
+    "certificate": "",
+    "host": "",
+    "name": "",
+    "port": "",
+    "tunnel": {
+      "private_ip": "",
+      "vnet_id": ""
+    }
+  }
+}

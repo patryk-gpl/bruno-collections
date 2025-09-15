@@ -1,0 +1,20 @@
+meta {
+  name: List per-operation schema validation settings
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/schema_validation/settings/operations
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~page: 
+  ~per_page: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

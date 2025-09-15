@@ -1,0 +1,24 @@
+meta {
+  name: Search URL scans
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/urlscanner/v2/search
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~size: 
+  ~q: 
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

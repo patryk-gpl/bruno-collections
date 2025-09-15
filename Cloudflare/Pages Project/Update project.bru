@@ -1,0 +1,20 @@
+meta {
+  name: Update project
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{baseUrl}}/accounts/:account_id/pages/projects/:project_name
+  body: json
+  auth: bearer
+}
+
+params:path {
+  project_name: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

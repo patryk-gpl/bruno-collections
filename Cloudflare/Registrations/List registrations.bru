@@ -1,0 +1,34 @@
+meta {
+  name: List registrations
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/devices/registrations
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~user.id: 
+  ~seen_after: 
+  ~seen_before: 
+  ~status: 
+  ~per_page: 
+  ~search: 
+  ~sort_by: 
+  ~sort_order: 
+  ~cursor: 
+  ~id: 
+  ~device.id: 
+  ~include: 
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

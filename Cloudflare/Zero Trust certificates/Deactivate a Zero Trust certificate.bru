@@ -1,0 +1,26 @@
+meta {
+  name: Deactivate a Zero Trust certificate
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/gateway/certificates/:certificate_id/deactivate
+  body: json
+  auth: apikey
+}
+
+params:path {
+  certificate_id: 
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

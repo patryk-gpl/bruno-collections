@@ -1,0 +1,19 @@
+meta {
+  name: Get aegis setting
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/settings/aegis
+  body: none
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

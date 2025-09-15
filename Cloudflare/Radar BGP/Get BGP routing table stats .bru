@@ -1,0 +1,27 @@
+meta {
+  name: Get BGP routing table stats 
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{baseUrl}}/radar/bgp/routes/stats
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~asn: 
+  ~location: 
+  ~format: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

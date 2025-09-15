@@ -1,0 +1,35 @@
+meta {
+  name: Update a rate limit
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{baseUrl}}/zones/:zone_id/rate_limits/:rate_limit_id
+  body: json
+  auth: apikey
+}
+
+params:path {
+  rate_limit_id: 
+  zone_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "action": {},
+    "match": {},
+    "period": "",
+    "threshold": ""
+  }
+}

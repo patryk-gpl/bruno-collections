@@ -1,0 +1,19 @@
+meta {
+  name: Bulk edit per-operation schema validation settings
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{baseUrl}}/zones/:zone_id/schema_validation/settings/operations
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {}
+}

@@ -1,0 +1,26 @@
+meta {
+  name: List Spectrum applications
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/spectrum/apps
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~page: 
+  ~per_page: 
+  ~direction: 
+  ~order: 
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

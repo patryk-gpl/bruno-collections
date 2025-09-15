@@ -1,0 +1,64 @@
+meta {
+  name: Put configuration
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/cfd_tunnel/:tunnel_id/configurations
+  body: json
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+  tunnel_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "config": {
+      "ingress": [
+        {
+          "hostname": "",
+          "originRequest": {
+            "access": {
+              "audTag": [],
+              "required": false,
+              "teamName": ""
+            },
+            "caPool": "",
+            "connectTimeout": 0,
+            "disableChunkedEncoding": false,
+            "http2Origin": false,
+            "httpHostHeader": "",
+            "keepAliveConnections": 0,
+            "keepAliveTimeout": 0,
+            "noHappyEyeballs": false,
+            "noTLSVerify": false,
+            "originServerName": "",
+            "proxyType": "",
+            "tcpKeepAlive": 0,
+            "tlsTimeout": 0
+          },
+          "path": "",
+          "service": ""
+        }
+      ],
+      "originRequest": {},
+      "warp-routing": {
+        "enabled": false
+      }
+    }
+  }
+}

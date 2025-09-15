@@ -1,0 +1,36 @@
+meta {
+  name: AI Search
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/autorag/rags/:id/ai-search
+  body: json
+  auth: bearer
+}
+
+params:path {
+  id: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "filters": "",
+    "max_num_results": 0,
+    "model": "",
+    "query": "",
+    "ranking_options": {
+      "ranker": "",
+      "score_threshold": ""
+    },
+    "rewrite_query": false,
+    "stream": false,
+    "system_prompt": ""
+  }
+}

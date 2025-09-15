@@ -1,0 +1,26 @@
+meta {
+  name: Get the Split Tunnel include list for a device settings profile
+  type: http
+  seq: 15
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/devices/policy/:policy_id/include
+  body: none
+  auth: apikey
+}
+
+params:path {
+  policy_id: 
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

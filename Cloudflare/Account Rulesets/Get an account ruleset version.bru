@@ -1,0 +1,21 @@
+meta {
+  name: Get an account ruleset version
+  type: http
+  seq: 11
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/rulesets/:ruleset_id/versions/:ruleset_version
+  body: none
+  auth: bearer
+}
+
+params:path {
+  ruleset_version: 
+  ruleset_id: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

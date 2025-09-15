@@ -1,0 +1,25 @@
+meta {
+  name: View webhooks
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/stream/webhook
+  body: none
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

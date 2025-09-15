@@ -1,0 +1,20 @@
+meta {
+  name: Get Spectrum application configuration
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/spectrum/apps/:app_id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  app_id: 
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

@@ -1,0 +1,26 @@
+meta {
+  name: Get status of the job responsible for terminate all instances of a workflow
+  type: http
+  seq: 12
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/workflows/:workflow_name/instances/terminate
+  body: none
+  auth: apikey
+}
+
+params:path {
+  workflow_name: 
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

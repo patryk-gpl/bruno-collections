@@ -1,0 +1,30 @@
+meta {
+  name: By Time
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/dns_analytics/report/bytime
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~metrics: 
+  ~dimensions: 
+  ~since: 
+  ~until: 
+  ~limit: 
+  ~sort: 
+  ~filters: 
+  ~time_delta: 
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

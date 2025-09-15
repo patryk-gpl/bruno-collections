@@ -1,0 +1,29 @@
+meta {
+  name: Updates a category
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/cloudforce-one/events/categories/:category_id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  category_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "killChain": "",
+    "mitreAttack": [],
+    "name": "",
+    "shortname": ""
+  }
+}

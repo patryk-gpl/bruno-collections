@@ -1,0 +1,25 @@
+meta {
+  name: Get Priority Intelligence Requirement Quota
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/cloudforce-one/requests/priority/quota
+  body: none
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

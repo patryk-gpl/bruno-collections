@@ -1,0 +1,15 @@
+meta {
+  name: Get global schema validation settings
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/schema_validation/settings
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

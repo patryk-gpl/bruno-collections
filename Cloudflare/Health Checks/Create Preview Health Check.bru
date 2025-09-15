@@ -1,0 +1,49 @@
+meta {
+  name: Create Preview Health Check
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{baseUrl}}/zones/:zone_id/healthchecks/preview
+  body: json
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "address": "",
+    "check_regions": [],
+    "consecutive_fails": 0,
+    "consecutive_successes": 0,
+    "description": "",
+    "http_config": {
+      "allow_insecure": false,
+      "expected_body": "",
+      "expected_codes": [],
+      "follow_redirects": false,
+      "header": {},
+      "method": "",
+      "path": "",
+      "port": 0
+    },
+    "interval": 0,
+    "name": "",
+    "retries": 0,
+    "suspended": false,
+    "tcp_config": {
+      "method": "",
+      "port": 0
+    },
+    "timeout": 0,
+    "type": ""
+  }
+}

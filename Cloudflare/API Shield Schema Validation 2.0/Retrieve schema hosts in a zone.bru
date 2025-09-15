@@ -1,0 +1,21 @@
+meta {
+  name: Retrieve schema hosts in a zone
+  type: http
+  seq: 13
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/api_gateway/user_schemas/hosts
+  body: none
+  auth: apikey
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

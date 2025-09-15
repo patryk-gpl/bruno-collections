@@ -1,0 +1,15 @@
+meta {
+  name: Cloudflare/JD Cloud IP Details
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/ips
+  body: none
+  auth: inherit
+}
+
+params:query {
+  ~networks: 
+}

@@ -1,0 +1,32 @@
+meta {
+  name: Update integration entry
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/dlp/entries/integration/:entry_id
+  body: json
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+  entry_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "enabled": false
+  }
+}

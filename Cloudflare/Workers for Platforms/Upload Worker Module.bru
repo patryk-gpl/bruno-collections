@@ -1,0 +1,21 @@
+meta {
+  name: Upload Worker Module
+  type: http
+  seq: 11
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/workers/dispatch/namespaces/:dispatch_namespace/scripts/:script_name
+  body: none
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  dispatch_namespace: 
+  script_name: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

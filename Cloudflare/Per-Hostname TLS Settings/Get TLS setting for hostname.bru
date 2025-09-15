@@ -1,0 +1,33 @@
+meta {
+  name: Get TLS setting for hostname
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/hostnames/settings/:setting_id/:hostname
+  body: json
+  auth: apikey
+}
+
+params:path {
+  zone_id: 
+  setting_id: 
+  hostname: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "value": ""
+  }
+}

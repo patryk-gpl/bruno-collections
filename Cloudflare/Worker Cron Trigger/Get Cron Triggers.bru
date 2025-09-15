@@ -1,0 +1,20 @@
+meta {
+  name: Get Cron Triggers
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/workers/scripts/:script_name/schedules
+  body: none
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  script_name: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

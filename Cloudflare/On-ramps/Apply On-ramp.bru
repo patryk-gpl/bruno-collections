@@ -1,0 +1,26 @@
+meta {
+  name: Apply On-ramp
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/magic/cloud/onramps/:onramp_id/apply
+  body: none
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+  onramp_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

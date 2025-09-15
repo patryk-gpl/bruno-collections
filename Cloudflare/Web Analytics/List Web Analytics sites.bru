@@ -1,0 +1,31 @@
+meta {
+  name: List Web Analytics sites
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/rum/site_info/list
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~per_page: 
+  ~page: 
+  ~order_by: 
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

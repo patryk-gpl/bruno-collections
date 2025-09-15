@@ -1,0 +1,21 @@
+meta {
+  name: Edit details of a schema to enable validation
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{baseUrl}}/zones/:zone_id/schema_validation/schemas/:schema_id
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "validation_enabled": false
+  }
+}

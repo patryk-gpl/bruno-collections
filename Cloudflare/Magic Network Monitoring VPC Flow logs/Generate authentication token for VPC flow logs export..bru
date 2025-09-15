@@ -1,0 +1,25 @@
+meta {
+  name: Generate authentication token for VPC flow logs export.
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/mnm/vpc-flows/token
+  body: none
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

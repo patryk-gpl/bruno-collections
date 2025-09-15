@@ -1,0 +1,37 @@
+meta {
+  name: Export Resources
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/magic/cloud/resources/export
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~provider_id: 
+  ~resource_type: 
+  ~resource_id: 
+  ~region: 
+  ~resource_group: 
+  ~search: 
+  ~order_by: 
+  ~desc: 
+  ~v2: 
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

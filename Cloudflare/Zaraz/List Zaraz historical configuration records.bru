@@ -1,0 +1,26 @@
+meta {
+  name: List Zaraz historical configuration records
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/settings/zaraz/history
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~offset: 
+  ~limit: 
+  ~sortField: 
+  ~sortOrder: 
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

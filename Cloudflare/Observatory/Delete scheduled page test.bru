@@ -1,0 +1,24 @@
+meta {
+  name: Delete scheduled page test
+  type: http
+  seq: 8
+}
+
+delete {
+  url: {{baseUrl}}/zones/:zone_id/speed_api/schedule/:url
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~region: 
+}
+
+params:path {
+  zone_id: 
+  url: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

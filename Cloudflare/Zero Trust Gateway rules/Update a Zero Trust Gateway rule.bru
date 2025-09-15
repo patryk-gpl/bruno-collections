@@ -1,0 +1,145 @@
+meta {
+  name: Update a Zero Trust Gateway rule
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/gateway/rules/:rule_id
+  body: json
+  auth: apikey
+}
+
+params:path {
+  rule_id: 
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "action": "",
+    "description": "",
+    "device_posture": "",
+    "enabled": false,
+    "expiration": {
+      "duration": 0,
+      "expired": false,
+      "expires_at": ""
+    },
+    "filters": [],
+    "identity": "",
+    "name": "",
+    "precedence": 0,
+    "rule_settings": {
+      "add_headers": {},
+      "allow_child_bypass": false,
+      "audit_ssh": {
+        "command_logging": false
+      },
+      "biso_admin_controls": {
+        "copy": "",
+        "dcp": false,
+        "dd": false,
+        "dk": false,
+        "download": "",
+        "dp": false,
+        "du": false,
+        "keyboard": "",
+        "paste": "",
+        "printing": "",
+        "upload": "",
+        "version": ""
+      },
+      "block_page": {
+        "include_context": false,
+        "target_uri": ""
+      },
+      "block_page_enabled": false,
+      "block_reason": "",
+      "bypass_parent_rule": false,
+      "check_session": {
+        "duration": "",
+        "enforce": false
+      },
+      "dns_resolvers": {
+        "ipv4": [
+          {
+            "ip": "",
+            "port": 0,
+            "route_through_private_network": false,
+            "vnet_id": ""
+          }
+        ],
+        "ipv6": [
+          {
+            "ip": "",
+            "port": 0,
+            "route_through_private_network": false,
+            "vnet_id": ""
+          }
+        ]
+      },
+      "egress": {
+        "ipv4": "",
+        "ipv4_fallback": "",
+        "ipv6": ""
+      },
+      "ignore_cname_category_matches": false,
+      "insecure_disable_dnssec_validation": false,
+      "ip_categories": false,
+      "ip_indicator_feeds": false,
+      "l4override": {
+        "ip": "",
+        "port": 0
+      },
+      "notification_settings": {
+        "enabled": false,
+        "include_context": false,
+        "msg": "",
+        "support_url": ""
+      },
+      "override_host": "",
+      "override_ips": [],
+      "payload_log": {
+        "enabled": false
+      },
+      "quarantine": {
+        "file_types": []
+      },
+      "redirect": {
+        "include_context": false,
+        "preserve_path_and_query": false,
+        "target_uri": ""
+      },
+      "resolve_dns_internally": {
+        "fallback": "",
+        "view_id": ""
+      },
+      "resolve_dns_through_cloudflare": false,
+      "untrusted_cert": {
+        "action": ""
+      }
+    },
+    "schedule": {
+      "fri": "",
+      "mon": "",
+      "sat": "",
+      "sun": "",
+      "thu": "",
+      "time_zone": "",
+      "tue": "",
+      "wed": ""
+    },
+    "traffic": ""
+  }
+}

@@ -1,0 +1,20 @@
+meta {
+  name: Update an account ruleset
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/rulesets/:ruleset_id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  ruleset_id: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

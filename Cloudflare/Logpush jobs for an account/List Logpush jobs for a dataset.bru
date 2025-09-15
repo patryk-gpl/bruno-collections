@@ -1,0 +1,26 @@
+meta {
+  name: List Logpush jobs for a dataset
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/logpush/datasets/:dataset_id/jobs
+  body: none
+  auth: apikey
+}
+
+params:path {
+  dataset_id: 
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

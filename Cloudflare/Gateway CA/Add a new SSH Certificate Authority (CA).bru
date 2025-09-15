@@ -1,0 +1,25 @@
+meta {
+  name: Add a new SSH Certificate Authority (CA)
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/access/gateway_ca
+  body: none
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

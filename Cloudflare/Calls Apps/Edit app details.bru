@@ -1,0 +1,26 @@
+meta {
+  name: Edit app details
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/calls/apps/:app_id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  app_id: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "name": ""
+  }
+}

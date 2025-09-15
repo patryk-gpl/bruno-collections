@@ -1,0 +1,23 @@
+meta {
+  name: Delete registrations
+  type: http
+  seq: 5
+}
+
+delete {
+  url: {{baseUrl}}/accounts/:account_id/devices/registrations
+  body: none
+  auth: bearer
+}
+
+params:query {
+  id: 
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

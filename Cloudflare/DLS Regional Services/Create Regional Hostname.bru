@@ -1,0 +1,33 @@
+meta {
+  name: Create Regional Hostname
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/zones/:zone_id/addressing/regional_hostnames
+  body: json
+  auth: apikey
+}
+
+params:path {
+  zone_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "hostname": "",
+    "region_key": "",
+    "routing": ""
+  }
+}

@@ -1,0 +1,20 @@
+meta {
+  name: List an account ruleset's versions
+  type: http
+  seq: 9
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/rulesets/:ruleset_id/versions
+  body: none
+  auth: bearer
+}
+
+params:path {
+  ruleset_id: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

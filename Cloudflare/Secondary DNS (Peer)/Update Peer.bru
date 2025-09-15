@@ -1,0 +1,31 @@
+meta {
+  name: Update Peer
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/secondary_dns/peers/:peer_id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  peer_id: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "id": "",
+    "ip": "",
+    "ixfr_enable": false,
+    "name": "",
+    "port": "",
+    "tsig_id": ""
+  }
+}

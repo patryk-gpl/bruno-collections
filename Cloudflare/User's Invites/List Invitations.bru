@@ -1,0 +1,21 @@
+meta {
+  name: List Invitations
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/user/invites
+  body: none
+  auth: apikey
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

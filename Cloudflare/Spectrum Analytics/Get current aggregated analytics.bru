@@ -1,0 +1,24 @@
+meta {
+  name: Get current aggregated analytics
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/spectrum/analytics/aggregate/current
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~appID: 
+  ~colo_name: 
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

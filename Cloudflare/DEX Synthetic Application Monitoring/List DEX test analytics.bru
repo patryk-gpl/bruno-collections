@@ -1,0 +1,33 @@
+meta {
+  name: List DEX test analytics
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/dex/tests/overview
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~colo: 
+  ~testName: 
+  ~deviceId: 
+  ~page: 
+  ~per_page: 
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

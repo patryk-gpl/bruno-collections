@@ -1,0 +1,27 @@
+meta {
+  name: Site ACL Details
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/magic/sites/:site_id/acls/:acl_id
+  body: none
+  auth: apikey
+}
+
+params:path {
+  site_id: 
+  account_id: 
+  acl_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

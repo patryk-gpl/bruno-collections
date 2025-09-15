@@ -1,0 +1,33 @@
+meta {
+  name: Write multiple key-value pairs
+  type: http
+  seq: 7
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/storage/kv/namespaces/:namespace_id/bulk
+  body: json
+  auth: bearer
+}
+
+params:path {
+  namespace_id: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  [
+    {
+      "base64": false,
+      "expiration": "",
+      "expiration_ttl": "",
+      "key": "",
+      "metadata": "",
+      "value": ""
+    }
+  ]
+}

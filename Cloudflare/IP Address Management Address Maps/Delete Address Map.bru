@@ -1,0 +1,26 @@
+meta {
+  name: Delete Address Map
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{baseUrl}}/accounts/:account_id/addressing/address_maps/:address_map_id
+  body: json
+  auth: apikey
+}
+
+params:path {
+  address_map_id: 
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

@@ -1,0 +1,24 @@
+meta {
+  name: List waiting rooms for account
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/waiting_rooms
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~page: 
+  ~per_page: 
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

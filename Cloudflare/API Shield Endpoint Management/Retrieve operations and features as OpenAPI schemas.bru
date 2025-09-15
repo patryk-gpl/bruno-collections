@@ -1,0 +1,26 @@
+meta {
+  name: Retrieve operations and features as OpenAPI schemas
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/api_gateway/schemas
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~host: 
+  ~feature: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

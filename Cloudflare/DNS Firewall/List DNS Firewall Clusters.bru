@@ -1,0 +1,24 @@
+meta {
+  name: List DNS Firewall Clusters
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/dns_firewall
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~page: 
+  ~per_page: 
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

@@ -1,0 +1,25 @@
+meta {
+  name: List D1 Databases
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/d1/database
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~name: 
+  ~page: 
+  ~per_page: 
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

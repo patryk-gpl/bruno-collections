@@ -1,0 +1,20 @@
+meta {
+  name: Update a zone ruleset
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{baseUrl}}/zones/:zone_id/rulesets/:ruleset_id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  ruleset_id: 
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

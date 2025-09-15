@@ -1,0 +1,25 @@
+meta {
+  name: List Jobs
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/autorag/rags/:id/jobs
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~page: 
+  ~per_page: 
+}
+
+params:path {
+  id: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

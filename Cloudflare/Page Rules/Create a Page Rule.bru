@@ -1,0 +1,28 @@
+meta {
+  name: Create a Page Rule
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/zones/:zone_id/pagerules
+  body: json
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "actions": [],
+    "priority": 0,
+    "status": "",
+    "targets": []
+  }
+}

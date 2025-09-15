@@ -1,0 +1,21 @@
+meta {
+  name: Delete Tail
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{baseUrl}}/accounts/:account_id/workers/scripts/:script_name/tails/:id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  script_name: 
+  id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

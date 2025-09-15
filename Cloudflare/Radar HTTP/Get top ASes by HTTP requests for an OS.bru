@@ -1,0 +1,44 @@
+meta {
+  name: Get top ASes by HTTP requests for an OS
+  type: http
+  seq: 27
+}
+
+get {
+  url: {{baseUrl}}/radar/http/top/ases/os/:os
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~limit: 
+  ~name: 
+  ~dateRange: 
+  ~dateStart: 
+  ~dateEnd: 
+  ~asn: 
+  ~location: 
+  ~continent: 
+  ~botClass: 
+  ~deviceType: 
+  ~httpProtocol: 
+  ~httpVersion: 
+  ~ipVersion: 
+  ~tlsVersion: 
+  ~browserFamily: 
+  ~format: 
+}
+
+params:path {
+  os: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

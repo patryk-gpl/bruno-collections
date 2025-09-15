@@ -1,0 +1,20 @@
+meta {
+  name: Get Settings
+  type: http
+  seq: 15
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/workers/scripts/:script_name/settings
+  body: none
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  script_name: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

@@ -1,0 +1,32 @@
+meta {
+  name: Validate ownership challenge
+  type: http
+  seq: 9
+}
+
+post {
+  url: {{baseUrl}}/zones/:zone_id/logpush/ownership/validate
+  body: json
+  auth: apikey
+}
+
+params:path {
+  zone_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "destination_conf": "",
+    "ownership_challenge": ""
+  }
+}

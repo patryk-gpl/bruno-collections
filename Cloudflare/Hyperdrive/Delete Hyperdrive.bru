@@ -1,0 +1,20 @@
+meta {
+  name: Delete Hyperdrive
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{baseUrl}}/accounts/:account_id/hyperdrive/configs/:hyperdrive_id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  hyperdrive_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

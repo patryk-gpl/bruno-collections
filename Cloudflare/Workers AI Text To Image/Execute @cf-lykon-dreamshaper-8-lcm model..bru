@@ -1,0 +1,39 @@
+meta {
+  name: Execute @cf/lykon/dreamshaper-8-lcm model.
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/ai/run/@cf/lykon/dreamshaper-8-lcm
+  body: json
+  auth: bearer
+}
+
+params:query {
+  ~queueRequest: 
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "guidance": "",
+    "height": 0,
+    "image": [],
+    "image_b64": "",
+    "mask": [],
+    "negative_prompt": "",
+    "num_steps": 0,
+    "prompt": "",
+    "seed": 0,
+    "strength": "",
+    "width": 0
+  }
+}

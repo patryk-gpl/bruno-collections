@@ -1,0 +1,28 @@
+meta {
+  name: Upload a new version of a multi-column dataset
+  type: http
+  seq: 9
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/dlp/datasets/:dataset_id/versions/:version/entries/:entry_id
+  body: none
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+  dataset_id: 
+  version: 
+  entry_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

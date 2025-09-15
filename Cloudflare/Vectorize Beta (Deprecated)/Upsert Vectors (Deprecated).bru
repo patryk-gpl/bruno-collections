@@ -1,0 +1,20 @@
+meta {
+  name: Upsert Vectors (Deprecated)
+  type: http
+  seq: 10
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/vectorize/indexes/:index_name/upsert
+  body: none
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  index_name: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

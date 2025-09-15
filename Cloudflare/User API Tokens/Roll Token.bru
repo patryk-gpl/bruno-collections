@@ -1,0 +1,23 @@
+meta {
+  name: Roll Token
+  type: http
+  seq: 6
+}
+
+put {
+  url: {{baseUrl}}/user/tokens/:token_id/value
+  body: json
+  auth: bearer
+}
+
+params:path {
+  token_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {}
+}

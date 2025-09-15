@@ -1,0 +1,19 @@
+meta {
+  name: Update global schema validation settings
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{baseUrl}}/zones/:zone_id/schema_validation/settings
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {}
+}

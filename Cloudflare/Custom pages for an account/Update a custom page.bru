@@ -1,0 +1,26 @@
+meta {
+  name: Update a custom page
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_identifier/custom_pages/:identifier
+  body: json
+  auth: apikey
+}
+
+params:path {
+  identifier: 
+  account_identifier: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

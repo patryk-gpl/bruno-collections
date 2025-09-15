@@ -1,0 +1,26 @@
+meta {
+  name: List Cloudflare Tunnel connections
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/cfd_tunnel/:tunnel_id/connections
+  body: none
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+  tunnel_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

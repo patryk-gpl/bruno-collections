@@ -1,0 +1,33 @@
+meta {
+  name: Changes pay-per-crawl config for a zone
+  type: http
+  seq: 4
+}
+
+patch {
+  url: {{baseUrl}}/zones/:zone_id/pay-per-crawl/configuration
+  body: json
+  auth: apikey
+}
+
+params:path {
+  zone_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "bot_overrides": {},
+    "enabled": false,
+    "price_usd_microcents": 0
+  }
+}

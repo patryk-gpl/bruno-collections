@@ -1,0 +1,25 @@
+meta {
+  name: Change Cache Reserve setting
+  type: http
+  seq: 2
+}
+
+patch {
+  url: {{baseUrl}}/zones/:zone_id/cache/cache_reserve
+  body: json
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "value": ""
+  }
+}

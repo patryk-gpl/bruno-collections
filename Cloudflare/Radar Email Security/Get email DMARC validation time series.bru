@@ -1,0 +1,34 @@
+meta {
+  name: Get email DMARC validation time series
+  type: http
+  seq: 12
+}
+
+get {
+  url: {{baseUrl}}/radar/email/security/timeseries_groups/dmarc
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~aggInterval: 
+  ~name: 
+  ~dateRange: 
+  ~dateStart: 
+  ~dateEnd: 
+  ~arc: 
+  ~dkim: 
+  ~spf: 
+  ~tlsVersion: 
+  ~format: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

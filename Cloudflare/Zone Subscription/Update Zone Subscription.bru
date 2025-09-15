@@ -1,0 +1,59 @@
+meta {
+  name: Update Zone Subscription
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{baseUrl}}/zones/:zone_id/subscription
+  body: json
+  auth: apikey
+}
+
+params:path {
+  zone_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "app": "",
+    "component_values": [
+      {
+        "default": "",
+        "name": "",
+        "price": "",
+        "value": ""
+      }
+    ],
+    "currency": "",
+    "current_period_end": "",
+    "current_period_start": "",
+    "frequency": "",
+    "id": "",
+    "price": "",
+    "rate_plan": {
+      "currency": "",
+      "externally_managed": false,
+      "id": "",
+      "is_contract": false,
+      "public_name": "",
+      "scope": "",
+      "sets": []
+    },
+    "state": "",
+    "zone": {
+      "id": "",
+      "name": ""
+    }
+  }
+}

@@ -1,0 +1,38 @@
+meta {
+  name: Get DNS queries by DNSSEC support time series
+  type: http
+  seq: 13
+}
+
+get {
+  url: {{baseUrl}}/radar/dns/timeseries_groups/dnssec
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~aggInterval: 
+  ~name: 
+  ~dateRange: 
+  ~dateStart: 
+  ~dateEnd: 
+  ~asn: 
+  ~location: 
+  ~continent: 
+  ~tld: 
+  ~queryType: 
+  ~protocol: 
+  ~responseCode: 
+  ~nodata: 
+  ~format: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

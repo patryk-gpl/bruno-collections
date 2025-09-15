@@ -1,0 +1,27 @@
+meta {
+  name: Get a WAF rule
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/firewall/waf/packages/:package_id/rules/:rule_id
+  body: none
+  auth: apikey
+}
+
+params:path {
+  rule_id: 
+  package_id: 
+  zone_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

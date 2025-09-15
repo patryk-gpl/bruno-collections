@@ -1,0 +1,26 @@
+meta {
+  name: Get active sessions
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/access/users/:user_id/active_sessions
+  body: none
+  auth: apikey
+}
+
+params:path {
+  user_id: 
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

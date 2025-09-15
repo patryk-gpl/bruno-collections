@@ -1,0 +1,33 @@
+meta {
+  name: Get network path breakdown for a traceroute test
+  type: http
+  seq: 12
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/dex/traceroute-tests/:test_id/network-path
+  body: none
+  auth: apikey
+}
+
+params:query {
+  deviceId: 
+  from: 
+  to: 
+  interval: 
+}
+
+params:path {
+  account_id: 
+  test_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

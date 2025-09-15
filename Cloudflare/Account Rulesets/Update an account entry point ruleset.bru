@@ -1,0 +1,20 @@
+meta {
+  name: Update an account entry point ruleset
+  type: http
+  seq: 14
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/rulesets/phases/:ruleset_phase/entrypoint
+  body: json
+  auth: bearer
+}
+
+params:path {
+  ruleset_phase: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

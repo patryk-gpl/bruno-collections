@@ -1,0 +1,29 @@
+meta {
+  name: Get analytics by time
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/spectrum/analytics/events/bytime
+  body: none
+  auth: bearer
+}
+
+params:query {
+  time_delta: 
+  ~dimensions: 
+  ~sort: 
+  ~until: 
+  ~metrics: 
+  ~filters: 
+  ~since: 
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

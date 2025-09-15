@@ -1,0 +1,30 @@
+meta {
+  name: Billing History Details
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/user/billing/history
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~page: 
+  ~per_page: 
+  ~order: 
+  ~occurred_at: 
+  ~type: 
+  ~action: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

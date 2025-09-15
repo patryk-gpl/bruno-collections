@@ -1,0 +1,15 @@
+meta {
+  name: Create new brands
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/brand-protection/brands
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

@@ -1,0 +1,21 @@
+meta {
+  name: Delete saved string queries by ID
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{baseUrl}}/accounts/:account_id/brand-protection/queries
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~id: 
+  ~tag: 
+  ~scan: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

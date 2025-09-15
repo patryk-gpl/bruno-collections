@@ -1,0 +1,26 @@
+meta {
+  name: Get Cloud Integration Setup Config
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/magic/cloud/providers/:provider_id/initial_setup
+  body: none
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+  provider_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

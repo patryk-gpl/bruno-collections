@@ -1,0 +1,27 @@
+meta {
+  name: Return WebVTT captions for a provided language
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/stream/:identifier/captions/:language/vtt
+  body: json
+  auth: apikey
+}
+
+params:path {
+  language: 
+  identifier: 
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

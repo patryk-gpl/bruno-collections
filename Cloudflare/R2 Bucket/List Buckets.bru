@@ -1,0 +1,32 @@
+meta {
+  name: List Buckets
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/r2/buckets
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~name_contains: 
+  ~start_after: 
+  ~per_page: 
+  ~order: 
+  ~direction: 
+  ~cursor: 
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  ~cf-r2-jurisdiction: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

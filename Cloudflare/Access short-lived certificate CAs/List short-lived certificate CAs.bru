@@ -1,0 +1,30 @@
+meta {
+  name: List short-lived certificate CAs
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/access/apps/ca
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~page: 
+  ~per_page: 
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

@@ -1,0 +1,19 @@
+meta {
+  name: Create Primary Zone Configuration
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/zones/:zone_id/secondary_dns/outgoing
+  body: json
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

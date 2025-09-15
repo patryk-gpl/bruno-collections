@@ -1,0 +1,29 @@
+meta {
+  name: Update TSIG
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/secondary_dns/tsigs/:tsig_id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  tsig_id: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "algo": "",
+    "id": "",
+    "name": "",
+    "secret": ""
+  }
+}

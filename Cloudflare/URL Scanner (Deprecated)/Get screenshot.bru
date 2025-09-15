@@ -1,0 +1,24 @@
+meta {
+  name: Get screenshot
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/urlscanner/scan/:scan_id/screenshot
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~resolution: 
+}
+
+params:path {
+  scan_id: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

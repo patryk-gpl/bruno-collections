@@ -1,0 +1,26 @@
+meta {
+  name: Creates a dataset
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/cloudforce-one/events/dataset/create
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "isPublic": false,
+    "name": ""
+  }
+}

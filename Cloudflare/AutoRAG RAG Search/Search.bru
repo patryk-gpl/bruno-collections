@@ -1,0 +1,33 @@
+meta {
+  name: Search
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/autorag/rags/:id/search
+  body: json
+  auth: bearer
+}
+
+params:path {
+  id: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "filters": "",
+    "max_num_results": 0,
+    "query": "",
+    "ranking_options": {
+      "ranker": "",
+      "score_threshold": ""
+    },
+    "rewrite_query": false
+  }
+}

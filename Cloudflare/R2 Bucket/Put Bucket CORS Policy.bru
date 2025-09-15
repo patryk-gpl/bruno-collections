@@ -1,0 +1,41 @@
+meta {
+  name: Put Bucket CORS Policy
+  type: http
+  seq: 12
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/r2/buckets/:bucket_name/cors
+  body: json
+  auth: bearer
+}
+
+params:path {
+  bucket_name: 
+  account_id: 
+}
+
+headers {
+  ~cf-r2-jurisdiction: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "rules": [
+      {
+        "allowed": {
+          "headers": [],
+          "methods": [],
+          "origins": []
+        },
+        "exposeHeaders": [],
+        "id": "",
+        "maxAgeSeconds": ""
+      }
+    ]
+  }
+}

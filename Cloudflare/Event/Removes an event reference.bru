@@ -1,0 +1,26 @@
+meta {
+  name: Removes an event reference
+  type: http
+  seq: 19
+}
+
+delete {
+  url: {{baseUrl}}/accounts/:account_id/cloudforce-one/events/relate/:event_id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  event_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "events": []
+  }
+}

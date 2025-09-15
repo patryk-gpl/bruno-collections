@@ -1,0 +1,27 @@
+meta {
+  name: Update an AI Gateway Dynamic Route.
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{baseUrl}}/accounts/:account_id/ai-gateway/gateways/:gateway_id/routes/:id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  gateway_id: 
+  id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "name": ""
+  }
+}

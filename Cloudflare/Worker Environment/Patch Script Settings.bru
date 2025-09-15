@@ -1,0 +1,21 @@
+meta {
+  name: Patch Script Settings
+  type: http
+  seq: 4
+}
+
+patch {
+  url: {{baseUrl}}/accounts/:account_id/workers/services/:service_name/environments/:environment_name/settings
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  service_name: 
+  environment_name: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

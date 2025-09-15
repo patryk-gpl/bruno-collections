@@ -1,0 +1,29 @@
+meta {
+  name: List all profiles
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/dlp/profiles
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~all: 
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

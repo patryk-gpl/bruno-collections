@@ -1,0 +1,29 @@
+meta {
+  name: Get bot details
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/radar/bots/:bot_slug
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~format: 
+}
+
+params:path {
+  bot_slug: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

@@ -1,0 +1,38 @@
+meta {
+  name: Get layer 3 attacks by bytes time series
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{baseUrl}}/radar/attacks/layer3/timeseries
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~aggInterval: 
+  ~name: 
+  ~dateRange: 
+  ~dateStart: 
+  ~dateEnd: 
+  ~asn: 
+  ~location: 
+  ~continent: 
+  ~ipVersion: 
+  ~protocol: 
+  ~normalization: 
+  ~metric: 
+  ~direction: 
+  ~format: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

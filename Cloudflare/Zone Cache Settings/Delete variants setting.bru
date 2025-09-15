@@ -1,0 +1,19 @@
+meta {
+  name: Delete variants setting
+  type: http
+  seq: 7
+}
+
+delete {
+  url: {{baseUrl}}/zones/:zone_id/cache/variants
+  body: none
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

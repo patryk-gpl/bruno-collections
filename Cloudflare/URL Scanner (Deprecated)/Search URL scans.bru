@@ -1,0 +1,39 @@
+meta {
+  name: Search URL scans
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/urlscanner/scan
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~scan_id: 
+  ~limit: 
+  ~next_cursor: 
+  ~date_start: 
+  ~date_end: 
+  ~url: 
+  ~hostname: 
+  ~path: 
+  ~ip: 
+  ~hash: 
+  ~page_url: 
+  ~page_hostname: 
+  ~page_path: 
+  ~page_asn: 
+  ~page_ip: 
+  ~account_scans: 
+  ~is_malicious: 
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

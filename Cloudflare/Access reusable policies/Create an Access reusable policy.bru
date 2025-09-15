@@ -1,0 +1,42 @@
+meta {
+  name: Create an Access reusable policy
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/access/policies
+  body: json
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "approval_groups": [
+      {
+        "approvals_needed": "",
+        "email_addresses": [],
+        "email_list_uuid": ""
+      }
+    ],
+    "approval_required": false,
+    "isolation_required": false,
+    "purpose_justification_prompt": "",
+    "purpose_justification_required": false,
+    "session_duration": ""
+  }
+}

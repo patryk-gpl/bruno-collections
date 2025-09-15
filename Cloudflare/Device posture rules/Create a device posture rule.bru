@@ -1,0 +1,41 @@
+meta {
+  name: Create a device posture rule
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/devices/posture
+  body: json
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "description": "",
+    "expiration": "",
+    "input": {},
+    "match": [
+      {
+        "platform": ""
+      }
+    ],
+    "name": "",
+    "schedule": "",
+    "type": ""
+  }
+}

@@ -1,0 +1,26 @@
+meta {
+  name: Adds a tag to an event
+  type: http
+  seq: 17
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/cloudforce-one/events/event_tag/:event_id/create
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  event_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "tags": []
+  }
+}

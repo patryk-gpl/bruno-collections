@@ -1,0 +1,33 @@
+meta {
+  name: Create Resource Group
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/iam/resource_groups
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "name": "",
+    "scope": {
+      "key": "",
+      "objects": [
+        {
+          "key": ""
+        }
+      ]
+    }
+  }
+}

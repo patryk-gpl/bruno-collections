@@ -1,0 +1,27 @@
+meta {
+  name: Update a Provider Configs
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/ai-gateway/gateways/:gateway_id/provider_configs/:id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  gateway_id: 
+  id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "secret": ""
+  }
+}

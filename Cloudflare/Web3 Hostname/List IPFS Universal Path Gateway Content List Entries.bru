@@ -1,0 +1,26 @@
+meta {
+  name: List IPFS Universal Path Gateway Content List Entries
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/web3/hostnames/:identifier/ipfs_universal_path/content_list/entries
+  body: none
+  auth: apikey
+}
+
+params:path {
+  identifier: 
+  zone_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

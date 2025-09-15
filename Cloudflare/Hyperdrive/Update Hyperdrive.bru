@@ -1,0 +1,37 @@
+meta {
+  name: Update Hyperdrive
+  type: http
+  seq: 6
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/hyperdrive/configs/:hyperdrive_id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  hyperdrive_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "caching": {},
+    "created_on": "",
+    "id": "",
+    "modified_on": "",
+    "mtls": {
+      "ca_certificate_id": "",
+      "mtls_certificate_id": "",
+      "sslmode": ""
+    },
+    "name": "",
+    "origin": {},
+    "origin_connection_limit": 0
+  }
+}

@@ -1,0 +1,19 @@
+meta {
+  name: Delete Secondary Zone Configuration
+  type: http
+  seq: 2
+}
+
+delete {
+  url: {{baseUrl}}/zones/:zone_id/secondary_dns/incoming
+  body: json
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

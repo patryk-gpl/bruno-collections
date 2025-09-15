@@ -1,0 +1,44 @@
+meta {
+  name: Get top locations by HTTP requests for a browser family
+  type: http
+  seq: 33
+}
+
+get {
+  url: {{baseUrl}}/radar/http/top/locations/browser_family/:browser_family
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~limit: 
+  ~name: 
+  ~dateRange: 
+  ~dateStart: 
+  ~dateEnd: 
+  ~asn: 
+  ~location: 
+  ~continent: 
+  ~botClass: 
+  ~deviceType: 
+  ~httpProtocol: 
+  ~httpVersion: 
+  ~ipVersion: 
+  ~os: 
+  ~tlsVersion: 
+  ~format: 
+}
+
+params:path {
+  browser_family: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

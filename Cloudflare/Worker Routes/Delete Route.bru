@@ -1,0 +1,20 @@
+meta {
+  name: Delete Route
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{baseUrl}}/zones/:zone_id/workers/routes/:route_id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  route_id: 
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

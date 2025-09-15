@@ -1,0 +1,23 @@
+meta {
+  name: Unrevoke registrations
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/devices/registrations/unrevoke
+  body: none
+  auth: bearer
+}
+
+params:query {
+  id: 
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

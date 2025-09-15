@@ -1,0 +1,26 @@
+meta {
+  name: Get a rate limit
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/rate_limits/:rate_limit_id
+  body: none
+  auth: apikey
+}
+
+params:path {
+  rate_limit_id: 
+  zone_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

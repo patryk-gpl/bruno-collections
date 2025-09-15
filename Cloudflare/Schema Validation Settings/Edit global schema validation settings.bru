@@ -1,0 +1,22 @@
+meta {
+  name: Edit global schema validation settings
+  type: http
+  seq: 2
+}
+
+patch {
+  url: {{baseUrl}}/zones/:zone_id/schema_validation/settings
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "validation_default_mitigation_action": "",
+    "validation_override_mitigation_action": ""
+  }
+}

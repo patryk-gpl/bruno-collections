@@ -1,0 +1,32 @@
+meta {
+  name: Create a new Provider Configs
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/ai-gateway/gateways/:gateway_id/provider_configs
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  gateway_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "alias": "",
+    "default_config": false,
+    "provider_slug": "",
+    "rate_limit": "",
+    "rate_limit_period": "",
+    "secret": "",
+    "secret_id": ""
+  }
+}

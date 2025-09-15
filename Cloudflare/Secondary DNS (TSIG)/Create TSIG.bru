@@ -1,0 +1,28 @@
+meta {
+  name: Create TSIG
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/secondary_dns/tsigs
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "algo": "",
+    "id": "",
+    "name": "",
+    "secret": ""
+  }
+}

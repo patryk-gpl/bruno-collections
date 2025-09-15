@@ -1,0 +1,43 @@
+meta {
+  name: Update catch-all rule
+  type: http
+  seq: 7
+}
+
+put {
+  url: {{baseUrl}}/zones/:zone_id/email/routing/rules/catch_all
+  body: json
+  auth: apikey
+}
+
+params:path {
+  zone_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "actions": [
+      {
+        "type": "",
+        "value": []
+      }
+    ],
+    "enabled": false,
+    "matchers": [
+      {
+        "type": ""
+      }
+    ],
+    "name": ""
+  }
+}

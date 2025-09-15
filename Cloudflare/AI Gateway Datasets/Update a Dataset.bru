@@ -1,0 +1,35 @@
+meta {
+  name: Update a Dataset
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/ai-gateway/gateways/:gateway_id/datasets/:id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  gateway_id: 
+  id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "enable": false,
+    "filters": [
+      {
+        "key": "",
+        "operator": "",
+        "value": []
+      }
+    ],
+    "name": ""
+  }
+}

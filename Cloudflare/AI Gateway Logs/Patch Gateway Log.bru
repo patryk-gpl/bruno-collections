@@ -1,0 +1,29 @@
+meta {
+  name: Patch Gateway Log
+  type: http
+  seq: 4
+}
+
+patch {
+  url: {{baseUrl}}/accounts/:account_id/ai-gateway/gateways/:gateway_id/logs/:id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  id: 
+  gateway_id: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "feedback": "",
+    "metadata": {},
+    "score": ""
+  }
+}

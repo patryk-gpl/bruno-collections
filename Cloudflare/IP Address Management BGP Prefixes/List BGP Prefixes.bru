@@ -1,0 +1,26 @@
+meta {
+  name: List BGP Prefixes
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/addressing/prefixes/:prefix_id/bgp/prefixes
+  body: none
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+  prefix_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

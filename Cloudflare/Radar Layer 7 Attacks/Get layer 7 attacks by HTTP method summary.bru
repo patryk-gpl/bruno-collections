@@ -1,0 +1,36 @@
+meta {
+  name: Get layer 7 attacks by HTTP method summary
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/radar/attacks/layer7/summary/http_method
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~name: 
+  ~dateRange: 
+  ~dateStart: 
+  ~dateEnd: 
+  ~asn: 
+  ~location: 
+  ~continent: 
+  ~ipVersion: 
+  ~httpVersion: 
+  ~mitigationProduct: 
+  ~limitPerGroup: 
+  ~format: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

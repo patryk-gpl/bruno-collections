@@ -1,0 +1,31 @@
+meta {
+  name: List Regions
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/load_balancers/regions
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~subdivision_code: 
+  ~subdivision_code_a2: 
+  ~country_code_a2: 
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

@@ -1,0 +1,23 @@
+meta {
+  name: Create new saved string queries in bulk
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/brand-protection/queries/bulk
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "queries": [
+      {}
+    ]
+  }
+}

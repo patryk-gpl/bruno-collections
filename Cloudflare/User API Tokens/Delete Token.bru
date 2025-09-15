@@ -1,0 +1,19 @@
+meta {
+  name: Delete Token
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{baseUrl}}/user/tokens/:token_id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  token_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

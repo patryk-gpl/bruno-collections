@@ -1,0 +1,20 @@
+meta {
+  name: DNS Record Details
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/dns_records/:dns_record_id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  dns_record_id: 
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

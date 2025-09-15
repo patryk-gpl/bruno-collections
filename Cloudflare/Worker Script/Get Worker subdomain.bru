@@ -1,0 +1,20 @@
+meta {
+  name: Get Worker subdomain
+  type: http
+  seq: 18
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/workers/scripts/:script_name/subdomain
+  body: none
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  script_name: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

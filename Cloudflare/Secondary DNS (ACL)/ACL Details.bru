@@ -1,0 +1,20 @@
+meta {
+  name: ACL Details
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/secondary_dns/acls/:acl_id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  acl_id: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

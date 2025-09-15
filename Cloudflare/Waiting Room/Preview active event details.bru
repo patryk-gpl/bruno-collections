@@ -1,0 +1,21 @@
+meta {
+  name: Preview active event details
+  type: http
+  seq: 14
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/waiting_rooms/:waiting_room_id/events/:event_id/details
+  body: none
+  auth: bearer
+}
+
+params:path {
+  event_id: 
+  waiting_room_id: 
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

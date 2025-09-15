@@ -1,0 +1,27 @@
+meta {
+  name: Create a new AI Gateway Dynamic Route.
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/ai-gateway/gateways/:gateway_id/routes
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  gateway_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "elements": [],
+    "name": ""
+  }
+}

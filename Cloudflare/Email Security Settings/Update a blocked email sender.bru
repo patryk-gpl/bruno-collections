@@ -1,0 +1,35 @@
+meta {
+  name: Update a blocked email sender
+  type: http
+  seq: 11
+}
+
+patch {
+  url: {{baseUrl}}/accounts/:account_id/email-security/settings/block_senders/:pattern_id
+  body: json
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+  pattern_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "comments": "",
+    "is_regex": false,
+    "pattern": "",
+    "pattern_type": ""
+  }
+}

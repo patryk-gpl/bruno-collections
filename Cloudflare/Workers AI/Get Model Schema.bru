@@ -1,0 +1,23 @@
+meta {
+  name: Get Model Schema
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/ai/models/schema
+  body: none
+  auth: bearer
+}
+
+params:query {
+  model: 
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

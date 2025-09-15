@@ -1,0 +1,37 @@
+meta {
+  name: Get layer 7 attacks by IP version time series
+  type: http
+  seq: 12
+}
+
+get {
+  url: {{baseUrl}}/radar/attacks/layer7/timeseries_groups/ip_version
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~aggInterval: 
+  ~name: 
+  ~dateRange: 
+  ~dateStart: 
+  ~dateEnd: 
+  ~asn: 
+  ~location: 
+  ~continent: 
+  ~httpVersion: 
+  ~httpMethod: 
+  ~mitigationProduct: 
+  ~normalization: 
+  ~format: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

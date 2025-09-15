@@ -1,0 +1,19 @@
+meta {
+  name: Enable Outgoing Zone Transfers
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{baseUrl}}/zones/:zone_id/secondary_dns/outgoing/enable
+  body: json
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

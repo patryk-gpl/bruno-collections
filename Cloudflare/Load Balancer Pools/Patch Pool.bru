@@ -1,0 +1,70 @@
+meta {
+  name: Patch Pool
+  type: http
+  seq: 6
+}
+
+patch {
+  url: {{baseUrl}}/user/load_balancers/pools/:pool_id
+  body: json
+  auth: apikey
+}
+
+params:path {
+  pool_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "check_regions": [],
+    "description": "",
+    "disabled_at": "",
+    "enabled": false,
+    "latitude": "",
+    "load_shedding": {
+      "default_percent": "",
+      "default_policy": "",
+      "session_percent": "",
+      "session_policy": ""
+    },
+    "longitude": "",
+    "minimum_origins": 0,
+    "monitor": "",
+    "name": "",
+    "notification_email": "",
+    "notification_filter": {
+      "origin": {
+        "disable": false,
+        "healthy": false
+      },
+      "pool": {}
+    },
+    "origin_steering": {
+      "policy": ""
+    },
+    "origins": [
+      {
+        "address": "",
+        "disabled_at": "",
+        "enabled": false,
+        "header": {
+          "Host": []
+        },
+        "name": "",
+        "port": 0,
+        "virtual_network_id": "",
+        "weight": ""
+      }
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+meta {
+  name: List all targets
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/infrastructure/targets
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~hostname: 
+  ~hostname_contains: 
+  ~virtual_network_id: 
+  ~ip_v4: 
+  ~ip_v6: 
+  ~created_before: 
+  ~created_after: 
+  ~modified_before: 
+  ~modified_after: 
+  ~ips: 
+  ~target_ids: 
+  ~ip_like: 
+  ~ipv4_start: 
+  ~ipv4_end: 
+  ~ipv6_start: 
+  ~ipv6_end: 
+  ~page: 
+  ~per_page: 
+  ~order: 
+  ~direction: 
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

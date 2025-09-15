@@ -1,0 +1,79 @@
+meta {
+  name: Run a query
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/workers/observability/telemetry/query
+  body: json
+  auth: inherit
+}
+
+params:path {
+  account_id: 
+}
+
+body:json {
+  {
+    "chart": false,
+    "compare": false,
+    "dry": false,
+    "granularity": "",
+    "ignoreSeries": false,
+    "limit": "",
+    "offset": "",
+    "offsetBy": "",
+    "offsetDirection": "",
+    "parameters": {
+      "calculations": [
+        {
+          "alias": "",
+          "key": "",
+          "keyType": "",
+          "operator": ""
+        }
+      ],
+      "datasets": [],
+      "filterCombination": "",
+      "filters": [
+        {
+          "key": "",
+          "operation": "",
+          "type": "",
+          "value": ""
+        }
+      ],
+      "groupBys": [
+        {
+          "type": "",
+          "value": ""
+        }
+      ],
+      "havings": [
+        {
+          "key": "",
+          "operation": "",
+          "value": ""
+        }
+      ],
+      "limit": 0,
+      "needle": {
+        "isRegex": false,
+        "matchCase": false,
+        "value": ""
+      },
+      "orderBy": {
+        "order": "",
+        "value": ""
+      }
+    },
+    "patternType": "",
+    "queryId": "",
+    "timeframe": {
+      "from": "",
+      "to": ""
+    },
+    "view": ""
+  }
+}

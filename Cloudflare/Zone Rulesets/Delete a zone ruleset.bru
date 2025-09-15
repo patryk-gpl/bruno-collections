@@ -1,0 +1,20 @@
+meta {
+  name: Delete a zone ruleset
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{baseUrl}}/zones/:zone_id/rulesets/:ruleset_id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  ruleset_id: 
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

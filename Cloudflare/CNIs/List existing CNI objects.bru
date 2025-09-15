@@ -1,0 +1,32 @@
+meta {
+  name: List existing CNI objects
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/cni/cnis
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~slot: 
+  ~tunnel_id: 
+  ~cursor: 
+  ~limit: 
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

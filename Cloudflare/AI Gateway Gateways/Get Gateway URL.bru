@@ -1,0 +1,21 @@
+meta {
+  name: Get Gateway URL
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/ai-gateway/gateways/:gateway_id/url/:provider
+  body: none
+  auth: bearer
+}
+
+params:path {
+  gateway_id: 
+  account_id: 
+  provider: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

@@ -1,0 +1,33 @@
+meta {
+  name: Create predefined entry
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/dlp/entries/predefined
+  body: json
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "enabled": false,
+    "entry_id": "",
+    "profile_id": ""
+  }
+}

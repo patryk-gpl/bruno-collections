@@ -1,0 +1,21 @@
+meta {
+  name: Download matches for logo queries by ID
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/brand-protection/logo-matches/download
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~logo_id: 
+  ~offset: 
+  ~limit: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

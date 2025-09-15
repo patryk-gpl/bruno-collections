@@ -1,0 +1,33 @@
+meta {
+  name: Updates an indicator
+  type: http
+  seq: 4
+}
+
+patch {
+  url: {{baseUrl}}/accounts/:account_id/cloudforce-one/events/indicators/:indicator_id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  indicator_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "indicatorType": "",
+    "relatedEvents": [
+      {
+        "datasetId": "",
+        "eventId": ""
+      }
+    ],
+    "value": ""
+  }
+}

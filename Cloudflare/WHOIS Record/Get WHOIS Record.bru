@@ -1,0 +1,23 @@
+meta {
+  name: Get WHOIS Record
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/intel/whois
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~domain: 
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

@@ -1,0 +1,26 @@
+meta {
+  name: Update Managed Transforms
+  type: http
+  seq: 3
+}
+
+patch {
+  url: {{baseUrl}}/zones/:zone_id/managed_headers
+  body: json
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "managed_request_headers": [],
+    "managed_response_headers": []
+  }
+}

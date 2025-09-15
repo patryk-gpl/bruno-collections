@@ -1,0 +1,26 @@
+meta {
+  name: Download LOA Document
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/addressing/loa_documents/:loa_document_id/download
+  body: none
+  auth: apikey
+}
+
+params:path {
+  loa_document_id: 
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

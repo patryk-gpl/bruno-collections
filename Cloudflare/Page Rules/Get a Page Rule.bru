@@ -1,0 +1,20 @@
+meta {
+  name: Get a Page Rule
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/pagerules/:pagerule_id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  pagerule_id: 
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

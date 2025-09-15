@@ -1,0 +1,15 @@
+meta {
+  name: Read patterns for brands by ID
+  type: http
+  seq: 10
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/brand-protection/brands/patterns
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

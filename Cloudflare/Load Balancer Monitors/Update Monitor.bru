@@ -1,0 +1,25 @@
+meta {
+  name: Update Monitor
+  type: http
+  seq: 6
+}
+
+put {
+  url: {{baseUrl}}/user/load_balancers/monitors/:monitor_id
+  body: json
+  auth: apikey
+}
+
+params:path {
+  monitor_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

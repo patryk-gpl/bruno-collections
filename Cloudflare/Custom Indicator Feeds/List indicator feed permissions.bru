@@ -1,0 +1,25 @@
+meta {
+  name: List indicator feed permissions
+  type: http
+  seq: 9
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/intel/indicator-feeds/permissions/view
+  body: none
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

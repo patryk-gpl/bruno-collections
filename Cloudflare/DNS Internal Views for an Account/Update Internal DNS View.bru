@@ -1,0 +1,24 @@
+meta {
+  name: Update Internal DNS View
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{baseUrl}}/accounts/:account_id/dns_settings/views/:view_id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  view_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {}
+}

@@ -1,0 +1,26 @@
+meta {
+  name: Delete a Zero Trust Gateway location
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{baseUrl}}/accounts/:account_id/gateway/locations/:location_id
+  body: json
+  auth: apikey
+}
+
+params:path {
+  location_id: 
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

@@ -1,0 +1,40 @@
+meta {
+  name: Get BGP hijack events
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/radar/bgp/hijacks/events
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~page: 
+  ~per_page: 
+  ~eventId: 
+  ~hijackerAsn: 
+  ~victimAsn: 
+  ~involvedAsn: 
+  ~involvedCountry: 
+  ~prefix: 
+  ~minConfidence: 
+  ~maxConfidence: 
+  ~dateRange: 
+  ~dateStart: 
+  ~dateEnd: 
+  ~sortBy: 
+  ~sortOrder: 
+  ~format: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

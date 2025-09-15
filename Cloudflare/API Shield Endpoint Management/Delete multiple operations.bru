@@ -1,0 +1,29 @@
+meta {
+  name: Delete multiple operations
+  type: http
+  seq: 1
+}
+
+delete {
+  url: {{baseUrl}}/zones/:zone_id/api_gateway/operations
+  body: json
+  auth: apikey
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  [
+    {
+      "operation_id": ""
+    }
+  ]
+}

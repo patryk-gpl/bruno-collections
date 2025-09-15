@@ -1,0 +1,15 @@
+meta {
+  name: Delete per-operation schema validation setting
+  type: http
+  seq: 6
+}
+
+delete {
+  url: {{baseUrl}}/zones/:zone_id/schema_validation/settings/operations/:operation_id
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

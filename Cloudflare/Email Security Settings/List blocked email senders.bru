@@ -1,0 +1,35 @@
+meta {
+  name: List blocked email senders
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/email-security/settings/block_senders
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~page: 
+  ~per_page: 
+  ~order: 
+  ~direction: 
+  ~search: 
+  ~pattern_type: 
+  ~pattern: 
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

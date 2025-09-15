@@ -1,0 +1,24 @@
+meta {
+  name: Update DNS Firewall Cluster Reverse DNS
+  type: http
+  seq: 7
+}
+
+patch {
+  url: {{baseUrl}}/accounts/:account_id/dns_firewall/:dns_firewall_id/reverse_dns
+  body: json
+  auth: bearer
+}
+
+params:path {
+  dns_firewall_id: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {}
+}

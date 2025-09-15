@@ -1,0 +1,34 @@
+meta {
+  name: Get top industries targeted by layer 3 attacks
+  type: http
+  seq: 17
+}
+
+get {
+  url: {{baseUrl}}/radar/attacks/layer3/top/industry
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~limit: 
+  ~name: 
+  ~dateRange: 
+  ~dateStart: 
+  ~dateEnd: 
+  ~location: 
+  ~continent: 
+  ~ipVersion: 
+  ~protocol: 
+  ~format: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

@@ -1,0 +1,25 @@
+meta {
+  name: Edit DNSSEC Status
+  type: http
+  seq: 3
+}
+
+patch {
+  url: {{baseUrl}}/zones/:zone_id/dnssec
+  body: json
+  auth: apikey
+}
+
+params:path {
+  zone_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

@@ -1,0 +1,28 @@
+meta {
+  name: List Internet services categories
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/radar/ranking/internet_services/categories
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~limit: 
+  ~name: 
+  ~date: 
+  ~format: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

@@ -1,0 +1,31 @@
+meta {
+  name: Retrieve all operations from a schema.
+  type: http
+  seq: 12
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/api_gateway/user_schemas/:schema_id/operations
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~feature: 
+  ~host: 
+  ~method: 
+  ~endpoint: 
+  ~page: 
+  ~per_page: 
+  ~operation_status: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

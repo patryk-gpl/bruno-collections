@@ -1,0 +1,33 @@
+meta {
+  name: Initiate video uploads using TUS
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/stream
+  body: json
+  auth: apikey
+}
+
+params:query {
+  ~direct_user: 
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  Tus-Resumable: 
+  Upload-Length: 
+  X-Auth-Email: {{apiKey}}
+  ~Upload-Creator: 
+  ~Upload-Metadata: 
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

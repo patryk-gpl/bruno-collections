@@ -1,0 +1,44 @@
+meta {
+  name: Get top ASes by HTTP requests for a bot class
+  type: http
+  seq: 21
+}
+
+get {
+  url: {{baseUrl}}/radar/http/top/ases/bot_class/:bot_class
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~limit: 
+  ~name: 
+  ~dateRange: 
+  ~dateStart: 
+  ~dateEnd: 
+  ~asn: 
+  ~location: 
+  ~continent: 
+  ~deviceType: 
+  ~httpProtocol: 
+  ~httpVersion: 
+  ~ipVersion: 
+  ~os: 
+  ~tlsVersion: 
+  ~browserFamily: 
+  ~format: 
+}
+
+params:path {
+  bot_class: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

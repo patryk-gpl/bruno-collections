@@ -1,0 +1,27 @@
+meta {
+  name: List captions or subtitles for a provided language
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/stream/:identifier/captions/:language
+  body: none
+  auth: apikey
+}
+
+params:path {
+  language: 
+  identifier: 
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

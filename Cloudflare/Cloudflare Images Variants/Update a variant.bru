@@ -1,0 +1,32 @@
+meta {
+  name: Update a variant
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{baseUrl}}/accounts/:account_id/images/v1/variants/:variant_id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  variant_id: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "neverRequireSignedURLs": false,
+    "options": {
+      "fit": "",
+      "height": "",
+      "metadata": "",
+      "width": ""
+    }
+  }
+}

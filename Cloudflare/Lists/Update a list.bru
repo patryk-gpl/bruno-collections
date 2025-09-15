@@ -1,0 +1,32 @@
+meta {
+  name: Update a list
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/rules/lists/:list_id
+  body: json
+  auth: apikey
+}
+
+params:path {
+  list_id: 
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "description": ""
+  }
+}

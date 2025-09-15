@@ -1,0 +1,36 @@
+meta {
+  name: Get layer 3 attacks by bitrate time series
+  type: http
+  seq: 9
+}
+
+get {
+  url: {{baseUrl}}/radar/attacks/layer3/timeseries_groups/bitrate
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~aggInterval: 
+  ~name: 
+  ~dateRange: 
+  ~dateStart: 
+  ~dateEnd: 
+  ~location: 
+  ~continent: 
+  ~ipVersion: 
+  ~protocol: 
+  ~normalization: 
+  ~direction: 
+  ~format: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

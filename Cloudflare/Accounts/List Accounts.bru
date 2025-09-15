@@ -1,0 +1,28 @@
+meta {
+  name: List Accounts
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/accounts
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~name: 
+  ~page: 
+  ~per_page: 
+  ~direction: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

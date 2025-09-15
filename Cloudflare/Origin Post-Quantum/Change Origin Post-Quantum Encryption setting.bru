@@ -1,0 +1,25 @@
+meta {
+  name: Change Origin Post-Quantum Encryption setting
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{baseUrl}}/zones/:zone_id/cache/origin_post_quantum_encryption
+  body: json
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "value": ""
+  }
+}

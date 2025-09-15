@@ -1,0 +1,32 @@
+meta {
+  name: Update CMB config
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/logs/control/cmb/config
+  body: json
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "allow_out_of_region_access": false,
+    "regions": ""
+  }
+}

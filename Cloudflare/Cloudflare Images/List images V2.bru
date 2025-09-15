@@ -1,0 +1,26 @@
+meta {
+  name: List images V2
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/images/v2
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~continuation_token: 
+  ~per_page: 
+  ~sort_order: 
+  ~creator: 
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

@@ -1,0 +1,43 @@
+meta {
+  name: Get time series distribution of bots HTTP requests by dimension.
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/radar/bots/timeseries_groups/:dimension
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~aggInterval: 
+  ~name: 
+  ~dateRange: 
+  ~dateStart: 
+  ~dateEnd: 
+  ~asn: 
+  ~location: 
+  ~continent: 
+  ~limitPerGroup: 
+  ~bot: 
+  ~botOperator: 
+  ~botCategory: 
+  ~botKind: 
+  ~botVerificationStatus: 
+  ~format: 
+}
+
+params:path {
+  dimension: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

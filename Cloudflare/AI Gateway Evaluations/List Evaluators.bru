@@ -1,0 +1,26 @@
+meta {
+  name: List Evaluators
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/ai-gateway/evaluation-types
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~page: 
+  ~per_page: 
+  ~order_by: 
+  ~order_by_direction: 
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

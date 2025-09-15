@@ -1,0 +1,28 @@
+meta {
+  name: Update zone level schema validation settings
+  type: http
+  seq: 6
+}
+
+put {
+  url: {{baseUrl}}/zones/:zone_id/api_gateway/settings/schema_validation
+  body: json
+  auth: apikey
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "validation_default_mitigation_action": "",
+    "validation_override_mitigation_action": ""
+  }
+}

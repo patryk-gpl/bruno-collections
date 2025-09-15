@@ -1,0 +1,35 @@
+meta {
+  name: Get email spam classification time series
+  type: http
+  seq: 14
+}
+
+get {
+  url: {{baseUrl}}/radar/email/security/timeseries_groups/spam
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~aggInterval: 
+  ~name: 
+  ~dateRange: 
+  ~dateStart: 
+  ~dateEnd: 
+  ~arc: 
+  ~dkim: 
+  ~dmarc: 
+  ~spf: 
+  ~tlsVersion: 
+  ~format: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

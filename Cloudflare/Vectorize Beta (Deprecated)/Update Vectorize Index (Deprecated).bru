@@ -1,0 +1,26 @@
+meta {
+  name: Update Vectorize Index (Deprecated)
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/vectorize/indexes/:index_name
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  index_name: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "description": ""
+  }
+}

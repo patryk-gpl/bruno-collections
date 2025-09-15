@@ -1,0 +1,21 @@
+meta {
+  name: Rollback deployment
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/pages/projects/:project_name/deployments/:deployment_id/rollback
+  body: json
+  auth: bearer
+}
+
+params:path {
+  deployment_id: 
+  project_name: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

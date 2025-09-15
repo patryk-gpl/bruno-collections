@@ -1,0 +1,27 @@
+meta {
+  name: Execute @cf/deepseek-ai/deepseek-r1-distill-qwen-32b model.
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/ai/run/@cf/deepseek-ai/deepseek-r1-distill-qwen-32b
+  body: json
+  auth: bearer
+}
+
+params:query {
+  ~queueRequest: 
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {}
+}

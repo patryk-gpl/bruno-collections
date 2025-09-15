@@ -1,0 +1,29 @@
+meta {
+  name: Get certificate authority details
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/radar/ct/authorities/:ca_slug
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~format: 
+}
+
+params:path {
+  ca_slug: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

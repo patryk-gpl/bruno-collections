@@ -1,0 +1,34 @@
+meta {
+  name: Execute @cf/openai/whisper-large-v3-turbo model.
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/ai/run/@cf/openai/whisper-large-v3-turbo
+  body: json
+  auth: bearer
+}
+
+params:query {
+  ~queueRequest: 
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "audio": "",
+    "initial_prompt": "",
+    "language": "",
+    "prefix": "",
+    "task": "",
+    "vad_filter": false
+  }
+}

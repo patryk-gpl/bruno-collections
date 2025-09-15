@@ -1,0 +1,33 @@
+meta {
+  name: Change status of instance
+  type: http
+  seq: 9
+}
+
+patch {
+  url: {{baseUrl}}/accounts/:account_id/workflows/:workflow_name/instances/:instance_id/status
+  body: json
+  auth: apikey
+}
+
+params:path {
+  workflow_name: 
+  instance_id: 
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "status": ""
+  }
+}

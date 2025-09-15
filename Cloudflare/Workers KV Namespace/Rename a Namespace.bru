@@ -1,0 +1,26 @@
+meta {
+  name: Rename a Namespace
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/storage/kv/namespaces/:namespace_id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  namespace_id: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "title": ""
+  }
+}

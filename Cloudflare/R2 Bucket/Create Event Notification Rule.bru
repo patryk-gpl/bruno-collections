@@ -1,0 +1,38 @@
+meta {
+  name: Create Event Notification Rule
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/event_notifications/r2/:bucket_name/configuration/queues/:queue_id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  queue_id: 
+  bucket_name: 
+  account_id: 
+}
+
+headers {
+  ~cf-r2-jurisdiction: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "rules": [
+      {
+        "actions": [],
+        "description": "",
+        "prefix": "",
+        "suffix": ""
+      }
+    ]
+  }
+}

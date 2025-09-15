@@ -1,0 +1,15 @@
+meta {
+  name: Read all alerts on submitted domains
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/brand-protection/alerts
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

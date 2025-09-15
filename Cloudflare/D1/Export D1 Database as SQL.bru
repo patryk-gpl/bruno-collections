@@ -1,0 +1,32 @@
+meta {
+  name: Export D1 Database as SQL
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/d1/database/:database_id/export
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  database_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "current_bookmark": "",
+    "dump_options": {
+      "no_data": false,
+      "no_schema": false,
+      "tables": []
+    },
+    "output_format": ""
+  }
+}

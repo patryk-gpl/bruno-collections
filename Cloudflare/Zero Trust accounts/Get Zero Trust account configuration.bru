@@ -1,0 +1,25 @@
+meta {
+  name: Get Zero Trust account configuration
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/gateway/configuration
+  body: none
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

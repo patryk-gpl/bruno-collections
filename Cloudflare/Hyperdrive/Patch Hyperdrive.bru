@@ -1,0 +1,34 @@
+meta {
+  name: Patch Hyperdrive
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{baseUrl}}/accounts/:account_id/hyperdrive/configs/:hyperdrive_id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  hyperdrive_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "caching": {},
+    "mtls": {
+      "ca_certificate_id": "",
+      "mtls_certificate_id": "",
+      "sslmode": ""
+    },
+    "name": "",
+    "origin": {},
+    "origin_connection_limit": 0
+  }
+}

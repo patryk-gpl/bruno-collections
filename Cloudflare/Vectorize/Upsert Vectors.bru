@@ -1,0 +1,24 @@
+meta {
+  name: Upsert Vectors
+  type: http
+  seq: 14
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/vectorize/v2/indexes/:index_name/upsert
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~unparsable-behavior: 
+}
+
+params:path {
+  account_id: 
+  index_name: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

@@ -1,0 +1,34 @@
+meta {
+  name: Create a New Priority Intelligence Requirement
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/cloudforce-one/requests/priority/new
+  body: json
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "labels": [],
+    "priority": 0,
+    "requirement": "",
+    "tlp": ""
+  }
+}

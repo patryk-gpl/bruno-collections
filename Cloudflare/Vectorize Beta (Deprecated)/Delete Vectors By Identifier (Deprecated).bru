@@ -1,0 +1,26 @@
+meta {
+  name: Delete Vectors By Identifier (Deprecated)
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/vectorize/indexes/:index_name/delete-by-ids
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  index_name: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "ids": []
+  }
+}

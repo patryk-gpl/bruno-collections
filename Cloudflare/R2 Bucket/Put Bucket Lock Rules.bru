@@ -1,0 +1,37 @@
+meta {
+  name: Put Bucket Lock Rules
+  type: http
+  seq: 23
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/r2/buckets/:bucket_name/lock
+  body: json
+  auth: bearer
+}
+
+params:path {
+  bucket_name: 
+  account_id: 
+}
+
+headers {
+  ~cf-r2-jurisdiction: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "rules": [
+      {
+        "condition": "",
+        "enabled": false,
+        "id": "",
+        "prefix": ""
+      }
+    ]
+  }
+}

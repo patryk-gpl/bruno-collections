@@ -1,0 +1,21 @@
+meta {
+  name: Get Version Detail
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/workers/scripts/:script_name/versions/:version_id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  script_name: 
+  version_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

@@ -1,0 +1,23 @@
+meta {
+  name: Create DNS Record
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/zones/:zone_id/dns_records
+  body: json
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {}
+}

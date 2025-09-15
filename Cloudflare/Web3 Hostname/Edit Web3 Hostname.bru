@@ -1,0 +1,33 @@
+meta {
+  name: Edit Web3 Hostname
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{baseUrl}}/zones/:zone_id/web3/hostnames/:identifier
+  body: json
+  auth: apikey
+}
+
+params:path {
+  identifier: 
+  zone_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "description": "",
+    "dnslink": ""
+  }
+}

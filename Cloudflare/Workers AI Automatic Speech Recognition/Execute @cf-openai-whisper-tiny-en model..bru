@@ -1,0 +1,23 @@
+meta {
+  name: Execute @cf/openai/whisper-tiny-en model.
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/ai/run/@cf/openai/whisper-tiny-en
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~queueRequest: 
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

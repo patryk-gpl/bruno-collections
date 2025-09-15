@@ -1,0 +1,25 @@
+meta {
+  name: Create a custom waiting room page preview
+  type: http
+  seq: 21
+}
+
+post {
+  url: {{baseUrl}}/zones/:zone_id/waiting_rooms/preview
+  body: json
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "custom_html": ""
+  }
+}

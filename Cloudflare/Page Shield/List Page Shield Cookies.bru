@@ -1,0 +1,42 @@
+meta {
+  name: List Page Shield Cookies
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/page_shield/cookies
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~hosts: 
+  ~page: 
+  ~per_page: 
+  ~order_by: 
+  ~direction: 
+  ~page_url: 
+  ~export: 
+  ~name: 
+  ~secure: 
+  ~http_only: 
+  ~same_site: 
+  ~type: 
+  ~path: 
+  ~domain: 
+}
+
+params:path {
+  zone_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

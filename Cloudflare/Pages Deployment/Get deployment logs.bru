@@ -1,0 +1,21 @@
+meta {
+  name: Get deployment logs
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/pages/projects/:project_name/deployments/:deployment_id/history/logs
+  body: none
+  auth: bearer
+}
+
+params:path {
+  deployment_id: 
+  project_name: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

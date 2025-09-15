@@ -1,0 +1,19 @@
+meta {
+  name: Convert Files into Markdown
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/ai/tomarkdown
+  body: none
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

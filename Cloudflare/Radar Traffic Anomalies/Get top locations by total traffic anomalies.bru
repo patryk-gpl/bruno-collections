@@ -1,0 +1,30 @@
+meta {
+  name: Get top locations by total traffic anomalies
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/radar/traffic_anomalies/locations
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~limit: 
+  ~dateRange: 
+  ~dateStart: 
+  ~dateEnd: 
+  ~status: 
+  ~format: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

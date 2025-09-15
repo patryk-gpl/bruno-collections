@@ -1,0 +1,24 @@
+meta {
+  name: List Scripts in Namespace
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/workers/dispatch/namespaces/:dispatch_namespace/scripts
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~tags: 
+}
+
+params:path {
+  account_id: 
+  dispatch_namespace: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

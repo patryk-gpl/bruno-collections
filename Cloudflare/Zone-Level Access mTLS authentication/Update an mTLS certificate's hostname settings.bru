@@ -1,0 +1,37 @@
+meta {
+  name: Update an mTLS certificate's hostname settings
+  type: http
+  seq: 7
+}
+
+put {
+  url: {{baseUrl}}/zones/:zone_id/access/certificates/settings
+  body: json
+  auth: apikey
+}
+
+params:path {
+  zone_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "settings": [
+      {
+        "china_network": false,
+        "client_certificate_forwarding": false,
+        "hostname": ""
+      }
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+meta {
+  name: List Pool References
+  type: http
+  seq: 10
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/load_balancers/pools/:pool_id/references
+  body: none
+  auth: apikey
+}
+
+params:path {
+  pool_id: 
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

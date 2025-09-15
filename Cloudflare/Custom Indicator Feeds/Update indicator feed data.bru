@@ -1,0 +1,30 @@
+meta {
+  name: Update indicator feed data
+  type: http
+  seq: 6
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/intel/indicator-feeds/:feed_id/snapshot
+  body: multipartForm
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+  feed_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:multipart-form {
+  source: 
+}

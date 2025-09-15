@@ -1,0 +1,42 @@
+meta {
+  name: Acknowledge + Retry Queue Messages
+  type: http
+  seq: 17
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/queues/:queue_id/messages/ack
+  body: json
+  auth: apikey
+}
+
+params:path {
+  queue_id: 
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "acks": [
+      {
+        "lease_id": ""
+      }
+    ],
+    "retries": [
+      {
+        "delay_seconds": "",
+        "lease_id": ""
+      }
+    ]
+  }
+}

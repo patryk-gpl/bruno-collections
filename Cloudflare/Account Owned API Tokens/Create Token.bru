@@ -1,0 +1,50 @@
+meta {
+  name: Create Token
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/tokens
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "condition": {
+      "request_ip": {
+        "in": [],
+        "not_in": []
+      }
+    },
+    "expires_on": "",
+    "name": "",
+    "not_before": "",
+    "policies": [
+      {
+        "effect": "",
+        "id": "",
+        "permission_groups": [
+          {
+            "id": "",
+            "meta": {
+              "key": "",
+              "value": ""
+            },
+            "name": ""
+          }
+        ],
+        "resources": ""
+      }
+    ]
+  }
+}

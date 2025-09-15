@@ -1,0 +1,23 @@
+meta {
+  name: Get Multiple Domain Details
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/intel/domain/bulk
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~domain: 
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

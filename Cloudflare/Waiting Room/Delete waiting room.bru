@@ -1,0 +1,20 @@
+meta {
+  name: Delete waiting room
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{baseUrl}}/zones/:zone_id/waiting_rooms/:waiting_room_id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  waiting_room_id: 
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

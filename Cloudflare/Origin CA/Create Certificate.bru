@@ -1,0 +1,30 @@
+meta {
+  name: Create Certificate
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/certificates
+  body: json
+  auth: apikey
+}
+
+headers {
+  X-Auth-User-Service-Key: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-User-Service-Key
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "csr": "",
+    "hostnames": [],
+    "request_type": "",
+    "requested_validity": ""
+  }
+}

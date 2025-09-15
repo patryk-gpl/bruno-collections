@@ -1,0 +1,36 @@
+meta {
+  name: Get top TLDs by email message volume
+  type: http
+  seq: 19
+}
+
+get {
+  url: {{baseUrl}}/radar/email/security/top/tlds
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~limit: 
+  ~name: 
+  ~dateRange: 
+  ~dateStart: 
+  ~dateEnd: 
+  ~arc: 
+  ~dkim: 
+  ~dmarc: 
+  ~spf: 
+  ~tlsVersion: 
+  ~tldCategory: 
+  ~format: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

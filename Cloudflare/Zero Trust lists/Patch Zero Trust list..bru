@@ -1,0 +1,38 @@
+meta {
+  name: Patch Zero Trust list.
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{baseUrl}}/accounts/:account_id/gateway/lists/:list_id
+  body: json
+  auth: apikey
+}
+
+params:path {
+  list_id: 
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "append": [
+      {
+        "description": "",
+        "value": ""
+      }
+    ],
+    "remove": []
+  }
+}

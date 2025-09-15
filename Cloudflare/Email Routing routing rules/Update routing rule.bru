@@ -1,0 +1,47 @@
+meta {
+  name: Update routing rule
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{baseUrl}}/zones/:zone_id/email/routing/rules/:rule_identifier
+  body: json
+  auth: apikey
+}
+
+params:path {
+  rule_identifier: 
+  zone_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "actions": [
+      {
+        "type": "",
+        "value": []
+      }
+    ],
+    "enabled": false,
+    "matchers": [
+      {
+        "field": "",
+        "type": "",
+        "value": ""
+      }
+    ],
+    "name": "",
+    "priority": ""
+  }
+}

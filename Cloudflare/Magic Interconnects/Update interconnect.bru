@@ -1,0 +1,45 @@
+meta {
+  name: Update interconnect
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/magic/cf_interconnects/:cf_interconnect_id
+  body: json
+  auth: apikey
+}
+
+params:path {
+  cf_interconnect_id: 
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+  ~x-magic-new-hc-target: 
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "description": "",
+    "gre": {
+      "cloudflare_endpoint": ""
+    },
+    "health_check": {
+      "enabled": false,
+      "rate": "",
+      "target": "",
+      "type": ""
+    },
+    "interface_address": "",
+    "interface_address6": "",
+    "mtu": 0
+  }
+}

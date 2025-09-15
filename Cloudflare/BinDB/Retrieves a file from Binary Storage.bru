@@ -1,0 +1,20 @@
+meta {
+  name: Retrieves a file from Binary Storage
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/cloudforce-one/binary/:hash
+  body: none
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  hash: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

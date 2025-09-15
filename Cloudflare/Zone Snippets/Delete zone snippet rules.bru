@@ -1,0 +1,19 @@
+meta {
+  name: Delete zone snippet rules
+  type: http
+  seq: 6
+}
+
+delete {
+  url: {{baseUrl}}/zones/:zone_id/snippets/snippet_rules
+  body: none
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

@@ -1,0 +1,31 @@
+meta {
+  name: Create URL Scan
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/urlscanner/v2/scan
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "country": "",
+    "customHeaders": {},
+    "customagent": "",
+    "referer": "",
+    "screenshotsResolutions": [],
+    "url": "",
+    "visibility": ""
+  }
+}

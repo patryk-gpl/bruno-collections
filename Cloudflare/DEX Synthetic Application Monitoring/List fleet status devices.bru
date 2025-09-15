@@ -1,0 +1,40 @@
+meta {
+  name: List fleet status devices
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/dex/fleet-status/devices
+  body: none
+  auth: apikey
+}
+
+params:query {
+  to: 
+  from: 
+  page: 
+  per_page: 
+  ~sort_by: 
+  ~colo: 
+  ~device_id: 
+  ~mode: 
+  ~status: 
+  ~platform: 
+  ~version: 
+  ~source: 
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

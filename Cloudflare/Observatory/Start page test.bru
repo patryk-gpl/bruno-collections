@@ -1,0 +1,26 @@
+meta {
+  name: Start page test
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{baseUrl}}/zones/:zone_id/speed_api/pages/:url/tests
+  body: json
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+  url: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "region": ""
+  }
+}

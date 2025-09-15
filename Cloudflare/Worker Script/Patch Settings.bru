@@ -1,0 +1,24 @@
+meta {
+  name: Patch Settings
+  type: http
+  seq: 16
+}
+
+patch {
+  url: {{baseUrl}}/accounts/:account_id/workers/scripts/:script_name/settings
+  body: multipartForm
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  script_name: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:multipart-form {
+  settings: 
+}

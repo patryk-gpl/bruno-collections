@@ -1,0 +1,30 @@
+meta {
+  name: Get user audit logs
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/user/audit_logs
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~id: 
+  ~export: 
+  ~action.type: 
+  ~actor.ip: 
+  ~actor.email: 
+  ~since: 
+  ~before: 
+  ~zone.name: 
+  ~direction: 
+  ~per_page: 
+  ~page: 
+  ~hide_user_logs: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

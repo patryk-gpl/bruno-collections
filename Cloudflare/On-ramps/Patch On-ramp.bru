@@ -1,0 +1,40 @@
+meta {
+  name: Patch On-ramp
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{baseUrl}}/accounts/:account_id/magic/cloud/onramps/:onramp_id
+  body: json
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+  onramp_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "attached_hubs": [],
+    "attached_vpcs": [],
+    "description": "",
+    "install_routes_in_cloud": false,
+    "install_routes_in_magic_wan": false,
+    "manage_hub_to_hub_attachments": false,
+    "manage_vpc_to_hub_attachments": false,
+    "name": "",
+    "vpc": ""
+  }
+}

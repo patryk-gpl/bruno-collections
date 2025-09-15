@@ -1,0 +1,94 @@
+meta {
+  name: Update Load Balancer
+  type: http
+  seq: 6
+}
+
+put {
+  url: {{baseUrl}}/zones/:zone_id/load_balancers/:load_balancer_id
+  body: json
+  auth: apikey
+}
+
+params:path {
+  zone_id: 
+  load_balancer_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "adaptive_routing": {
+      "failover_across_pools": false
+    },
+    "country_pools": {},
+    "default_pools": [],
+    "description": "",
+    "enabled": false,
+    "fallback_pool": "",
+    "location_strategy": {
+      "mode": "",
+      "prefer_ecs": ""
+    },
+    "name": "",
+    "networks": [],
+    "pop_pools": {},
+    "proxied": false,
+    "random_steering": {
+      "default_weight": "",
+      "pool_weights": {}
+    },
+    "region_pools": {},
+    "rules": [
+      {
+        "condition": "",
+        "disabled": false,
+        "fixed_response": {
+          "content_type": "",
+          "location": "",
+          "message_body": "",
+          "status_code": 0
+        },
+        "name": "",
+        "overrides": {
+          "adaptive_routing": {},
+          "country_pools": {},
+          "default_pools": [],
+          "fallback_pool": "",
+          "location_strategy": {},
+          "pop_pools": {},
+          "random_steering": {},
+          "region_pools": {},
+          "session_affinity": "",
+          "session_affinity_attributes": {
+            "drain_duration": "",
+            "headers": [],
+            "require_all_headers": false,
+            "samesite": "",
+            "secure": "",
+            "zero_downtime_failover": ""
+          },
+          "session_affinity_ttl": "",
+          "steering_policy": "",
+          "ttl": ""
+        },
+        "priority": 0,
+        "terminates": false
+      }
+    ],
+    "session_affinity": "",
+    "session_affinity_attributes": {},
+    "session_affinity_ttl": "",
+    "steering_policy": "",
+    "ttl": ""
+  }
+}

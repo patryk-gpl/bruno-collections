@@ -1,0 +1,25 @@
+meta {
+  name: List events
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/waiting_rooms/:waiting_room_id/events
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~page: 
+  ~per_page: 
+}
+
+params:path {
+  waiting_room_id: 
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

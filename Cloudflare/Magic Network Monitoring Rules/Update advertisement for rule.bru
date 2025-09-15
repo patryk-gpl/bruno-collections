@@ -1,0 +1,26 @@
+meta {
+  name: Update advertisement for rule
+  type: http
+  seq: 7
+}
+
+patch {
+  url: {{baseUrl}}/accounts/:account_id/mnm/rules/:rule_id/advertisement
+  body: json
+  auth: apikey
+}
+
+params:path {
+  rule_id: 
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

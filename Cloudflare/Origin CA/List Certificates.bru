@@ -1,0 +1,29 @@
+meta {
+  name: List Certificates
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/certificates
+  body: none
+  auth: apikey
+}
+
+params:query {
+  zone_id: 
+  ~page: 
+  ~per_page: 
+  ~limit: 
+  ~offset: 
+}
+
+headers {
+  X-Auth-User-Service-Key: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-User-Service-Key
+  value: {{apiKey}}
+  placement: header
+}

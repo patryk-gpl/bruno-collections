@@ -1,0 +1,35 @@
+meta {
+  name: Create a New Request.
+  type: http
+  seq: 15
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/cloudforce-one/requests/new
+  body: json
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "content": "",
+    "priority": "",
+    "request_type": "",
+    "summary": "",
+    "tlp": ""
+  }
+}

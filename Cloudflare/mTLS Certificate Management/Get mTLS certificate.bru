@@ -1,0 +1,26 @@
+meta {
+  name: Get mTLS certificate
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/mtls_certificates/:mtls_certificate_id
+  body: none
+  auth: apikey
+}
+
+params:path {
+  mtls_certificate_id: 
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

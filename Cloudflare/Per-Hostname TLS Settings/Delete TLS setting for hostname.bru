@@ -1,0 +1,27 @@
+meta {
+  name: Delete TLS setting for hostname
+  type: http
+  seq: 2
+}
+
+delete {
+  url: {{baseUrl}}/zones/:zone_id/hostnames/settings/:setting_id/:hostname
+  body: none
+  auth: apikey
+}
+
+params:path {
+  zone_id: 
+  setting_id: 
+  hostname: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

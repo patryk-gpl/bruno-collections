@@ -1,0 +1,31 @@
+meta {
+  name: Get logs RayIDs
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/logs/rayids/:ray_id
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~fields: 
+  ~timestamps: 
+}
+
+params:path {
+  zone_id: 
+  ray_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

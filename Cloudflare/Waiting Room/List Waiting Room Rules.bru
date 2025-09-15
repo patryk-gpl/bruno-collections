@@ -1,0 +1,20 @@
+meta {
+  name: List Waiting Room Rules
+  type: http
+  seq: 15
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/waiting_rooms/:waiting_room_id/rules
+  body: none
+  auth: bearer
+}
+
+params:path {
+  waiting_room_id: 
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

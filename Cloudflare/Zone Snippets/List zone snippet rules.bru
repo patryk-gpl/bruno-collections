@@ -1,0 +1,19 @@
+meta {
+  name: List zone snippet rules
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/snippets/snippet_rules
+  body: none
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

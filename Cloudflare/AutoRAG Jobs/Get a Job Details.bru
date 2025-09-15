@@ -1,0 +1,21 @@
+meta {
+  name: Get a Job Details
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/autorag/rags/:id/jobs/:job_id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  id: 
+  job_id: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

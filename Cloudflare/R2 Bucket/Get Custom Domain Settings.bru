@@ -1,0 +1,25 @@
+meta {
+  name: Get Custom Domain Settings
+  type: http
+  seq: 16
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/r2/buckets/:bucket_name/domains/custom/:domain
+  body: none
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  bucket_name: 
+  domain: 
+}
+
+headers {
+  ~cf-r2-jurisdiction: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

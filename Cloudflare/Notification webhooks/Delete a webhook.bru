@@ -1,0 +1,20 @@
+meta {
+  name: Delete a webhook
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{baseUrl}}/accounts/:account_id/alerting/v3/destinations/webhooks/:webhook_id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  webhook_id: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

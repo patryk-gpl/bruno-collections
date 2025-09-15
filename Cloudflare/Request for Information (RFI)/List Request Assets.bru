@@ -1,0 +1,33 @@
+meta {
+  name: List Request Assets
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/cloudforce-one/requests/:request_id/asset
+  body: json
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+  request_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "page": 0,
+    "per_page": 0
+  }
+}

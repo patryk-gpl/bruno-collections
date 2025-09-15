@@ -1,0 +1,35 @@
+meta {
+  name: Set your Local Domain Fallback list
+  type: http
+  seq: 20
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/devices/policy/fallback_domains
+  body: json
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  [
+    {
+      "description": "",
+      "dns_server": [],
+      "suffix": ""
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+meta {
+  name: Read string queries by ID
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/brand-protection/queries
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

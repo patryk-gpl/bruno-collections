@@ -1,0 +1,33 @@
+meta {
+  name: Get top ASes by speed test results
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/radar/quality/speed/top/ases
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~limit: 
+  ~name: 
+  ~dateEnd: 
+  ~asn: 
+  ~location: 
+  ~continent: 
+  ~orderBy: 
+  ~reverse: 
+  ~format: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

@@ -1,0 +1,31 @@
+meta {
+  name: Delete Event Notification Rules
+  type: http
+  seq: 2
+}
+
+delete {
+  url: {{baseUrl}}/accounts/:account_id/event_notifications/r2/:bucket_name/configuration/queues/:queue_id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  queue_id: 
+  bucket_name: 
+  account_id: 
+}
+
+headers {
+  ~cf-r2-jurisdiction: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "ruleIds": []
+  }
+}

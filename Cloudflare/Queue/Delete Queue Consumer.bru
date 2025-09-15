@@ -1,0 +1,27 @@
+meta {
+  name: Delete Queue Consumer
+  type: http
+  seq: 13
+}
+
+delete {
+  url: {{baseUrl}}/accounts/:account_id/queues/:queue_id/consumers/:consumer_id
+  body: none
+  auth: apikey
+}
+
+params:path {
+  consumer_id: 
+  queue_id: 
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

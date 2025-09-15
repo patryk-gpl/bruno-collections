@@ -1,0 +1,45 @@
+meta {
+  name: Batch Block Senders
+  type: http
+  seq: 12
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/email-security/settings/block_senders/batch
+  body: json
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "deletes": [
+      {
+        "id": 0
+      }
+    ],
+    "patches": [],
+    "posts": [
+      {
+        "comments": "",
+        "is_regex": false,
+        "pattern": "",
+        "pattern_type": ""
+      }
+    ],
+    "puts": []
+  }
+}

@@ -1,0 +1,20 @@
+meta {
+  name: List Tails
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/workers/scripts/:script_name/tails
+  body: none
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  script_name: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

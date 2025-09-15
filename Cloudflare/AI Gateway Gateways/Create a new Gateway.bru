@@ -1,0 +1,36 @@
+meta {
+  name: Create a new Gateway
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/ai-gateway/gateways
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "authentication": false,
+    "cache_invalidate_on_update": false,
+    "cache_ttl": 0,
+    "collect_logs": false,
+    "id": "",
+    "log_management": 0,
+    "log_management_strategy": "",
+    "logpush": false,
+    "logpush_public_key": "",
+    "rate_limiting_interval": 0,
+    "rate_limiting_limit": 0,
+    "rate_limiting_technique": ""
+  }
+}

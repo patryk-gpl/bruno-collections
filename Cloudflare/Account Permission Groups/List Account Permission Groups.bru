@@ -1,0 +1,27 @@
+meta {
+  name: List Account Permission Groups
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/iam/permission_groups
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~id: 
+  ~name: 
+  ~label: 
+  ~page: 
+  ~per_page: 
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

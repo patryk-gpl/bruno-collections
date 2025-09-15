@@ -1,0 +1,69 @@
+meta {
+  name: Get account audit logs (Version 2, Beta release)
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/logs/audit
+  body: none
+  auth: bearer
+}
+
+params:query {
+  since: 
+  before: 
+  ~account_name: 
+  ~action_result: 
+  ~action_type: 
+  ~actor_context: 
+  ~actor_email: 
+  ~actor_id: 
+  ~actor_ip_address: 
+  ~actor_token_id: 
+  ~actor_token_name: 
+  ~actor_type: 
+  ~audit_log_id: 
+  ~raw_cf_ray_id: 
+  ~raw_method: 
+  ~raw_status_code: 
+  ~raw_uri: 
+  ~resource_id: 
+  ~resource_product: 
+  ~resource_type: 
+  ~resource_scope: 
+  ~zone_id: 
+  ~zone_name: 
+  ~account_name.not: 
+  ~action_result.not: 
+  ~action_type.not: 
+  ~actor_context.not: 
+  ~actor_email.not: 
+  ~actor_id.not: 
+  ~actor_ip_address.not: 
+  ~actor_token_id.not: 
+  ~actor_token_name.not: 
+  ~actor_type.not: 
+  ~audit_log_id.not: 
+  ~raw_cf_ray_id.not: 
+  ~raw_method.not: 
+  ~raw_status_code.not: 
+  ~raw_uri.not: 
+  ~resource_id.not: 
+  ~resource_product.not: 
+  ~resource_type.not: 
+  ~resource_scope.not: 
+  ~zone_id.not: 
+  ~zone_name.not: 
+  ~direction: 
+  ~limit: 
+  ~cursor: 
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

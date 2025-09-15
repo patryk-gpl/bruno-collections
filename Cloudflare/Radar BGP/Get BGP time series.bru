@@ -1,0 +1,33 @@
+meta {
+  name: Get BGP time series
+  type: http
+  seq: 9
+}
+
+get {
+  url: {{baseUrl}}/radar/bgp/timeseries
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~aggInterval: 
+  ~name: 
+  ~dateRange: 
+  ~dateStart: 
+  ~dateEnd: 
+  ~prefix: 
+  ~updateType: 
+  ~asn: 
+  ~format: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

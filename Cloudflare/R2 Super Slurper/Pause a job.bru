@@ -1,0 +1,26 @@
+meta {
+  name: Pause a job
+  type: http
+  seq: 6
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/slurper/jobs/:job_id/pause
+  body: none
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+  job_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

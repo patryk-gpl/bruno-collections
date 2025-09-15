@@ -1,0 +1,22 @@
+meta {
+  name: Delete Script Tag
+  type: http
+  seq: 24
+}
+
+delete {
+  url: {{baseUrl}}/accounts/:account_id/workers/dispatch/namespaces/:dispatch_namespace/scripts/:script_name/tags/:tag
+  body: none
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  dispatch_namespace: 
+  script_name: 
+  tag: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

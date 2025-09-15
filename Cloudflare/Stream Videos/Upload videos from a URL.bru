@@ -1,0 +1,26 @@
+meta {
+  name: Upload videos from a URL
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/stream/copy
+  body: json
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+  ~Upload-Creator: 
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

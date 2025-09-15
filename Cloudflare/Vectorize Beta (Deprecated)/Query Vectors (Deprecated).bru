@@ -1,0 +1,30 @@
+meta {
+  name: Query Vectors (Deprecated)
+  type: http
+  seq: 9
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/vectorize/indexes/:index_name/query
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  index_name: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "filter": {},
+    "returnMetadata": false,
+    "returnValues": false,
+    "topK": "",
+    "vector": []
+  }
+}

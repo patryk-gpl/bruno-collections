@@ -1,0 +1,29 @@
+meta {
+  name: Get location details
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{baseUrl}}/radar/entities/locations/:location
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~format: 
+}
+
+params:path {
+  location: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

@@ -1,0 +1,28 @@
+meta {
+  name: Change aegis setting
+  type: http
+  seq: 6
+}
+
+patch {
+  url: {{baseUrl}}/zones/:zone_id/settings/aegis
+  body: json
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "value": {
+      "enabled": false,
+      "pool_id": ""
+    }
+  }
+}

@@ -1,0 +1,20 @@
+meta {
+  name: DNS Internal View Details
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/dns_settings/views/:view_id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  view_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

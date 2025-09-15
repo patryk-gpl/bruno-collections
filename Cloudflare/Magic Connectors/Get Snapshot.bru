@@ -1,0 +1,27 @@
+meta {
+  name: Get Snapshot
+  type: http
+  seq: 11
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/magic/connectors/:connector_id/telemetry/snapshots/:snapshot_t
+  body: none
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+  connector_id: 
+  snapshot_t: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

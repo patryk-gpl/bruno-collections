@@ -1,0 +1,20 @@
+meta {
+  name: List a zone entry point ruleset's versions
+  type: http
+  seq: 15
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/rulesets/phases/:ruleset_phase/entrypoint/versions
+  body: none
+  auth: bearer
+}
+
+params:path {
+  ruleset_phase: 
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

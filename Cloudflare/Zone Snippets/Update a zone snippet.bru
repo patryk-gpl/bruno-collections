@@ -1,0 +1,25 @@
+meta {
+  name: Update a zone snippet
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{baseUrl}}/zones/:zone_id/snippets/:snippet_name
+  body: multipartForm
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+  snippet_name: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:multipart-form {
+  files: 
+  metadata: 
+}

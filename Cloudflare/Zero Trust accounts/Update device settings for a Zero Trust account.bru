@@ -1,0 +1,35 @@
+meta {
+  name: Update device settings for a Zero Trust account
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/devices/settings
+  body: json
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "disable_for_time": "",
+    "gateway_proxy_enabled": false,
+    "gateway_udp_proxy_enabled": false,
+    "root_certificate_installation_enabled": false,
+    "use_zt_virtual_ip": false
+  }
+}

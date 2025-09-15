@@ -1,0 +1,25 @@
+meta {
+  name: Get Event Notification Rule
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/event_notifications/r2/:bucket_name/configuration/queues/:queue_id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  queue_id: 
+  bucket_name: 
+  account_id: 
+}
+
+headers {
+  ~cf-r2-jurisdiction: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

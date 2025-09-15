@@ -1,0 +1,25 @@
+meta {
+  name: Change Origin Max HTTP Version Setting
+  type: http
+  seq: 12
+}
+
+patch {
+  url: {{baseUrl}}/zones/:zone_id/settings/origin_max_http_version
+  body: json
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "value": ""
+  }
+}

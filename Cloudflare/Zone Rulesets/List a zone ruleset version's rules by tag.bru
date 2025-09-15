@@ -1,0 +1,22 @@
+meta {
+  name: List a zone ruleset version's rules by tag
+  type: http
+  seq: 12
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/rulesets/:ruleset_id/versions/:ruleset_version/by_tag/:rule_tag
+  body: none
+  auth: bearer
+}
+
+params:path {
+  rule_tag: 
+  ruleset_version: 
+  ruleset_id: 
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

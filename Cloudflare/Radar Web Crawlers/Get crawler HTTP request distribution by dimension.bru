@@ -1,0 +1,37 @@
+meta {
+  name: Get crawler HTTP request distribution by dimension
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/radar/bots/crawlers/summary/:dimension
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~name: 
+  ~dateRange: 
+  ~dateStart: 
+  ~dateEnd: 
+  ~limitPerGroup: 
+  ~botOperator: 
+  ~vertical: 
+  ~industry: 
+  ~format: 
+}
+
+params:path {
+  dimension: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

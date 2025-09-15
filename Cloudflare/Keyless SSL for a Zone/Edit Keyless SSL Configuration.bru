@@ -1,0 +1,39 @@
+meta {
+  name: Edit Keyless SSL Configuration
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{baseUrl}}/zones/:zone_id/keyless_certificates/:keyless_certificate_id
+  body: json
+  auth: apikey
+}
+
+params:path {
+  keyless_certificate_id: 
+  zone_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "enabled": false,
+    "host": "",
+    "name": "",
+    "port": "",
+    "tunnel": {
+      "private_ip": "",
+      "vnet_id": ""
+    }
+  }
+}

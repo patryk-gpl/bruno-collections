@@ -1,0 +1,40 @@
+meta {
+  name: List Requests
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/cloudforce-one/requests
+  body: json
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "completed_after": "",
+    "completed_before": "",
+    "created_after": "",
+    "created_before": "",
+    "page": 0,
+    "per_page": 0,
+    "request_type": "",
+    "sort_by": "",
+    "sort_order": "",
+    "status": ""
+  }
+}

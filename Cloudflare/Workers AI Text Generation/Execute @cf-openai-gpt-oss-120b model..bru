@@ -1,0 +1,33 @@
+meta {
+  name: Execute @cf/openai/gpt-oss-120b model.
+  type: http
+  seq: 30
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/ai/run/@cf/openai/gpt-oss-120b
+  body: json
+  auth: bearer
+}
+
+params:query {
+  ~queueRequest: 
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "input": "",
+    "reasoning": {
+      "effort": "",
+      "summary": ""
+    }
+  }
+}

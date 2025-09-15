@@ -1,0 +1,21 @@
+meta {
+  name: Get Script Settings
+  type: http
+  seq: 20
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/workers/dispatch/namespaces/:dispatch_namespace/scripts/:script_name/settings
+  body: none
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  dispatch_namespace: 
+  script_name: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

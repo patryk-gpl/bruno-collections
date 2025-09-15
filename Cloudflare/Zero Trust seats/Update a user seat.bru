@@ -1,0 +1,35 @@
+meta {
+  name: Update a user seat
+  type: http
+  seq: 1
+}
+
+patch {
+  url: {{baseUrl}}/accounts/:account_id/access/seats
+  body: json
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  [
+    {
+      "access_seat": false,
+      "gateway_seat": false,
+      "seat_uid": ""
+    }
+  ]
+}

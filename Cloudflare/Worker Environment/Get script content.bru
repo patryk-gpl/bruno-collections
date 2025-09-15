@@ -1,0 +1,21 @@
+meta {
+  name: Get script content
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/workers/services/:service_name/environments/:environment_name/content
+  body: none
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  service_name: 
+  environment_name: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

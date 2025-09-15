@@ -1,0 +1,20 @@
+meta {
+  name: Retrieve TURN key details
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/calls/turn_keys/:key_id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  key_id: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

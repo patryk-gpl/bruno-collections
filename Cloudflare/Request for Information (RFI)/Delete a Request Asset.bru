@@ -1,0 +1,27 @@
+meta {
+  name: Delete a Request Asset
+  type: http
+  seq: 6
+}
+
+delete {
+  url: {{baseUrl}}/accounts/:account_id/cloudforce-one/requests/:request_id/asset/:asset_id
+  body: none
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+  request_id: 
+  asset_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

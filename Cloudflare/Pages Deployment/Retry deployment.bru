@@ -1,0 +1,21 @@
+meta {
+  name: Retry deployment
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/pages/projects/:project_name/deployments/:deployment_id/retry
+  body: json
+  auth: bearer
+}
+
+params:path {
+  deployment_id: 
+  project_name: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

@@ -1,0 +1,42 @@
+meta {
+  name: List Access SCIM update logs
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/access/logs/scim/updates
+  body: none
+  auth: apikey
+}
+
+params:query {
+  idp_id: 
+  ~limit: 
+  ~direction: 
+  ~since: 
+  ~until: 
+  ~status: 
+  ~resource_type: 
+  ~request_method: 
+  ~resource_user_email: 
+  ~resource_group_name: 
+  ~cf_resource_id: 
+  ~idp_resource_id: 
+  ~page: 
+  ~per_page: 
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

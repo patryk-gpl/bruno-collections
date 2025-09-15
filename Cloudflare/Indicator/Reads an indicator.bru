@@ -1,0 +1,20 @@
+meta {
+  name: Reads an indicator
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/cloudforce-one/events/indicators/:indicator_id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  indicator_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

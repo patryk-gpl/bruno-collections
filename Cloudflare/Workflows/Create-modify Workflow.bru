@@ -1,0 +1,33 @@
+meta {
+  name: Create/modify Workflow
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/workflows/:workflow_name
+  body: json
+  auth: apikey
+}
+
+params:path {
+  workflow_name: 
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "class_name": "",
+    "script_name": ""
+  }
+}

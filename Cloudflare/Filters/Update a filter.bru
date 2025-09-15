@@ -1,0 +1,36 @@
+meta {
+  name: Update a filter
+  type: http
+  seq: 7
+}
+
+put {
+  url: {{baseUrl}}/zones/:zone_id/filters/:filter_id
+  body: json
+  auth: apikey
+}
+
+params:path {
+  filter_id: 
+  zone_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "description": "",
+    "expression": "",
+    "id": "",
+    "paused": false,
+    "ref": ""
+  }
+}

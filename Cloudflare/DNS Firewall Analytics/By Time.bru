@@ -1,0 +1,31 @@
+meta {
+  name: By Time
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/dns_firewall/:dns_firewall_id/dns_analytics/report/bytime
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~metrics: 
+  ~dimensions: 
+  ~since: 
+  ~until: 
+  ~limit: 
+  ~sort: 
+  ~filters: 
+  ~time_delta: 
+}
+
+params:path {
+  dns_firewall_id: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

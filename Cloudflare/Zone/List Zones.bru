@@ -1,0 +1,27 @@
+meta {
+  name: List Zones
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/zones
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~name: 
+  ~status: 
+  ~account.id: 
+  ~account.name: 
+  ~page: 
+  ~per_page: 
+  ~order: 
+  ~direction: 
+  ~match: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

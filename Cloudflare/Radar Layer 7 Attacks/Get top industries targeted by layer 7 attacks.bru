@@ -1,0 +1,37 @@
+meta {
+  name: Get top industries targeted by layer 7 attacks
+  type: http
+  seq: 18
+}
+
+get {
+  url: {{baseUrl}}/radar/attacks/layer7/top/industry
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~limit: 
+  ~name: 
+  ~dateRange: 
+  ~dateStart: 
+  ~dateEnd: 
+  ~asn: 
+  ~location: 
+  ~continent: 
+  ~ipVersion: 
+  ~httpVersion: 
+  ~httpMethod: 
+  ~mitigationProduct: 
+  ~format: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

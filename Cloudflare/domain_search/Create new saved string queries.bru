@@ -1,0 +1,31 @@
+meta {
+  name: Create new saved string queries
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/brand-protection/queries
+  body: json
+  auth: bearer
+}
+
+params:query {
+  ~id: 
+  ~tag: 
+  ~scan: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "max_time": "",
+    "min_time": "",
+    "scan": false,
+    "string_matches": "",
+    "tag": ""
+  }
+}

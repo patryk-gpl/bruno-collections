@@ -1,0 +1,23 @@
+meta {
+  name: Update Zone Bot Management Config
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{baseUrl}}/zones/:zone_id/bot_management
+  body: json
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {}
+}

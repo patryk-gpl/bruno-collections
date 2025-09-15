@@ -1,0 +1,19 @@
+meta {
+  name: Create Spectrum application using a name for the origin
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/zones/:zone_id/spectrum/apps
+  body: json
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

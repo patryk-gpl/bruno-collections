@@ -1,0 +1,30 @@
+meta {
+  name: Uploads a new version for a document fingerprint.
+  type: http
+  seq: 6
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/dlp/document_fingerprints/:document_fingerprint_id
+  body: multipartForm
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+  document_fingerprint_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:multipart-form {
+  file: 
+}

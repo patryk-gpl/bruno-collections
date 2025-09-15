@@ -1,0 +1,32 @@
+meta {
+  name: Delete an IP Access rule
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{baseUrl}}/zones/:zone_id/firewall/access_rules/rules/:rule_id
+  body: json
+  auth: apikey
+}
+
+params:path {
+  zone_id: 
+  rule_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "cascade": ""
+  }
+}

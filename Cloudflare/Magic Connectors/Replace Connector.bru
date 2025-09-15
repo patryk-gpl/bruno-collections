@@ -1,0 +1,36 @@
+meta {
+  name: Replace Connector
+  type: http
+  seq: 6
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/magic/connectors/:connector_id
+  body: json
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+  connector_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "activated": false,
+    "interrupt_window_duration_hours": "",
+    "interrupt_window_hour_of_day": "",
+    "notes": "",
+    "timezone": ""
+  }
+}

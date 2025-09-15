@@ -1,0 +1,15 @@
+meta {
+  name: Create new logo queries from image files
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/brand-protection/scan-logo
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

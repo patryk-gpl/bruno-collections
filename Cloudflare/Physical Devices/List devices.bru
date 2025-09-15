@@ -1,0 +1,33 @@
+meta {
+  name: List devices
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/devices/physical-devices
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~cursor: 
+  ~sort_by: 
+  ~sort_order: 
+  ~last_seen_user.email: 
+  ~seen_after: 
+  ~seen_before: 
+  ~per_page: 
+  ~search: 
+  ~active_registrations: 
+  ~id: 
+  ~include: 
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

@@ -1,0 +1,34 @@
+meta {
+  name: Clean up Cloudflare Tunnel connections
+  type: http
+  seq: 6
+}
+
+delete {
+  url: {{baseUrl}}/accounts/:account_id/cfd_tunnel/:tunnel_id/connections
+  body: json
+  auth: apikey
+}
+
+params:query {
+  ~client_id: 
+}
+
+params:path {
+  account_id: 
+  tunnel_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {}
+}

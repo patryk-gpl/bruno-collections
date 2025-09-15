@@ -1,0 +1,19 @@
+meta {
+  name: Get Zone Hold
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/hold
+  body: none
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

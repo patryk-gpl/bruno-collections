@@ -1,0 +1,45 @@
+meta {
+  name: Update custom profile
+  type: http
+  seq: 6
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/dlp/profiles/custom/:profile_id
+  body: json
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+  profile_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "ai_context_enabled": false,
+    "allowed_match_count": 0,
+    "confidence_threshold": "",
+    "context_awareness": {
+      "enabled": false,
+      "skip": {
+        "files": false
+      }
+    },
+    "description": "",
+    "entries": [],
+    "name": "",
+    "ocr_enabled": false,
+    "shared_entries": []
+  }
+}

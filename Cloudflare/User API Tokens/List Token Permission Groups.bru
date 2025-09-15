@@ -1,0 +1,20 @@
+meta {
+  name: List Token Permission Groups
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{baseUrl}}/user/tokens/permission_groups
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~name: 
+  ~scope: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

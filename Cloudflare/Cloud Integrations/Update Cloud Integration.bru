@@ -1,0 +1,38 @@
+meta {
+  name: Update Cloud Integration
+  type: http
+  seq: 6
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/magic/cloud/providers/:provider_id
+  body: json
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+  provider_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "aws_arn": "",
+    "azure_subscription_id": "",
+    "azure_tenant_id": "",
+    "description": "",
+    "friendly_name": "",
+    "gcp_project_id": "",
+    "gcp_service_account_email": ""
+  }
+}

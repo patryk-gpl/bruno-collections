@@ -1,0 +1,20 @@
+meta {
+  name: Fetch Usage Model
+  type: http
+  seq: 20
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/workers/scripts/:script_name/usage-model
+  body: none
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  script_name: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

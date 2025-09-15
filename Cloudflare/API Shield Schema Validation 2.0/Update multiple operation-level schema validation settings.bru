@@ -1,0 +1,25 @@
+meta {
+  name: Update multiple operation-level schema validation settings
+  type: http
+  seq: 3
+}
+
+patch {
+  url: {{baseUrl}}/zones/:zone_id/api_gateway/operations/schema_validation
+  body: json
+  auth: apikey
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {}
+}

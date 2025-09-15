@@ -1,0 +1,20 @@
+meta {
+  name: Fetch a Gateway
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/ai-gateway/gateways/:id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

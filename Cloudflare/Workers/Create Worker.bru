@@ -1,0 +1,48 @@
+meta {
+  name: Create Worker
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/workers/workers
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "created_on": "",
+    "id": "",
+    "logpush": false,
+    "name": "",
+    "observability": {
+      "enabled": false,
+      "head_sampling_rate": "",
+      "logs": {
+        "enabled": false,
+        "head_sampling_rate": "",
+        "invocation_logs": false
+      }
+    },
+    "subdomain": {
+      "enabled": false,
+      "previews_enabled": false
+    },
+    "tags": [],
+    "tail_consumers": [
+      {
+        "name": ""
+      }
+    ],
+    "updated_on": ""
+  }
+}

@@ -1,0 +1,27 @@
+meta {
+  name: Execute @hf/thebloke/deepseek-coder-6.7b-instruct-awq model.
+  type: http
+  seq: 48
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/ai/run/@hf/thebloke/deepseek-coder-6.7b-instruct-awq
+  body: json
+  auth: bearer
+}
+
+params:query {
+  ~queueRequest: 
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {}
+}

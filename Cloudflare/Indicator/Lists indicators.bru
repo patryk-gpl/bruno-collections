@@ -1,0 +1,26 @@
+meta {
+  name: Lists indicators
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/cloudforce-one/events/indicators
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~page: 
+  ~pageSize: 
+  ~search: 
+  ~indicatorType: 
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

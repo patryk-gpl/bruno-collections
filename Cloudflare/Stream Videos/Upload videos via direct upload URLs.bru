@@ -1,0 +1,42 @@
+meta {
+  name: Upload videos via direct upload URLs
+  type: http
+  seq: 9
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/stream/direct_upload
+  body: json
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+  ~Upload-Creator: 
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "allowedOrigins": [],
+    "creator": "",
+    "expiry": "",
+    "maxDurationSeconds": 0,
+    "meta": {},
+    "requireSignedURLs": false,
+    "scheduledDeletion": "",
+    "thumbnailTimestampPct": "",
+    "watermark": {
+      "uid": ""
+    }
+  }
+}

@@ -1,0 +1,28 @@
+meta {
+  name: Get Multi-Origin AS (MOAS) prefixes
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/radar/bgp/routes/moas
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~origin: 
+  ~prefix: 
+  ~invalid_only: 
+  ~format: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

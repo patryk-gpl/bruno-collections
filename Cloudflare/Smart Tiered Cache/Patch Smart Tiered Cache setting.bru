@@ -1,0 +1,25 @@
+meta {
+  name: Patch Smart Tiered Cache setting
+  type: http
+  seq: 3
+}
+
+patch {
+  url: {{baseUrl}}/zones/:zone_id/cache/tiered_cache_smart_topology_enable
+  body: json
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "value": ""
+  }
+}

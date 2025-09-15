@@ -1,0 +1,33 @@
+meta {
+  name: Unprotect multiple email domains
+  type: http
+  seq: 13
+}
+
+delete {
+  url: {{baseUrl}}/accounts/:account_id/email-security/settings/domains
+  body: json
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  [
+    {
+      "id": 0
+    }
+  ]
+}

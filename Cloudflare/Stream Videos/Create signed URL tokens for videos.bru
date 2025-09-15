@@ -1,0 +1,44 @@
+meta {
+  name: Create signed URL tokens for videos
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/stream/:identifier/token
+  body: json
+  auth: apikey
+}
+
+params:path {
+  identifier: 
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "accessRules": [
+      {
+        "action": "",
+        "country": [],
+        "ip": [],
+        "type": ""
+      }
+    ],
+    "downloadable": false,
+    "exp": 0,
+    "id": "",
+    "nbf": 0,
+    "pem": ""
+  }
+}

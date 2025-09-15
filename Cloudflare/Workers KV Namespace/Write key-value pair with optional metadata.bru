@@ -1,0 +1,26 @@
+meta {
+  name: Write key-value pair with optional metadata
+  type: http
+  seq: 14
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/storage/kv/namespaces/:namespace_id/values/:key_name
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~expiration: 
+  ~expiration_ttl: 
+}
+
+params:path {
+  key_name: 
+  namespace_id: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

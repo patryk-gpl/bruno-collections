@@ -1,0 +1,26 @@
+meta {
+  name: Delete Advanced Certificate Manager Certificate Pack
+  type: http
+  seq: 2
+}
+
+delete {
+  url: {{baseUrl}}/zones/:zone_id/ssl/certificate_packs/:certificate_pack_id
+  body: json
+  auth: apikey
+}
+
+params:path {
+  certificate_pack_id: 
+  zone_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

@@ -1,0 +1,25 @@
+meta {
+  name: Create new saved logo queries from image files
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/brand-protection/logos
+  body: formUrlEncoded
+  auth: bearer
+}
+
+params:query {
+  ~tag: 
+  ~match_type: 
+  ~threshold: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:form-urlencoded {
+  image: 
+}

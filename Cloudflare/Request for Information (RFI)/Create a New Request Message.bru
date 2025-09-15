@@ -1,0 +1,32 @@
+meta {
+  name: Create a New Request Message
+  type: http
+  seq: 13
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/cloudforce-one/requests/:request_id/message/new
+  body: json
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+  request_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "content": ""
+  }
+}

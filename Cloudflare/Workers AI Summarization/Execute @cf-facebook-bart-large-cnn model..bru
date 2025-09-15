@@ -1,0 +1,30 @@
+meta {
+  name: Execute @cf/facebook/bart-large-cnn model.
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/ai/run/@cf/facebook/bart-large-cnn
+  body: json
+  auth: bearer
+}
+
+params:query {
+  ~queueRequest: 
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "input_text": "",
+    "max_length": 0
+  }
+}

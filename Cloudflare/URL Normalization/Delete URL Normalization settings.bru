@@ -1,0 +1,19 @@
+meta {
+  name: Delete URL Normalization settings
+  type: http
+  seq: 1
+}
+
+delete {
+  url: {{baseUrl}}/zones/:zone_id/url_normalization
+  body: none
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

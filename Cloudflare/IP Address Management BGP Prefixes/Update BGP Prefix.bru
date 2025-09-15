@@ -1,0 +1,37 @@
+meta {
+  name: Update BGP Prefix
+  type: http
+  seq: 4
+}
+
+patch {
+  url: {{baseUrl}}/accounts/:account_id/addressing/prefixes/:prefix_id/bgp/prefixes/:bgp_prefix_id
+  body: json
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+  prefix_id: 
+  bgp_prefix_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "asn_prepend_count": 0,
+    "auto_advertise_withdraw": false,
+    "on_demand": {
+      "advertised": false
+    }
+  }
+}

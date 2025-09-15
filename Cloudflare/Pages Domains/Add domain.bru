@@ -1,0 +1,26 @@
+meta {
+  name: Add domain
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/pages/projects/:project_name/domains
+  body: json
+  auth: bearer
+}
+
+params:path {
+  project_name: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "name": ""
+  }
+}

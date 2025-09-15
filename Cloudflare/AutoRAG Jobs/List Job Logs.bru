@@ -1,0 +1,26 @@
+meta {
+  name: List Job Logs
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/autorag/rags/:id/jobs/:job_id/logs
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~page: 
+  ~per_page: 
+}
+
+params:path {
+  id: 
+  job_id: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

@@ -1,0 +1,48 @@
+meta {
+  name: Update Queue
+  type: http
+  seq: 10
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/queues/:queue_id
+  body: json
+  auth: apikey
+}
+
+params:path {
+  queue_id: 
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "consumers": [
+      {}
+    ],
+    "consumers_total_count": "",
+    "created_on": "",
+    "modified_on": "",
+    "producers": [
+      {}
+    ],
+    "producers_total_count": "",
+    "queue_id": "",
+    "queue_name": "",
+    "settings": {
+      "delivery_delay": "",
+      "delivery_paused": false,
+      "message_retention_period": ""
+    }
+  }
+}

@@ -1,0 +1,31 @@
+meta {
+  name: Set the Split Tunnel include list
+  type: http
+  seq: 22
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/devices/policy/include
+  body: json
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  [
+    {}
+  ]
+}

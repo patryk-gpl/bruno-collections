@@ -1,0 +1,15 @@
+meta {
+  name: Turnstile Widget Details
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/challenges/widgets/:sitekey
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

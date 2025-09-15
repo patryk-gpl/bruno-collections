@@ -1,0 +1,24 @@
+meta {
+  name: Disable Sippy
+  type: http
+  seq: 24
+}
+
+delete {
+  url: {{baseUrl}}/accounts/:account_id/r2/buckets/:bucket_name/sippy
+  body: none
+  auth: bearer
+}
+
+params:path {
+  bucket_name: 
+  account_id: 
+}
+
+headers {
+  ~cf-r2-jurisdiction: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

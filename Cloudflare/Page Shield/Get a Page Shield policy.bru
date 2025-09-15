@@ -1,0 +1,26 @@
+meta {
+  name: Get a Page Shield policy
+  type: http
+  seq: 10
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/page_shield/policies/:policy_id
+  body: none
+  auth: apikey
+}
+
+params:path {
+  zone_id: 
+  policy_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

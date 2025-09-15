@@ -1,0 +1,28 @@
+meta {
+  name: Create Secondary Zone Configuration
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/zones/:zone_id/secondary_dns/incoming
+  body: json
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "auto_refresh_seconds": "",
+    "id": "",
+    "name": "",
+    "peers": []
+  }
+}

@@ -1,0 +1,28 @@
+meta {
+  name: Update a Turnstile Widget
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/challenges/widgets/:sitekey
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "bot_fight_mode": false,
+    "clearance_level": "",
+    "domains": [],
+    "ephemeral_id": false,
+    "mode": "",
+    "name": "",
+    "offlabel": false,
+    "region": ""
+  }
+}

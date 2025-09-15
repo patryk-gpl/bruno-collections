@@ -1,0 +1,19 @@
+meta {
+  name: Get Regional Tiered Cache setting
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/cache/regional_tiered_cache
+  body: none
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

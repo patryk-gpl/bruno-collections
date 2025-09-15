@@ -1,0 +1,20 @@
+meta {
+  name: Get Vectorize Index
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/vectorize/v2/indexes/:index_name
+  body: none
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  index_name: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

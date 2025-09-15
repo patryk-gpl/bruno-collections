@@ -1,0 +1,25 @@
+meta {
+  name: Run Discovery for All Integrations
+  type: http
+  seq: 9
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/magic/cloud/providers/discover
+  body: none
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

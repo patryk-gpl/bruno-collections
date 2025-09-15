@@ -1,0 +1,37 @@
+meta {
+  name: Update rule
+  type: http
+  seq: 6
+}
+
+patch {
+  url: {{baseUrl}}/accounts/:account_id/mnm/rules/:rule_id
+  body: json
+  auth: apikey
+}
+
+params:path {
+  rule_id: 
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "automatic_advertisement": false,
+    "bandwidth": "",
+    "duration": "",
+    "name": "",
+    "packet_threshold": "",
+    "prefixes": []
+  }
+}

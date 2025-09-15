@@ -1,0 +1,45 @@
+meta {
+  name: Create a new share
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/shares
+  body: json
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "name": "",
+    "recipients": [
+      {
+        "account_id": "",
+        "organization_id": ""
+      }
+    ],
+    "resources": [
+      {
+        "meta": {},
+        "resource_account_id": "",
+        "resource_id": "",
+        "resource_type": ""
+      }
+    ]
+  }
+}

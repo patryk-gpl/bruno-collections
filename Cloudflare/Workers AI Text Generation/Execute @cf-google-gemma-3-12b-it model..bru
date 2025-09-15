@@ -1,0 +1,27 @@
+meta {
+  name: Execute @cf/google/gemma-3-12b-it model.
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/ai/run/@cf/google/gemma-3-12b-it
+  body: json
+  auth: bearer
+}
+
+params:query {
+  ~queueRequest: 
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {}
+}

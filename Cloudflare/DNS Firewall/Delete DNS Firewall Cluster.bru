@@ -1,0 +1,20 @@
+meta {
+  name: Delete DNS Firewall Cluster
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{baseUrl}}/accounts/:account_id/dns_firewall/:dns_firewall_id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  dns_firewall_id: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

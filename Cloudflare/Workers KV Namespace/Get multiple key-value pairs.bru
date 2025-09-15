@@ -1,0 +1,28 @@
+meta {
+  name: Get multiple key-value pairs
+  type: http
+  seq: 9
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/storage/kv/namespaces/:namespace_id/bulk/get
+  body: json
+  auth: bearer
+}
+
+params:path {
+  namespace_id: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "keys": [],
+    "type": "",
+    "withMetadata": false
+  }
+}

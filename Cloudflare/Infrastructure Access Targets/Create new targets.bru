@@ -1,0 +1,43 @@
+meta {
+  name: Create new targets
+  type: http
+  seq: 7
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/infrastructure/targets/batch
+  body: json
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  [
+    {
+      "hostname": "",
+      "ip": {
+        "ipv4": {
+          "ip_addr": "",
+          "virtual_network_id": ""
+        },
+        "ipv6": {
+          "ip_addr": "",
+          "virtual_network_id": ""
+        }
+      }
+    }
+  ]
+}

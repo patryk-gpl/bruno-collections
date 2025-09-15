@@ -1,0 +1,44 @@
+meta {
+  name: Get top ASes by HTTP requests for an IP version
+  type: http
+  seq: 26
+}
+
+get {
+  url: {{baseUrl}}/radar/http/top/ases/ip_version/:ip_version
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~limit: 
+  ~name: 
+  ~dateRange: 
+  ~dateStart: 
+  ~dateEnd: 
+  ~asn: 
+  ~location: 
+  ~continent: 
+  ~botClass: 
+  ~deviceType: 
+  ~httpProtocol: 
+  ~httpVersion: 
+  ~os: 
+  ~tlsVersion: 
+  ~browserFamily: 
+  ~format: 
+}
+
+params:path {
+  ip_version: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

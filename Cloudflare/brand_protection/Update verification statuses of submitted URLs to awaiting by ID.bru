@@ -1,0 +1,15 @@
+meta {
+  name: Update verification statuses of submitted URLs to awaiting by ID
+  type: http
+  seq: 12
+}
+
+patch {
+  url: {{baseUrl}}/accounts/:account_id/brand-protection/clear
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

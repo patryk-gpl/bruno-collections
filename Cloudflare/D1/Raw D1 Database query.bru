@@ -1,0 +1,27 @@
+meta {
+  name: Raw D1 Database query
+  type: http
+  seq: 10
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/d1/database/:database_id/raw
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  database_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "params": [],
+    "sql": ""
+  }
+}

@@ -1,0 +1,19 @@
+meta {
+  name: Export DNS Records
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/dns_records/export
+  body: none
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

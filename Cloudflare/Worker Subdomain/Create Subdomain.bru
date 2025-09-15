@@ -1,0 +1,25 @@
+meta {
+  name: Create Subdomain
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/workers/subdomain
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "subdomain": ""
+  }
+}

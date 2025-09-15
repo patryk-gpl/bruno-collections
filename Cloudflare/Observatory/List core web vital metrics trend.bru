@@ -1,0 +1,29 @@
+meta {
+  name: List core web vital metrics trend
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/speed_api/pages/:url/trend
+  body: none
+  auth: bearer
+}
+
+params:query {
+  region: 
+  deviceType: 
+  start: 
+  tz: 
+  metrics: 
+  ~end: 
+}
+
+params:path {
+  zone_id: 
+  url: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

@@ -1,0 +1,38 @@
+meta {
+  name: Get top layer 3 attack pairs (origin and target locations)
+  type: http
+  seq: 16
+}
+
+get {
+  url: {{baseUrl}}/radar/attacks/layer3/top/attacks
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~limit: 
+  ~name: 
+  ~dateRange: 
+  ~dateStart: 
+  ~dateEnd: 
+  ~location: 
+  ~continent: 
+  ~ipVersion: 
+  ~protocol: 
+  ~limitDirection: 
+  ~limitPerLocation: 
+  ~magnitude: 
+  ~normalization: 
+  ~format: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

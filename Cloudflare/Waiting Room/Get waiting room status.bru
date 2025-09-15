@@ -1,0 +1,20 @@
+meta {
+  name: Get waiting room status
+  type: http
+  seq: 20
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/waiting_rooms/:waiting_room_id/status
+  body: none
+  auth: bearer
+}
+
+params:path {
+  waiting_room_id: 
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

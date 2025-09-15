@@ -1,0 +1,38 @@
+meta {
+  name: Get DNS queries by response code time series
+  type: http
+  seq: 20
+}
+
+get {
+  url: {{baseUrl}}/radar/dns/timeseries_groups/response_code
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~aggInterval: 
+  ~name: 
+  ~dateRange: 
+  ~dateStart: 
+  ~dateEnd: 
+  ~asn: 
+  ~location: 
+  ~continent: 
+  ~tld: 
+  ~queryType: 
+  ~protocol: 
+  ~nodata: 
+  ~limitPerGroup: 
+  ~format: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

@@ -1,0 +1,26 @@
+meta {
+  name: List Page Rules
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/pagerules
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~order: 
+  ~direction: 
+  ~match: 
+  ~status: 
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

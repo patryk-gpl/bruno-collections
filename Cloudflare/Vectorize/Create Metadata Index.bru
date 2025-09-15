@@ -1,0 +1,27 @@
+meta {
+  name: Create Metadata Index
+  type: http
+  seq: 10
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/vectorize/v2/indexes/:index_name/metadata_index/create
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  index_name: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "indexType": "",
+    "propertyName": ""
+  }
+}

@@ -1,0 +1,30 @@
+meta {
+  name: Get AS-level relationships by ASN
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/radar/entities/asns/:asn/rel
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~asn2: 
+  ~format: 
+}
+
+params:path {
+  asn: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

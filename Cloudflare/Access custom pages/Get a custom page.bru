@@ -1,0 +1,26 @@
+meta {
+  name: Get a custom page
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/access/custom_pages/:custom_page_id
+  body: none
+  auth: apikey
+}
+
+params:path {
+  custom_page_id: 
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

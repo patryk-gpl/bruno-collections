@@ -1,0 +1,33 @@
+meta {
+  name: List IP Access rules
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/user/firewall/access_rules/rules
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~mode: 
+  ~configuration.target: 
+  ~configuration.value: 
+  ~notes: 
+  ~match: 
+  ~page: 
+  ~per_page: 
+  ~order: 
+  ~direction: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

@@ -1,0 +1,21 @@
+meta {
+  name: List all AI Gateway Dynamic Route Deployments.
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/ai-gateway/gateways/:gateway_id/routes/:id/deployments
+  body: none
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  gateway_id: 
+  id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

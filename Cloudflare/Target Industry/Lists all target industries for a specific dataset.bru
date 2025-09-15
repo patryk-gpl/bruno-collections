@@ -1,0 +1,20 @@
+meta {
+  name: Lists all target industries for a specific dataset
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/cloudforce-one/events/dataset/:dataset_id/targetIndustries
+  body: none
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  dataset_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

@@ -1,0 +1,32 @@
+meta {
+  name: Create Client Certificate
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/zones/:zone_id/client_certificates
+  body: json
+  auth: apikey
+}
+
+params:path {
+  zone_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "csr": "",
+    "validity_days": 0
+  }
+}

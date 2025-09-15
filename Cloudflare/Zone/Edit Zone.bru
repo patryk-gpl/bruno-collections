@@ -1,0 +1,30 @@
+meta {
+  name: Edit Zone
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{baseUrl}}/zones/:zone_id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "paused": false,
+    "plan": {
+      "id": ""
+    },
+    "type": "",
+    "vanity_name_servers": []
+  }
+}

@@ -1,0 +1,27 @@
+meta {
+  name: Execute @hf/mistralai/mistral-7b-instruct-v0.2 model.
+  type: http
+  seq: 44
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/ai/run/@hf/mistralai/mistral-7b-instruct-v0.2
+  body: json
+  auth: bearer
+}
+
+params:query {
+  ~queueRequest: 
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {}
+}

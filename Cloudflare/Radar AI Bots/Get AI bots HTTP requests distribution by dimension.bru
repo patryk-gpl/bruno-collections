@@ -1,0 +1,40 @@
+meta {
+  name: Get AI bots HTTP requests distribution by dimension
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/radar/ai/bots/summary/:dimension
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~name: 
+  ~dateRange: 
+  ~dateStart: 
+  ~dateEnd: 
+  ~asn: 
+  ~location: 
+  ~continent: 
+  ~crawlPurpose: 
+  ~vertical: 
+  ~industry: 
+  ~limitPerGroup: 
+  ~format: 
+}
+
+params:path {
+  dimension: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

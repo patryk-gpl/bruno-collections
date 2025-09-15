@@ -1,0 +1,47 @@
+meta {
+  name: Creates bulk events
+  type: http
+  seq: 13
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/cloudforce-one/events/create/bulk
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "data": [
+      {
+        "accountId": "",
+        "attacker": "",
+        "attackerCountry": "",
+        "category": "",
+        "datasetId": "",
+        "date": "",
+        "event": "",
+        "indicator": "",
+        "indicatorType": "",
+        "raw": {
+          "data": {},
+          "source": "",
+          "tlp": ""
+        },
+        "tags": [],
+        "targetCountry": "",
+        "targetIndustry": "",
+        "tlp": ""
+      }
+    ],
+    "datasetId": ""
+  }
+}

@@ -1,0 +1,20 @@
+meta {
+  name: List all AI Gateway Dynamic Routes.
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/ai-gateway/gateways/:gateway_id/routes
+  body: none
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  gateway_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

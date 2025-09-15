@@ -1,0 +1,26 @@
+meta {
+  name: List rules in Web Analytics ruleset
+  type: http
+  seq: 9
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/rum/v2/:ruleset_id/rules
+  body: none
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+  ruleset_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

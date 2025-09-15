@@ -1,0 +1,26 @@
+meta {
+  name: Update Route
+  type: http
+  seq: 7
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/magic/routes/:route_id
+  body: json
+  auth: apikey
+}
+
+params:path {
+  route_id: 
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

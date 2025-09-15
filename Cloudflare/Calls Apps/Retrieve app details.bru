@@ -1,0 +1,20 @@
+meta {
+  name: Retrieve app details
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/calls/apps/:app_id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  app_id: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

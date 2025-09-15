@@ -1,0 +1,26 @@
+meta {
+  name: Available Plan Details
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/available_plans/:plan_identifier
+  body: none
+  auth: apikey
+}
+
+params:path {
+  plan_identifier: 
+  zone_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

@@ -1,0 +1,27 @@
+meta {
+  name: Moves specified events from one dataset to another dataset
+  type: http
+  seq: 15
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/cloudforce-one/events/dataset/:dataset_id/move
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  dataset_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "destDatasetId": "",
+    "eventIds": []
+  }
+}

@@ -1,0 +1,35 @@
+meta {
+  name: Create a Zone Lockdown rule
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/zones/:zone_id/firewall/lockdowns
+  body: json
+  auth: apikey
+}
+
+params:path {
+  zone_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "configurations": [],
+    "description": "",
+    "paused": false,
+    "priority": "",
+    "urls": []
+  }
+}

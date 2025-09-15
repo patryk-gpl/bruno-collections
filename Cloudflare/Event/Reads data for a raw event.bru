@@ -1,0 +1,21 @@
+meta {
+  name: Reads data for a raw event
+  type: http
+  seq: 18
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/cloudforce-one/events/raw/:dataset_id/:event_id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  event_id: 
+  dataset_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

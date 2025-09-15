@@ -1,0 +1,28 @@
+meta {
+  name: Update an existing Scan Config
+  type: http
+  seq: 4
+}
+
+patch {
+  url: {{baseUrl}}/accounts/:account_id/cloudforce-one/scans/config/:config_id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  config_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "frequency": "",
+    "ips": [],
+    "ports": []
+  }
+}

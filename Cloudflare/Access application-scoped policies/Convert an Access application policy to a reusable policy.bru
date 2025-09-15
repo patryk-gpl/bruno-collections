@@ -1,0 +1,27 @@
+meta {
+  name: Convert an Access application policy to a reusable policy
+  type: http
+  seq: 6
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/access/apps/:app_id/policies/:policy_id/make_reusable
+  body: none
+  auth: apikey
+}
+
+params:path {
+  app_id: 
+  policy_id: 
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

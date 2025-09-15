@@ -1,0 +1,27 @@
+meta {
+  name: Execute @hf/nousresearch/hermes-2-pro-mistral-7b model.
+  type: http
+  seq: 46
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/ai/run/@hf/nousresearch/hermes-2-pro-mistral-7b
+  body: json
+  auth: bearer
+}
+
+params:query {
+  ~queueRequest: 
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {}
+}

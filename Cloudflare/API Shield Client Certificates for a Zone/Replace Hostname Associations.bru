@@ -1,0 +1,32 @@
+meta {
+  name: Replace Hostname Associations
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{baseUrl}}/zones/:zone_id/certificate_authorities/hostname_associations
+  body: json
+  auth: apikey
+}
+
+params:path {
+  zone_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "hostnames": [],
+    "mtls_certificate_id": ""
+  }
+}

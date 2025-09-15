@@ -1,0 +1,35 @@
+meta {
+  name: Edit IPFS Universal Path Gateway Content List Entry
+  type: http
+  seq: 12
+}
+
+put {
+  url: {{baseUrl}}/zones/:zone_id/web3/hostnames/:identifier/ipfs_universal_path/content_list/entries/:content_list_entry_identifier
+  body: json
+  auth: apikey
+}
+
+params:path {
+  content_list_entry_identifier: 
+  identifier: 
+  zone_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "content": "",
+    "description": "",
+    "type": ""
+  }
+}

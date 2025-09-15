@@ -1,0 +1,25 @@
+meta {
+  name: Revoke Certificate
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{baseUrl}}/certificates/:certificate_id
+  body: json
+  auth: apikey
+}
+
+params:path {
+  certificate_id: 
+}
+
+headers {
+  X-Auth-User-Service-Key: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-User-Service-Key
+  value: {{apiKey}}
+  placement: header
+}

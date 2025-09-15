@@ -1,0 +1,33 @@
+meta {
+  name: Get email TLS version summary
+  type: http
+  seq: 9
+}
+
+get {
+  url: {{baseUrl}}/radar/email/security/summary/tls_version
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~name: 
+  ~dateRange: 
+  ~dateStart: 
+  ~dateEnd: 
+  ~arc: 
+  ~dkim: 
+  ~dmarc: 
+  ~spf: 
+  ~format: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

@@ -1,0 +1,27 @@
+meta {
+  name: Download command output file
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/dex/commands/:command_id/downloads/:filename
+  body: none
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+  command_id: 
+  filename: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

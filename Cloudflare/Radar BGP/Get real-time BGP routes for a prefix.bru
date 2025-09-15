@@ -1,0 +1,26 @@
+meta {
+  name: Get real-time BGP routes for a prefix
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{baseUrl}}/radar/bgp/routes/realtime
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~prefix: 
+  ~format: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

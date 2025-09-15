@@ -1,0 +1,28 @@
+meta {
+  name: Filter and list events related to specific event
+  type: http
+  seq: 11
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/cloudforce-one/events/:event_id/relationships
+  body: none
+  auth: bearer
+}
+
+params:query {
+  datasetId: 
+  ~direction: 
+  ~maxDepth: 
+  ~relationshipTypes: 
+  ~indicatorTypes: 
+}
+
+params:path {
+  account_id: 
+  event_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

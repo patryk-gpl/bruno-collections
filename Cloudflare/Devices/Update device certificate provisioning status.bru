@@ -1,0 +1,31 @@
+meta {
+  name: Update device certificate provisioning status
+  type: http
+  seq: 26
+}
+
+patch {
+  url: {{baseUrl}}/zones/:zone_id/devices/policy/certificates
+  body: json
+  auth: apikey
+}
+
+params:path {
+  zone_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "enabled": false
+  }
+}

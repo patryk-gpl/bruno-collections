@@ -1,0 +1,22 @@
+meta {
+  name: Read matches for string queries by ID
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/brand-protection/matches
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~id: 
+  ~offset: 
+  ~limit: 
+  ~include_domain_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

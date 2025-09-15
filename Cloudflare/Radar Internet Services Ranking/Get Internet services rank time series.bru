@@ -1,0 +1,31 @@
+meta {
+  name: Get Internet services rank time series
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/radar/ranking/internet_services/timeseries_groups
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~serviceCategory: 
+  ~limit: 
+  ~name: 
+  ~dateRange: 
+  ~dateStart: 
+  ~dateEnd: 
+  ~format: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

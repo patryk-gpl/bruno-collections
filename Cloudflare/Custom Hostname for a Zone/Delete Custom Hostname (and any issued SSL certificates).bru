@@ -1,0 +1,26 @@
+meta {
+  name: Delete Custom Hostname (and any issued SSL certificates)
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{baseUrl}}/zones/:zone_id/custom_hostnames/:custom_hostname_id
+  body: json
+  auth: apikey
+}
+
+params:path {
+  custom_hostname_id: 
+  zone_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

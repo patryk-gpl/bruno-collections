@@ -1,0 +1,25 @@
+meta {
+  name: List Pools
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/user/load_balancers/pools
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~monitor: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

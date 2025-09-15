@@ -1,0 +1,27 @@
+meta {
+  name: Get top ASes by prefix count
+  type: http
+  seq: 11
+}
+
+get {
+  url: {{baseUrl}}/radar/bgp/top/ases/prefixes
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~country: 
+  ~limit: 
+  ~format: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

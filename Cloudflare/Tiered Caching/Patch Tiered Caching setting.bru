@@ -1,0 +1,25 @@
+meta {
+  name: Patch Tiered Caching setting
+  type: http
+  seq: 2
+}
+
+patch {
+  url: {{baseUrl}}/zones/:zone_id/argo/tiered_caching
+  body: json
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "value": ""
+  }
+}

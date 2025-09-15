@@ -1,0 +1,26 @@
+meta {
+  name: List a Namespace's Keys
+  type: http
+  seq: 10
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/storage/kv/namespaces/:namespace_id/keys
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~limit: 
+  ~prefix: 
+  ~cursor: 
+}
+
+params:path {
+  namespace_id: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

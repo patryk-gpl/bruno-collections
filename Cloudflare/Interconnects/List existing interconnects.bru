@@ -1,0 +1,32 @@
+meta {
+  name: List existing interconnects
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/cni/interconnects
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~site: 
+  ~type: 
+  ~cursor: 
+  ~limit: 
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

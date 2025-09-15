@@ -1,0 +1,24 @@
+meta {
+  name: Create scheduled page test
+  type: http
+  seq: 10
+}
+
+post {
+  url: {{baseUrl}}/zones/:zone_id/speed_api/schedule/:url
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~region: 
+}
+
+params:path {
+  zone_id: 
+  url: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

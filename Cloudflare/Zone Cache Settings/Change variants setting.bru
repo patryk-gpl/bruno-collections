@@ -1,0 +1,37 @@
+meta {
+  name: Change variants setting
+  type: http
+  seq: 9
+}
+
+patch {
+  url: {{baseUrl}}/zones/:zone_id/cache/variants
+  body: json
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "value": {
+      "avif": [],
+      "bmp": [],
+      "gif": [],
+      "jp2": [],
+      "jpeg": [],
+      "jpg": [],
+      "jpg2": [],
+      "png": [],
+      "tif": [],
+      "tiff": [],
+      "webp": []
+    }
+  }
+}

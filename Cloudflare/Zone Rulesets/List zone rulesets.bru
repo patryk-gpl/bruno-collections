@@ -1,0 +1,24 @@
+meta {
+  name: List zone rulesets
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/rulesets
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~cursor: 
+  ~per_page: 
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

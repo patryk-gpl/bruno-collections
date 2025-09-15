@@ -1,0 +1,24 @@
+meta {
+  name: Get Sippy Configuration
+  type: http
+  seq: 25
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/r2/buckets/:bucket_name/sippy
+  body: none
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  bucket_name: 
+}
+
+headers {
+  ~cf-r2-jurisdiction: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

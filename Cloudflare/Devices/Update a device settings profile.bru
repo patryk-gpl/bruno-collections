@@ -1,0 +1,60 @@
+meta {
+  name: Update a device settings profile
+  type: http
+  seq: 10
+}
+
+patch {
+  url: {{baseUrl}}/accounts/:account_id/devices/policy/:policy_id
+  body: json
+  auth: apikey
+}
+
+params:path {
+  policy_id: 
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "allow_mode_switch": false,
+    "allow_updates": false,
+    "allowed_to_leave": false,
+    "auto_connect": "",
+    "captive_portal": "",
+    "description": "",
+    "disable_auto_fallback": false,
+    "enabled": false,
+    "exclude": [
+      {}
+    ],
+    "exclude_office_ips": false,
+    "include": [
+      {}
+    ],
+    "lan_allow_minutes": "",
+    "lan_allow_subnet_size": "",
+    "match": "",
+    "name": "",
+    "precedence": "",
+    "register_interface_ip_with_dns": false,
+    "sccm_vpn_boundary_support": false,
+    "service_mode_v2": {
+      "mode": "",
+      "port": ""
+    },
+    "support_url": "",
+    "switch_locked": false,
+    "tunnel_protocol": ""
+  }
+}

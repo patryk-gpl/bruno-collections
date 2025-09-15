@@ -1,0 +1,26 @@
+meta {
+  name: Update Zone Hold
+  type: http
+  seq: 3
+}
+
+patch {
+  url: {{baseUrl}}/zones/:zone_id/hold
+  body: json
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "hold_after": "",
+    "include_subdomains": false
+  }
+}

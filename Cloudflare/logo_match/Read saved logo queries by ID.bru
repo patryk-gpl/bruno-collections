@@ -1,0 +1,15 @@
+meta {
+  name: Read saved logo queries by ID
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/brand-protection/logos/:logo_id
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

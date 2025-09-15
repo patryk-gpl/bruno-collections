@@ -1,0 +1,19 @@
+meta {
+  name: Rerun the Activation Check
+  type: http
+  seq: 6
+}
+
+put {
+  url: {{baseUrl}}/zones/:zone_id/activation_check
+  body: none
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

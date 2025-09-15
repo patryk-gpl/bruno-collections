@@ -1,0 +1,26 @@
+meta {
+  name: Edit TURN key details
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/calls/turn_keys/:key_id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  key_id: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "name": ""
+  }
+}

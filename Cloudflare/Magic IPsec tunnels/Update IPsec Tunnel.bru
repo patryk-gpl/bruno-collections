@@ -1,0 +1,46 @@
+meta {
+  name: Update IPsec Tunnel
+  type: http
+  seq: 6
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/magic/ipsec_tunnels/:ipsec_tunnel_id
+  body: json
+  auth: apikey
+}
+
+params:path {
+  ipsec_tunnel_id: 
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+  ~x-magic-new-hc-target: 
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "bgp": {
+      "customer_asn": 0,
+      "extra_prefixes": [],
+      "md5_key": ""
+    },
+    "cloudflare_endpoint": "",
+    "customer_endpoint": "",
+    "description": "",
+    "health_check": "",
+    "interface_address": "",
+    "interface_address6": "",
+    "name": "",
+    "psk": "",
+    "replay_protection": false
+  }
+}

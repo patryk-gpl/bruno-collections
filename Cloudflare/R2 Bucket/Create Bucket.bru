@@ -1,0 +1,31 @@
+meta {
+  name: Create Bucket
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/r2/buckets
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  ~cf-r2-jurisdiction: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "locationHint": "",
+    "name": "",
+    "storageClass": ""
+  }
+}

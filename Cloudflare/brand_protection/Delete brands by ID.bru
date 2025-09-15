@@ -1,0 +1,15 @@
+meta {
+  name: Delete brands by ID
+  type: http
+  seq: 6
+}
+
+delete {
+  url: {{baseUrl}}/accounts/:account_id/brand-protection/brands
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

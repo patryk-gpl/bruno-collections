@@ -1,0 +1,39 @@
+meta {
+  name: Execute @cf/meta/llama-guard-3-8b model.
+  type: http
+  seq: 24
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/ai/run/@cf/meta/llama-guard-3-8b
+  body: json
+  auth: bearer
+}
+
+params:query {
+  ~queueRequest: 
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "max_tokens": 0,
+    "messages": [
+      {
+        "content": "",
+        "role": ""
+      }
+    ],
+    "response_format": {
+      "type": ""
+    },
+    "temperature": ""
+  }
+}

@@ -1,0 +1,31 @@
+meta {
+  name: Upload captions or subtitles
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/stream/:identifier/captions/:language
+  body: multipartForm
+  auth: apikey
+}
+
+params:path {
+  language: 
+  identifier: 
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:multipart-form {
+  file: 
+}

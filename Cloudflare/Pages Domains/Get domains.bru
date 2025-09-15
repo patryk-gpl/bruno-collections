@@ -1,0 +1,20 @@
+meta {
+  name: Get domains
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/pages/projects/:project_name/domains
+  body: none
+  auth: bearer
+}
+
+params:path {
+  project_name: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

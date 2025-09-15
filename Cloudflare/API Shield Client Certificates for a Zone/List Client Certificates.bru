@@ -1,0 +1,33 @@
+meta {
+  name: List Client Certificates
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/client_certificates
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~status: 
+  ~page: 
+  ~per_page: 
+  ~limit: 
+  ~offset: 
+}
+
+params:path {
+  zone_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

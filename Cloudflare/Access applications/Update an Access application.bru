@@ -1,0 +1,26 @@
+meta {
+  name: Update an Access application
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/access/apps/:app_id
+  body: json
+  auth: apikey
+}
+
+params:path {
+  app_id: 
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

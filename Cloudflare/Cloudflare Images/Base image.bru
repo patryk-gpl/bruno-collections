@@ -1,0 +1,20 @@
+meta {
+  name: Base image
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/images/v1/:image_id/blob
+  body: none
+  auth: bearer
+}
+
+params:path {
+  image_id: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

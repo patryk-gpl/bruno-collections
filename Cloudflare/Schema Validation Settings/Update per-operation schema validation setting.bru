@@ -1,0 +1,19 @@
+meta {
+  name: Update per-operation schema validation setting
+  type: http
+  seq: 8
+}
+
+put {
+  url: {{baseUrl}}/zones/:zone_id/schema_validation/settings/operations/:operation_id
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {}
+}

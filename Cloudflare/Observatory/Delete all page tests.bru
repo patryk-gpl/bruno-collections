@@ -1,0 +1,24 @@
+meta {
+  name: Delete all page tests
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{baseUrl}}/zones/:zone_id/speed_api/pages/:url/tests
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~region: 
+}
+
+params:path {
+  zone_id: 
+  url: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

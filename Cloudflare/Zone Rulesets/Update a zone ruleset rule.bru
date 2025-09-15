@@ -1,0 +1,21 @@
+meta {
+  name: Update a zone ruleset rule
+  type: http
+  seq: 8
+}
+
+patch {
+  url: {{baseUrl}}/zones/:zone_id/rulesets/:ruleset_id/rules/:rule_id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  rule_id: 
+  ruleset_id: 
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

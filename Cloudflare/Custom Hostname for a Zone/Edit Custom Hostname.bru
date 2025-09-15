@@ -1,0 +1,35 @@
+meta {
+  name: Edit Custom Hostname
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{baseUrl}}/zones/:zone_id/custom_hostnames/:custom_hostname_id
+  body: json
+  auth: apikey
+}
+
+params:path {
+  custom_hostname_id: 
+  zone_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "custom_metadata": {},
+    "custom_origin_server": "",
+    "custom_origin_sni": "",
+    "ssl": {}
+  }
+}

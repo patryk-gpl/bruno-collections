@@ -1,0 +1,15 @@
+meta {
+  name: Delete a Turnstile Widget
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{baseUrl}}/accounts/:account_id/challenges/widgets/:sitekey
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

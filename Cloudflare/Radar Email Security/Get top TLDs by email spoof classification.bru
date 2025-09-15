@@ -1,0 +1,40 @@
+meta {
+  name: Get top TLDs by email spoof classification
+  type: http
+  seq: 22
+}
+
+get {
+  url: {{baseUrl}}/radar/email/security/top/tlds/spoof/:spoof
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~limit: 
+  ~name: 
+  ~dateRange: 
+  ~dateStart: 
+  ~dateEnd: 
+  ~arc: 
+  ~dkim: 
+  ~dmarc: 
+  ~spf: 
+  ~tlsVersion: 
+  ~tldCategory: 
+  ~format: 
+}
+
+params:path {
+  spoof: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

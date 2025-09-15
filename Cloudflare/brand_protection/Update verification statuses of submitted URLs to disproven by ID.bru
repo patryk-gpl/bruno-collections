@@ -1,0 +1,15 @@
+meta {
+  name: Update verification statuses of submitted URLs to disproven by ID
+  type: http
+  seq: 15
+}
+
+patch {
+  url: {{baseUrl}}/accounts/:account_id/brand-protection/refute
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

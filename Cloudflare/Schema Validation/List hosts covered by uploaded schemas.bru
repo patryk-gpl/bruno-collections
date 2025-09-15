@@ -1,0 +1,20 @@
+meta {
+  name: List hosts covered by uploaded schemas
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/schema_validation/schemas/hosts
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~page: 
+  ~per_page: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

@@ -1,0 +1,27 @@
+meta {
+  name: Put Script Tags
+  type: http
+  seq: 23
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/workers/dispatch/namespaces/:dispatch_namespace/scripts/:script_name/tags
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  dispatch_namespace: 
+  script_name: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  [
+    {}
+  ]
+}

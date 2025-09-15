@@ -1,0 +1,29 @@
+meta {
+  name: List datasets
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/radar/datasets
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~limit: 
+  ~offset: 
+  ~datasetType: 
+  ~date: 
+  ~format: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

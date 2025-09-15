@@ -1,0 +1,33 @@
+meta {
+  name: Update a share resource
+  type: http
+  seq: 14
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/shares/:share_id/resources/:resource_id
+  body: json
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+  share_id: 
+  resource_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "meta": {}
+  }
+}

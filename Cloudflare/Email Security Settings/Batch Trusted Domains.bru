@@ -1,0 +1,46 @@
+meta {
+  name: Batch Trusted Domains
+  type: http
+  seq: 29
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/email-security/settings/trusted_domains/batch
+  body: json
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "deletes": [
+      {
+        "id": 0
+      }
+    ],
+    "patches": [],
+    "posts": [
+      {
+        "comments": "",
+        "is_recent": false,
+        "is_regex": false,
+        "is_similarity": false,
+        "pattern": ""
+      }
+    ],
+    "puts": []
+  }
+}

@@ -1,0 +1,26 @@
+meta {
+  name: Plan On-ramp
+  type: http
+  seq: 9
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/magic/cloud/onramps/:onramp_id/plan
+  body: none
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+  onramp_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

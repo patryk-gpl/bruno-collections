@@ -1,0 +1,45 @@
+meta {
+  name: Create a GRE tunnel
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/magic/gre_tunnels
+  body: json
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+  ~x-magic-new-hc-target: 
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "bgp": {
+      "customer_asn": 0,
+      "extra_prefixes": [],
+      "md5_key": ""
+    },
+    "cloudflare_gre_endpoint": "",
+    "customer_gre_endpoint": "",
+    "description": "",
+    "health_check": "",
+    "interface_address": "",
+    "interface_address6": "",
+    "mtu": 0,
+    "name": "",
+    "ttl": 0
+  }
+}

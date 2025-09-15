@@ -1,0 +1,24 @@
+meta {
+  name: Delete Worker
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{baseUrl}}/accounts/:account_id/workers/scripts/:script_name
+  body: json
+  auth: bearer
+}
+
+params:query {
+  ~force: 
+}
+
+params:path {
+  account_id: 
+  script_name: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

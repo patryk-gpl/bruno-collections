@@ -1,0 +1,26 @@
+meta {
+  name: Delete an Access group
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{baseUrl}}/zones/:zone_id/access/groups/:group_id
+  body: none
+  auth: apikey
+}
+
+params:path {
+  group_id: 
+  zone_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

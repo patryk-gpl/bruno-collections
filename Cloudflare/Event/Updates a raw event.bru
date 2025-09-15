@@ -1,0 +1,29 @@
+meta {
+  name: Updates a raw event
+  type: http
+  seq: 10
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/cloudforce-one/events/:event_id/raw/:raw_id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  event_id: 
+  raw_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "data": {},
+    "source": "",
+    "tlp": ""
+  }
+}

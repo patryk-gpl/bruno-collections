@@ -1,0 +1,31 @@
+meta {
+  name: Toggle RUM on/off for a zone
+  type: http
+  seq: 12
+}
+
+patch {
+  url: {{baseUrl}}/zones/:zone_id/settings/rum
+  body: json
+  auth: apikey
+}
+
+params:path {
+  zone_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "value": ""
+  }
+}

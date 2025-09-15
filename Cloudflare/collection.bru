@@ -1,0 +1,13 @@
+meta {
+  name: Cloudflare API
+}
+
+auth {
+  mode: apikey
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

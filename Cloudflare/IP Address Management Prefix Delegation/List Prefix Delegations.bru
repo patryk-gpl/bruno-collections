@@ -1,0 +1,26 @@
+meta {
+  name: List Prefix Delegations
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/addressing/prefixes/:prefix_id/delegations
+  body: none
+  auth: apikey
+}
+
+params:path {
+  prefix_id: 
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

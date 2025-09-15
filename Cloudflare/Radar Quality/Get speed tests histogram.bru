@@ -1,0 +1,32 @@
+meta {
+  name: Get speed tests histogram
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/radar/quality/speed/histogram
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~name: 
+  ~dateEnd: 
+  ~asn: 
+  ~location: 
+  ~continent: 
+  ~bucketSize: 
+  ~metricGroup: 
+  ~format: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

@@ -1,0 +1,25 @@
+meta {
+  name: Create Zone
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/zones
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "account": {
+      "id": ""
+    },
+    "name": "",
+    "type": ""
+  }
+}

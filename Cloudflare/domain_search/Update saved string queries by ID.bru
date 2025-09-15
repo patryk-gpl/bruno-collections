@@ -1,0 +1,15 @@
+meta {
+  name: Update saved string queries by ID
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{baseUrl}}/accounts/:account_id/brand-protection/queries
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

@@ -1,0 +1,22 @@
+meta {
+  name: List an account ruleset version's rules by tag
+  type: http
+  seq: 12
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/rulesets/:ruleset_id/versions/:ruleset_version/by_tag/:rule_tag
+  body: none
+  auth: bearer
+}
+
+params:path {
+  rule_tag: 
+  ruleset_version: 
+  ruleset_id: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

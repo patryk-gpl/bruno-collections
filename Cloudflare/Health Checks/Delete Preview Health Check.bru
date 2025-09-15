@@ -1,0 +1,20 @@
+meta {
+  name: Delete Preview Health Check
+  type: http
+  seq: 8
+}
+
+delete {
+  url: {{baseUrl}}/zones/:zone_id/healthchecks/preview/:healthcheck_id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  healthcheck_id: 
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

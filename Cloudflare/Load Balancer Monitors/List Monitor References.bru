@@ -1,0 +1,25 @@
+meta {
+  name: List Monitor References
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{baseUrl}}/user/load_balancers/monitors/:monitor_id/references
+  body: none
+  auth: apikey
+}
+
+params:path {
+  monitor_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

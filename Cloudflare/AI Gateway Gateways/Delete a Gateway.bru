@@ -1,0 +1,20 @@
+meta {
+  name: Delete a Gateway
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{baseUrl}}/accounts/:account_id/ai-gateway/gateways/:id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

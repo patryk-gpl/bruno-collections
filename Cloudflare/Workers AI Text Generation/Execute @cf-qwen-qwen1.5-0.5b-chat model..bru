@@ -1,0 +1,27 @@
+meta {
+  name: Execute @cf/qwen/qwen1.5-0.5b-chat model.
+  type: http
+  seq: 32
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/ai/run/@cf/qwen/qwen1.5-0.5b-chat
+  body: json
+  auth: bearer
+}
+
+params:query {
+  ~queueRequest: 
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {}
+}

@@ -1,0 +1,23 @@
+meta {
+  name: List Workers
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/workers/scripts
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~tags: 
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

@@ -1,0 +1,34 @@
+meta {
+  name: Upload mTLS certificate
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/mtls_certificates
+  body: json
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "ca": false,
+    "certificates": "",
+    "name": "",
+    "private_key": ""
+  }
+}

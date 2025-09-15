@@ -1,0 +1,20 @@
+meta {
+  name: Get URL scan
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/urlscanner/v2/result/:scan_id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  scan_id: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

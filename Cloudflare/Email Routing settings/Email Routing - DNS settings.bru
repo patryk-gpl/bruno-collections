@@ -1,0 +1,29 @@
+meta {
+  name: Email Routing - DNS settings
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/email/routing/dns
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~subdomain: 
+}
+
+params:path {
+  zone_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

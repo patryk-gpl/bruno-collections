@@ -1,0 +1,25 @@
+meta {
+  name: List Pipelines
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/pipelines
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~search: 
+  ~page: 
+  ~per_page: 
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

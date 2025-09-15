@@ -1,0 +1,25 @@
+meta {
+  name: List Vectors
+  type: http
+  seq: 9
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/vectorize/v2/indexes/:index_name/list
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~count: 
+  ~cursor: 
+}
+
+params:path {
+  account_id: 
+  index_name: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

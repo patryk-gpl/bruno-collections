@@ -1,0 +1,41 @@
+meta {
+  name: List Page Shield scripts
+  type: http
+  seq: 12
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/page_shield/scripts
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~exclude_urls: 
+  ~urls: 
+  ~hosts: 
+  ~page: 
+  ~per_page: 
+  ~order_by: 
+  ~direction: 
+  ~prioritize_malicious: 
+  ~exclude_cdn_cgi: 
+  ~exclude_duplicates: 
+  ~status: 
+  ~page_url: 
+  ~export: 
+}
+
+params:path {
+  zone_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

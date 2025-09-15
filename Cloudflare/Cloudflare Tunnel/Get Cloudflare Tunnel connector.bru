@@ -1,0 +1,27 @@
+meta {
+  name: Get Cloudflare Tunnel connector
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/cfd_tunnel/:tunnel_id/connectors/:connector_id
+  body: none
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+  tunnel_id: 
+  connector_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

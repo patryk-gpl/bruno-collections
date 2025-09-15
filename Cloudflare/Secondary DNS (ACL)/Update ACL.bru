@@ -1,0 +1,28 @@
+meta {
+  name: Update ACL
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/secondary_dns/acls/:acl_id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  acl_id: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "id": "",
+    "ip_range": "",
+    "name": ""
+  }
+}

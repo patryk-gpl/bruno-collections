@@ -1,0 +1,26 @@
+meta {
+  name: Delete routing rule
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{baseUrl}}/zones/:zone_id/email/routing/rules/:rule_identifier
+  body: none
+  auth: apikey
+}
+
+params:path {
+  rule_identifier: 
+  zone_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

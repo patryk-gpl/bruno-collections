@@ -1,0 +1,20 @@
+meta {
+  name: Peer Details
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/secondary_dns/peers/:peer_id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  peer_id: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

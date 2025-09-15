@@ -1,0 +1,15 @@
+meta {
+  name: Internal route for testing URL submissions
+  type: http
+  seq: 21
+}
+
+post {
+  url: {{baseUrl}}/internal/submit
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

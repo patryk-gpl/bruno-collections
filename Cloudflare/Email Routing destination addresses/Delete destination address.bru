@@ -1,0 +1,26 @@
+meta {
+  name: Delete destination address
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{baseUrl}}/accounts/:account_id/email/routing/addresses/:destination_address_identifier
+  body: none
+  auth: apikey
+}
+
+params:path {
+  destination_address_identifier: 
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

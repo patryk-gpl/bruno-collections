@@ -1,0 +1,26 @@
+meta {
+  name: Fetch Regional Hostname
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/addressing/regional_hostnames/:hostname
+  body: none
+  auth: apikey
+}
+
+params:path {
+  zone_id: 
+  hostname: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

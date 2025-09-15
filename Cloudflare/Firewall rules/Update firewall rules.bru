@@ -1,0 +1,25 @@
+meta {
+  name: Update firewall rules
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{baseUrl}}/zones/:zone_id/firewall/rules
+  body: json
+  auth: apikey
+}
+
+params:path {
+  zone_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

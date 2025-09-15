@@ -1,0 +1,20 @@
+meta {
+  name: Delete a Notification policy
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{baseUrl}}/accounts/:account_id/alerting/v3/policies/:policy_id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  policy_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

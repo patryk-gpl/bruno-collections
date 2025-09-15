@@ -1,0 +1,21 @@
+meta {
+  name: Delete Deployment
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{baseUrl}}/accounts/:account_id/workers/scripts/:script_name/deployments/:deployment_id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  script_name: 
+  deployment_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

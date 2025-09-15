@@ -1,0 +1,33 @@
+meta {
+  name: Update a Request Asset
+  type: http
+  seq: 8
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/cloudforce-one/requests/:request_id/asset/:asset_id
+  body: json
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+  request_id: 
+  asset_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "source": ""
+  }
+}

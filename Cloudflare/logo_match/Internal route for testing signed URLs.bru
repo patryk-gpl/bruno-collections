@@ -1,0 +1,15 @@
+meta {
+  name: Internal route for testing signed URLs
+  type: http
+  seq: 9
+}
+
+get {
+  url: {{baseUrl}}/signed-url
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

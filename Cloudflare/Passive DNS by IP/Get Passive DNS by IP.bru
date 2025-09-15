@@ -1,0 +1,26 @@
+meta {
+  name: Get Passive DNS by IP
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/intel/dns
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~start_end_params: 
+  ~ipv4: 
+  ~page: 
+  ~per_page: 
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

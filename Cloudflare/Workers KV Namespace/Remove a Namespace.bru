@@ -1,0 +1,20 @@
+meta {
+  name: Remove a Namespace
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{baseUrl}}/accounts/:account_id/storage/kv/namespaces/:namespace_id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  namespace_id: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

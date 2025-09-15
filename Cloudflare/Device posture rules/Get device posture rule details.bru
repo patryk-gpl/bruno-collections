@@ -1,0 +1,26 @@
+meta {
+  name: Get device posture rule details
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/devices/posture/:rule_id
+  body: none
+  auth: apikey
+}
+
+params:path {
+  rule_id: 
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

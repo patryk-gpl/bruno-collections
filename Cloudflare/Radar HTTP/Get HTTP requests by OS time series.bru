@@ -1,0 +1,40 @@
+meta {
+  name: Get HTTP requests by OS time series
+  type: http
+  seq: 17
+}
+
+get {
+  url: {{baseUrl}}/radar/http/timeseries_groups/os
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~aggInterval: 
+  ~name: 
+  ~dateRange: 
+  ~dateStart: 
+  ~dateEnd: 
+  ~asn: 
+  ~location: 
+  ~continent: 
+  ~botClass: 
+  ~deviceType: 
+  ~httpProtocol: 
+  ~httpVersion: 
+  ~ipVersion: 
+  ~tlsVersion: 
+  ~browserFamily: 
+  ~format: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

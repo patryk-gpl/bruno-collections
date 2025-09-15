@@ -1,0 +1,20 @@
+meta {
+  name: Update a Notification policy
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/alerting/v3/policies/:policy_id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  policy_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

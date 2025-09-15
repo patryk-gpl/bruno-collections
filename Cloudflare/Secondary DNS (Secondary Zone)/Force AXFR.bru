@@ -1,0 +1,19 @@
+meta {
+  name: Force AXFR
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/zones/:zone_id/secondary_dns/force_axfr
+  body: json
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

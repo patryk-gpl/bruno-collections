@@ -1,0 +1,19 @@
+meta {
+  name: Open Websocket connection with @cf/deepgram/aura model.
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/ai/run/@cf/deepgram/aura
+  body: none
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

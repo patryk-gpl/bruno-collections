@@ -1,0 +1,26 @@
+meta {
+  name: Get a tag
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/access/tags/:tag_name
+  body: none
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+  tag_name: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

@@ -1,0 +1,20 @@
+meta {
+  name: Get raw response
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/urlscanner/response/:response_id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  response_id: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

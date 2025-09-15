@@ -1,0 +1,29 @@
+meta {
+  name: List Prebuilt Policies
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/magic/cloud/catalog-syncs/prebuilt-policies
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~destination_type: 
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

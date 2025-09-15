@@ -1,0 +1,28 @@
+meta {
+  name: List Evaluations
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/ai-gateway/gateways/:gateway_id/evaluations
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~page: 
+  ~per_page: 
+  ~name: 
+  ~processed: 
+  ~search: 
+}
+
+params:path {
+  account_id: 
+  gateway_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

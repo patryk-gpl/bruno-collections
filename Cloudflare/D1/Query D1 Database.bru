@@ -1,0 +1,27 @@
+meta {
+  name: Query D1 Database
+  type: http
+  seq: 9
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/d1/database/:database_id/query
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  database_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "params": [],
+    "sql": ""
+  }
+}

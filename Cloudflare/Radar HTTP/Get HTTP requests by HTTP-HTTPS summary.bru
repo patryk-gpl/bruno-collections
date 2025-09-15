@@ -1,0 +1,39 @@
+meta {
+  name: Get HTTP requests by HTTP/HTTPS summary
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/radar/http/summary/http_protocol
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~name: 
+  ~dateRange: 
+  ~dateStart: 
+  ~dateEnd: 
+  ~asn: 
+  ~location: 
+  ~continent: 
+  ~botClass: 
+  ~deviceType: 
+  ~httpVersion: 
+  ~ipVersion: 
+  ~os: 
+  ~tlsVersion: 
+  ~browserFamily: 
+  ~format: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

@@ -1,0 +1,29 @@
+meta {
+  name: Edit a Page Rule
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{baseUrl}}/zones/:zone_id/pagerules/:pagerule_id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  pagerule_id: 
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "actions": [],
+    "priority": 0,
+    "status": "",
+    "targets": []
+  }
+}

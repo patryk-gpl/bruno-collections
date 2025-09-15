@@ -1,0 +1,20 @@
+meta {
+  name: Detach from Domain
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{baseUrl}}/accounts/:account_id/workers/domains/:domain_id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  domain_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

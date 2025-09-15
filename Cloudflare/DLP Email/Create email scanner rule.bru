@@ -1,0 +1,41 @@
+meta {
+  name: Create email scanner rule
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/dlp/email/rules
+  body: json
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "action": "",
+    "conditions": [
+      {
+        "operator": "",
+        "selector": "",
+        "value": ""
+      }
+    ],
+    "description": "",
+    "enabled": false,
+    "name": ""
+  }
+}

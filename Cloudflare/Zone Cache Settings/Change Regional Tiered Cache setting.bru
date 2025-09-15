@@ -1,0 +1,25 @@
+meta {
+  name: Change Regional Tiered Cache setting
+  type: http
+  seq: 6
+}
+
+patch {
+  url: {{baseUrl}}/zones/:zone_id/cache/regional_tiered_cache
+  body: json
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "value": ""
+  }
+}

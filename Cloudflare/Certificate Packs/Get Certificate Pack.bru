@@ -1,0 +1,26 @@
+meta {
+  name: Get Certificate Pack
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/ssl/certificate_packs/:certificate_pack_id
+  body: none
+  auth: apikey
+}
+
+params:path {
+  certificate_pack_id: 
+  zone_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

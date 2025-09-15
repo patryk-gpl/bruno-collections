@@ -1,0 +1,28 @@
+meta {
+  name: Update Endpoint Health Check
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/diagnostics/endpoint-healthchecks/:id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "check_type": "",
+    "endpoint": "",
+    "name": ""
+  }
+}

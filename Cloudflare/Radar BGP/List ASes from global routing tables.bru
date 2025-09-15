@@ -1,0 +1,29 @@
+meta {
+  name: List ASes from global routing tables
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/radar/bgp/routes/ases
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~location: 
+  ~limit: 
+  ~sortBy: 
+  ~sortOrder: 
+  ~format: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

@@ -1,0 +1,45 @@
+meta {
+  name: Create On-ramp
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/magic/cloud/onramps
+  body: json
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+  ~forwarded: 
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "adopted_hub_id": "",
+    "attached_hubs": [],
+    "attached_vpcs": [],
+    "cloud_type": "",
+    "description": "",
+    "hub_provider_id": "",
+    "install_routes_in_cloud": false,
+    "install_routes_in_magic_wan": false,
+    "manage_hub_to_hub_attachments": false,
+    "manage_vpc_to_hub_attachments": false,
+    "name": "",
+    "region": "",
+    "type": "",
+    "vpc": ""
+  }
+}

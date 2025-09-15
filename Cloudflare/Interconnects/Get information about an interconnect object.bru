@@ -1,0 +1,26 @@
+meta {
+  name: Get information about an interconnect object
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/cni/interconnects/:icon
+  body: none
+  auth: apikey
+}
+
+params:path {
+  icon: 
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

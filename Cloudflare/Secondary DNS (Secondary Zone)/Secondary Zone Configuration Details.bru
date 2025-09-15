@@ -1,0 +1,19 @@
+meta {
+  name: Secondary Zone Configuration Details
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/secondary_dns/incoming
+  body: none
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

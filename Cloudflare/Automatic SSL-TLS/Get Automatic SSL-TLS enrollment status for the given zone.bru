@@ -1,0 +1,19 @@
+meta {
+  name: Get Automatic SSL/TLS enrollment status for the given zone
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/settings/ssl_automatic_mode
+  body: none
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

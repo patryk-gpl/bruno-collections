@@ -1,0 +1,21 @@
+meta {
+  name: Get an account entry point ruleset version
+  type: http
+  seq: 16
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/rulesets/phases/:ruleset_phase/entrypoint/versions/:ruleset_version
+  body: none
+  auth: bearer
+}
+
+params:path {
+  ruleset_version: 
+  ruleset_phase: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

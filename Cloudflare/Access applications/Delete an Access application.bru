@@ -1,0 +1,26 @@
+meta {
+  name: Delete an Access application
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{baseUrl}}/accounts/:account_id/access/apps/:app_id
+  body: none
+  auth: apikey
+}
+
+params:path {
+  app_id: 
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

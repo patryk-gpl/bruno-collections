@@ -1,0 +1,36 @@
+meta {
+  name: List SCIM User resources
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/access/identity_providers/:identity_provider_id/scim/users
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~cf_resource_id: 
+  ~idp_resource_id: 
+  ~username: 
+  ~email: 
+  ~name: 
+  ~page: 
+  ~per_page: 
+}
+
+params:path {
+  identity_provider_id: 
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

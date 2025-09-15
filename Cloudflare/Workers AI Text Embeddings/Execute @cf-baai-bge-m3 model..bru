@@ -1,0 +1,27 @@
+meta {
+  name: Execute @cf/baai/bge-m3 model.
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/ai/run/@cf/baai/bge-m3
+  body: json
+  auth: bearer
+}
+
+params:query {
+  ~queueRequest: 
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {}
+}

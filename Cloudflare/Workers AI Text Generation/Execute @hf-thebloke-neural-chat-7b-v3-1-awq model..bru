@@ -1,0 +1,27 @@
+meta {
+  name: Execute @hf/thebloke/neural-chat-7b-v3-1-awq model.
+  type: http
+  seq: 52
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/ai/run/@hf/thebloke/neural-chat-7b-v3-1-awq
+  body: json
+  auth: bearer
+}
+
+params:query {
+  ~queueRequest: 
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {}
+}

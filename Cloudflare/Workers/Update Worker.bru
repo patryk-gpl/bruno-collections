@@ -1,0 +1,49 @@
+meta {
+  name: Update Worker
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/workers/workers/:worker_id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  worker_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "created_on": "",
+    "id": "",
+    "logpush": false,
+    "name": "",
+    "observability": {
+      "enabled": false,
+      "head_sampling_rate": "",
+      "logs": {
+        "enabled": false,
+        "head_sampling_rate": "",
+        "invocation_logs": false
+      }
+    },
+    "subdomain": {
+      "enabled": false,
+      "previews_enabled": false
+    },
+    "tags": [],
+    "tail_consumers": [
+      {
+        "name": ""
+      }
+    ],
+    "updated_on": ""
+  }
+}

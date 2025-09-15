@@ -1,0 +1,32 @@
+meta {
+  name: Delete a tunnel route (CIDR Endpoint)
+  type: http
+  seq: 7
+}
+
+delete {
+  url: {{baseUrl}}/accounts/:account_id/teamnet/routes/network/:ip_network_encoded
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~virtual_network_id: 
+  ~tun_type: 
+  ~tunnel_id: 
+}
+
+params:path {
+  ip_network_encoded: 
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

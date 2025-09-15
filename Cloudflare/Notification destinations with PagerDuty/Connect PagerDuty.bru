@@ -1,0 +1,20 @@
+meta {
+  name: Connect PagerDuty
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/alerting/v3/destinations/pagerduty/connect/:token_id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  token_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

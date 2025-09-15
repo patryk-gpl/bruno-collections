@@ -1,0 +1,15 @@
+meta {
+  name: Read submitted domains by pattern
+  type: http
+  seq: 18
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/brand-protection/tracked-domains
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

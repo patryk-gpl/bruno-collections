@@ -1,0 +1,20 @@
+meta {
+  name: Health Check Details
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/healthchecks/:healthcheck_id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  healthcheck_id: 
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

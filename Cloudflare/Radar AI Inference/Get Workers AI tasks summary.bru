@@ -1,0 +1,30 @@
+meta {
+  name: Get Workers AI tasks summary
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/radar/ai/inference/summary/task
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~name: 
+  ~dateRange: 
+  ~dateStart: 
+  ~dateEnd: 
+  ~limitPerGroup: 
+  ~format: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

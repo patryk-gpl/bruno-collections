@@ -1,0 +1,22 @@
+meta {
+  name: List all uploaded schemas
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/schema_validation/schemas
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~page: 
+  ~per_page: 
+  ~omit_source: 
+  ~validation_enabled: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

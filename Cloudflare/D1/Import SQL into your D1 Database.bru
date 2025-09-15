@@ -1,0 +1,20 @@
+meta {
+  name: Import SQL into your D1 Database
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/d1/database/:database_id/import
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  database_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

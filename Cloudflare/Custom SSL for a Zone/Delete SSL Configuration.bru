@@ -1,0 +1,26 @@
+meta {
+  name: Delete SSL Configuration
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{baseUrl}}/zones/:zone_id/custom_certificates/:custom_certificate_id
+  body: json
+  auth: apikey
+}
+
+params:path {
+  custom_certificate_id: 
+  zone_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

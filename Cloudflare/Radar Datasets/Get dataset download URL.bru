@@ -1,0 +1,31 @@
+meta {
+  name: Get dataset download URL
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/radar/datasets/download
+  body: json
+  auth: apikey
+}
+
+params:query {
+  ~format: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "datasetId": 0
+  }
+}

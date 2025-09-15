@@ -1,0 +1,27 @@
+meta {
+  name: Execute @cf/deepseek-ai/deepseek-math-7b-instruct model.
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/ai/run/@cf/deepseek-ai/deepseek-math-7b-instruct
+  body: json
+  auth: bearer
+}
+
+params:query {
+  ~queueRequest: 
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {}
+}

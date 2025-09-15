@@ -1,0 +1,20 @@
+meta {
+  name: Delete Worker
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{baseUrl}}/accounts/:account_id/workers/workers/:worker_id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  worker_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

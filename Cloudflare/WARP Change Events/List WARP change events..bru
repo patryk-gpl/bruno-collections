@@ -1,0 +1,37 @@
+meta {
+  name: List WARP change events.
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/dex/warp-change-events
+  body: none
+  auth: apikey
+}
+
+params:query {
+  page: 
+  per_page: 
+  from: 
+  to: 
+  ~type: 
+  ~toggle: 
+  ~config_name: 
+  ~account_name: 
+  ~sort_order: 
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

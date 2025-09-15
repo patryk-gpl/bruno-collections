@@ -1,0 +1,25 @@
+meta {
+  name: Patch zone-level Waiting Room settings
+  type: http
+  seq: 23
+}
+
+patch {
+  url: {{baseUrl}}/zones/:zone_id/waiting_rooms/settings
+  body: json
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "search_engine_crawler_bypass": false
+  }
+}

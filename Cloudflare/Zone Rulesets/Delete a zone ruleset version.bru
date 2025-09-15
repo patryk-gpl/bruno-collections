@@ -1,0 +1,21 @@
+meta {
+  name: Delete a zone ruleset version
+  type: http
+  seq: 10
+}
+
+delete {
+  url: {{baseUrl}}/zones/:zone_id/rulesets/:ruleset_id/versions/:ruleset_version
+  body: none
+  auth: bearer
+}
+
+params:path {
+  ruleset_version: 
+  ruleset_id: 
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

@@ -1,0 +1,26 @@
+meta {
+  name: Delete Hostname Client Certificate
+  type: http
+  seq: 5
+}
+
+delete {
+  url: {{baseUrl}}/zones/:zone_id/origin_tls_client_auth/hostnames/certificates/:certificate_id
+  body: json
+  auth: apikey
+}
+
+params:path {
+  certificate_id: 
+  zone_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

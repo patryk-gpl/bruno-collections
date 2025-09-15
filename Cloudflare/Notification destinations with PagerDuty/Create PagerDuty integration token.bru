@@ -1,0 +1,19 @@
+meta {
+  name: Create PagerDuty integration token
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/alerting/v3/destinations/pagerduty/connect
+  body: none
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

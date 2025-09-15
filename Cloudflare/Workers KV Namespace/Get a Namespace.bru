@@ -1,0 +1,20 @@
+meta {
+  name: Get a Namespace
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/storage/kv/namespaces/:namespace_id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  namespace_id: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

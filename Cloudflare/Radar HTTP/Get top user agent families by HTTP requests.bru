@@ -1,0 +1,40 @@
+meta {
+  name: Get top user agent families by HTTP requests
+  type: http
+  seq: 30
+}
+
+get {
+  url: {{baseUrl}}/radar/http/top/browser_family
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~limit: 
+  ~name: 
+  ~dateRange: 
+  ~dateStart: 
+  ~dateEnd: 
+  ~asn: 
+  ~location: 
+  ~continent: 
+  ~botClass: 
+  ~deviceType: 
+  ~httpProtocol: 
+  ~httpVersion: 
+  ~ipVersion: 
+  ~os: 
+  ~tlsVersion: 
+  ~format: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

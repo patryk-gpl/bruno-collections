@@ -1,0 +1,40 @@
+meta {
+  name: Batch DNS Records
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{baseUrl}}/zones/:zone_id/dns_records/batch
+  body: json
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "deletes": [
+      {}
+    ],
+    "patches": [
+      {
+        "id": ""
+      }
+    ],
+    "posts": [
+      {}
+    ],
+    "puts": [
+      {
+        "id": ""
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+meta {
+  name: Update image
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{baseUrl}}/accounts/:account_id/images/v1/:image_id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  image_id: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "creator": "",
+    "metadata": {},
+    "requireSignedURLs": false
+  }
+}

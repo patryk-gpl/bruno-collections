@@ -1,0 +1,39 @@
+meta {
+  name: List Warp Connector Tunnels
+  type: http
+  seq: 12
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/warp_connector
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~name: 
+  ~is_deleted: 
+  ~existed_at: 
+  ~uuid: 
+  ~was_active_at: 
+  ~was_inactive_at: 
+  ~include_prefix: 
+  ~exclude_prefix: 
+  ~status: 
+  ~per_page: 
+  ~page: 
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

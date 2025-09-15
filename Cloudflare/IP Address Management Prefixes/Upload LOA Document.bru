@@ -1,0 +1,29 @@
+meta {
+  name: Upload LOA Document
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/addressing/loa_documents
+  body: multipartForm
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:multipart-form {
+  loa_document: 
+}

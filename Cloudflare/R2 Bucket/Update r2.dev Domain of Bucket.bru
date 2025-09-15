@@ -1,0 +1,30 @@
+meta {
+  name: Update r2.dev Domain of Bucket
+  type: http
+  seq: 19
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/r2/buckets/:bucket_name/domains/managed
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  bucket_name: 
+}
+
+headers {
+  ~cf-r2-jurisdiction: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "enabled": false
+  }
+}

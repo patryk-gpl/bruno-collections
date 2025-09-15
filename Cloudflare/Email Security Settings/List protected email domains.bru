@@ -1,0 +1,36 @@
+meta {
+  name: List protected email domains
+  type: http
+  seq: 14
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/email-security/settings/domains
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~page: 
+  ~per_page: 
+  ~order: 
+  ~direction: 
+  ~search: 
+  ~allowed_delivery_mode: 
+  ~domain: 
+  ~active_delivery_mode: 
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

@@ -1,0 +1,35 @@
+meta {
+  name: Update Catalog Sync
+  type: http
+  seq: 6
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/magic/cloud/catalog-syncs/:sync_id
+  body: json
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+  sync_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "description": "",
+    "name": "",
+    "policy": "",
+    "update_mode": ""
+  }
+}

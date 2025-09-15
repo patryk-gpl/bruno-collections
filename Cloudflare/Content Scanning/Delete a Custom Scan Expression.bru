@@ -1,0 +1,26 @@
+meta {
+  name: Delete a Custom Scan Expression
+  type: http
+  seq: 5
+}
+
+delete {
+  url: {{baseUrl}}/zones/:zone_id/content-upload-scan/payloads/:expression_id
+  body: none
+  auth: apikey
+}
+
+params:path {
+  zone_id: 
+  expression_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

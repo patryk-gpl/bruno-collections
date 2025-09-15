@@ -1,0 +1,27 @@
+meta {
+  name: Delete Gateway Logs
+  type: http
+  seq: 1
+}
+
+delete {
+  url: {{baseUrl}}/accounts/:account_id/ai-gateway/gateways/:gateway_id/logs
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~order_by: 
+  ~order_by_direction: 
+  ~filters: 
+  ~limit: 
+}
+
+params:path {
+  account_id: 
+  gateway_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

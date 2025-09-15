@@ -1,0 +1,34 @@
+meta {
+  name: Get email spoof classification summary
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{baseUrl}}/radar/email/security/summary/spoof
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~name: 
+  ~dateRange: 
+  ~dateStart: 
+  ~dateEnd: 
+  ~arc: 
+  ~dkim: 
+  ~dmarc: 
+  ~spf: 
+  ~tlsVersion: 
+  ~format: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

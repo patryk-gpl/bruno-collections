@@ -1,0 +1,20 @@
+meta {
+  name: Variant details
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/images/v1/variants/:variant_id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  variant_id: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

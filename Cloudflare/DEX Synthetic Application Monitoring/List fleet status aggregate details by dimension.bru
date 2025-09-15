@@ -1,0 +1,32 @@
+meta {
+  name: List fleet status aggregate details by dimension
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/dex/fleet-status/over-time
+  body: none
+  auth: apikey
+}
+
+params:query {
+  to: 
+  from: 
+  ~colo: 
+  ~device_id: 
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

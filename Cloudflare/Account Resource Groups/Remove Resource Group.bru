@@ -1,0 +1,20 @@
+meta {
+  name: Remove Resource Group
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{baseUrl}}/accounts/:account_id/iam/resource_groups/:resource_group_id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  resource_group_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

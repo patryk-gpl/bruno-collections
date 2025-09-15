@@ -1,0 +1,60 @@
+meta {
+  name: Create project
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/pages/projects
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "build_config": {
+      "build_caching": false,
+      "build_command": "",
+      "destination_dir": "",
+      "root_dir": "",
+      "web_analytics_tag": "",
+      "web_analytics_token": ""
+    },
+    "canonical_deployment": "",
+    "created_on": "",
+    "deployment_configs": {
+      "preview": {},
+      "production": {}
+    },
+    "domains": [],
+    "id": "",
+    "latest_deployment": "",
+    "name": "",
+    "production_branch": "",
+    "source": {
+      "config": {
+        "deployments_enabled": false,
+        "owner": "",
+        "path_excludes": [],
+        "path_includes": [],
+        "pr_comments_enabled": false,
+        "preview_branch_excludes": [],
+        "preview_branch_includes": [],
+        "preview_deployment_setting": "",
+        "production_branch": "",
+        "production_deployments_enabled": false,
+        "repo_name": ""
+      },
+      "type": ""
+    },
+    "subdomain": ""
+  }
+}

@@ -1,0 +1,19 @@
+meta {
+  name: Get zone-level Waiting Room settings
+  type: http
+  seq: 22
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/waiting_rooms/settings
+  body: none
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

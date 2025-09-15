@@ -1,0 +1,27 @@
+meta {
+  name: Create Route
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/zones/:zone_id/workers/routes
+  body: json
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "id": "",
+    "pattern": "",
+    "script": ""
+  }
+}

@@ -1,0 +1,25 @@
+meta {
+  name: Revoke permission to indicator feed
+  type: http
+  seq: 8
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/intel/indicator-feeds/permissions/remove
+  body: json
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

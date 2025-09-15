@@ -1,0 +1,27 @@
+meta {
+  name: Post Worker subdomain
+  type: http
+  seq: 19
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/workers/scripts/:script_name/subdomain
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  script_name: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "enabled": false,
+    "previews_enabled": false
+  }
+}

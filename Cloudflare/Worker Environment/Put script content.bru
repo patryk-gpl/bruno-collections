@@ -1,0 +1,31 @@
+meta {
+  name: Put script content
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/workers/services/:service_name/environments/:environment_name/content
+  body: multipartForm
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  service_name: 
+  environment_name: 
+}
+
+headers {
+  ~CF-WORKER-BODY-PART: 
+  ~CF-WORKER-MAIN-MODULE-PART: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:multipart-form {
+  files: 
+  metadata: 
+}

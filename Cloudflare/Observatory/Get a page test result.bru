@@ -1,0 +1,21 @@
+meta {
+  name: Get a page test result
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/speed_api/pages/:url/tests/:test_id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+  url: 
+  test_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

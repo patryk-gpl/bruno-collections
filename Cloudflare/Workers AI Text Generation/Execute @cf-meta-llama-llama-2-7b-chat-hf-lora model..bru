@@ -1,0 +1,27 @@
+meta {
+  name: Execute @cf/meta-llama/llama-2-7b-chat-hf-lora model.
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/ai/run/@cf/meta-llama/llama-2-7b-chat-hf-lora
+  body: json
+  auth: bearer
+}
+
+params:query {
+  ~queueRequest: 
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {}
+}

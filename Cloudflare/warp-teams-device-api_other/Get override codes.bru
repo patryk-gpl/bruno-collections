@@ -1,0 +1,20 @@
+meta {
+  name: Get override codes
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/devices/registrations/:registration_id/override_codes
+  body: none
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  registration_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

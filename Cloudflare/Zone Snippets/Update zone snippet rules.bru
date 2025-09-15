@@ -1,0 +1,34 @@
+meta {
+  name: Update zone snippet rules
+  type: http
+  seq: 8
+}
+
+put {
+  url: {{baseUrl}}/zones/:zone_id/snippets/snippet_rules
+  body: json
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "rules": [
+      {
+        "description": "",
+        "enabled": false,
+        "expression": "",
+        "id": "",
+        "last_updated": "",
+        "snippet_name": ""
+      }
+    ]
+  }
+}

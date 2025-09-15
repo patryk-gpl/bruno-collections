@@ -1,0 +1,26 @@
+meta {
+  name: Create Worker Account Settings
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/workers/account-settings
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "default_usage_model": "",
+    "green_compute": false
+  }
+}

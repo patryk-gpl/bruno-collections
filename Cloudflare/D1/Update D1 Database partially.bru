@@ -1,0 +1,28 @@
+meta {
+  name: Update D1 Database partially
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{baseUrl}}/accounts/:account_id/d1/database/:database_id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  database_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "read_replication": {
+      "mode": ""
+    }
+  }
+}

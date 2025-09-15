@@ -1,0 +1,26 @@
+meta {
+  name: Get the current status of an interconnect object
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/cni/interconnects/:icon/status
+  body: none
+  auth: apikey
+}
+
+params:path {
+  icon: 
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

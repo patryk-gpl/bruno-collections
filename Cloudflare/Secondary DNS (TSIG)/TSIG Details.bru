@@ -1,0 +1,20 @@
+meta {
+  name: TSIG Details
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/secondary_dns/tsigs/:tsig_id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  tsig_id: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

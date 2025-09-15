@@ -1,0 +1,28 @@
+meta {
+  name: Upload an image
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/images/v1
+  body: multipartForm
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:multipart-form {
+  creator: 
+  file: 
+  id: 
+  metadata: 
+  requireSignedURLs: 
+  url: 
+}

@@ -1,0 +1,26 @@
+meta {
+  name: Delete a trusted email domain
+  type: http
+  seq: 26
+}
+
+delete {
+  url: {{baseUrl}}/accounts/:account_id/email-security/settings/trusted_domains/:trusted_domain_id
+  body: none
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+  trusted_domain_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

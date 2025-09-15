@@ -1,0 +1,25 @@
+meta {
+  name: Patch Automatic SSL/TLS Enrollment status for given zone
+  type: http
+  seq: 2
+}
+
+patch {
+  url: {{baseUrl}}/zones/:zone_id/settings/ssl_automatic_mode
+  body: json
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "value": ""
+  }
+}

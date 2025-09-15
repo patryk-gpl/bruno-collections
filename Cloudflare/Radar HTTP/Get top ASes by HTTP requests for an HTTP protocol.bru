@@ -1,0 +1,44 @@
+meta {
+  name: Get top ASes by HTTP requests for an HTTP protocol
+  type: http
+  seq: 24
+}
+
+get {
+  url: {{baseUrl}}/radar/http/top/ases/http_protocol/:http_protocol
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~limit: 
+  ~name: 
+  ~dateRange: 
+  ~dateStart: 
+  ~dateEnd: 
+  ~asn: 
+  ~location: 
+  ~continent: 
+  ~botClass: 
+  ~deviceType: 
+  ~httpVersion: 
+  ~ipVersion: 
+  ~os: 
+  ~tlsVersion: 
+  ~browserFamily: 
+  ~format: 
+}
+
+params:path {
+  http_protocol: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

@@ -1,0 +1,24 @@
+meta {
+  name: Get Bucket Lock Rules
+  type: http
+  seq: 22
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/r2/buckets/:bucket_name/lock
+  body: none
+  auth: bearer
+}
+
+params:path {
+  bucket_name: 
+  account_id: 
+}
+
+headers {
+  ~cf-r2-jurisdiction: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

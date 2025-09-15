@@ -1,0 +1,19 @@
+meta {
+  name: Images usage statistics
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/images/v1/stats
+  body: none
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

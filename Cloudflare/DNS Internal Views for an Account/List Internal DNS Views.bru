@@ -1,0 +1,34 @@
+meta {
+  name: List Internal DNS Views
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/dns_settings/views
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~name: 
+  ~name.exact: 
+  ~name.contains: 
+  ~name.startswith: 
+  ~name.endswith: 
+  ~zone_id: 
+  ~zone_name: 
+  ~match: 
+  ~page: 
+  ~per_page: 
+  ~order: 
+  ~direction: 
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

@@ -1,0 +1,31 @@
+meta {
+  name: Replace Waiting Room Rules
+  type: http
+  seq: 17
+}
+
+put {
+  url: {{baseUrl}}/zones/:zone_id/waiting_rooms/:waiting_room_id/rules
+  body: json
+  auth: bearer
+}
+
+params:path {
+  waiting_room_id: 
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  [
+    {
+      "action": "",
+      "description": "",
+      "enabled": false,
+      "expression": ""
+    }
+  ]
+}

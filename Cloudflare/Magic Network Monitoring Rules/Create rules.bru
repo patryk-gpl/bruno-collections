@@ -1,0 +1,36 @@
+meta {
+  name: Create rules
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/mnm/rules
+  body: json
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "automatic_advertisement": false,
+    "bandwidth": "",
+    "duration": "",
+    "name": "",
+    "packet_threshold": "",
+    "prefixes": []
+  }
+}

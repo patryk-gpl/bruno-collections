@@ -1,0 +1,26 @@
+meta {
+  name: Set Account Custom Nameserver Related Zone Metadata
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{baseUrl}}/zones/:zone_id/custom_ns
+  body: json
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "enabled": false,
+    "ns_set": ""
+  }
+}

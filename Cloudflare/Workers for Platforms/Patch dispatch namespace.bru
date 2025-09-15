@@ -1,0 +1,27 @@
+meta {
+  name: Patch dispatch namespace
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{baseUrl}}/accounts/:account_id/workers/dispatch/namespaces/:dispatch_namespace
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  dispatch_namespace: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "name": "",
+    "trusted_workers": false
+  }
+}

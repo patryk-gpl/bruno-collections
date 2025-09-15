@@ -1,0 +1,21 @@
+meta {
+  name: Get Gateway Log Detail
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/ai-gateway/gateways/:gateway_id/logs/:id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  id: 
+  gateway_id: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

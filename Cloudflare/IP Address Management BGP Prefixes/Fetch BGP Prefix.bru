@@ -1,0 +1,27 @@
+meta {
+  name: Fetch BGP Prefix
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/addressing/prefixes/:prefix_id/bgp/prefixes/:bgp_prefix_id
+  body: none
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+  prefix_id: 
+  bgp_prefix_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

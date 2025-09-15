@@ -1,0 +1,28 @@
+meta {
+  name: Update Route
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{baseUrl}}/zones/:zone_id/workers/routes/:route_id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  route_id: 
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "id": "",
+    "pattern": "",
+    "script": ""
+  }
+}

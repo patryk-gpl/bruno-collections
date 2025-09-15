@@ -1,0 +1,20 @@
+meta {
+  name: Resource Group Details
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/iam/resource_groups/:resource_group_id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  resource_group_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

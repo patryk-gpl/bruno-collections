@@ -1,0 +1,20 @@
+meta {
+  name: Create a zone ruleset rule
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{baseUrl}}/zones/:zone_id/rulesets/:ruleset_id/rules
+  body: json
+  auth: bearer
+}
+
+params:path {
+  ruleset_id: 
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

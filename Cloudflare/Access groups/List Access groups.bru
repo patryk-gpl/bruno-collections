@@ -1,0 +1,32 @@
+meta {
+  name: List Access groups
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/access/groups
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~name: 
+  ~search: 
+  ~page: 
+  ~per_page: 
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

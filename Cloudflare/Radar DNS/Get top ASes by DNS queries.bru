@@ -1,0 +1,34 @@
+meta {
+  name: Get top ASes by DNS queries
+  type: http
+  seq: 22
+}
+
+get {
+  url: {{baseUrl}}/radar/dns/top/ases
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~limit: 
+  ~name: 
+  ~dateRange: 
+  ~dateStart: 
+  ~dateEnd: 
+  ~asn: 
+  ~location: 
+  ~continent: 
+  ~domain: 
+  ~format: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

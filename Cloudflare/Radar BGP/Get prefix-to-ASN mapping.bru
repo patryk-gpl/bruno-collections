@@ -1,0 +1,29 @@
+meta {
+  name: Get prefix-to-ASN mapping
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{baseUrl}}/radar/bgp/routes/pfx2as
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~prefix: 
+  ~origin: 
+  ~rpkiStatus: 
+  ~longestPrefixMatch: 
+  ~format: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

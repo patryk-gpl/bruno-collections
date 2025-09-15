@@ -1,0 +1,27 @@
+meta {
+  name: Execute @cf/meta/llama-3.2-3b-instruct model.
+  type: http
+  seq: 21
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/ai/run/@cf/meta/llama-3.2-3b-instruct
+  body: json
+  auth: bearer
+}
+
+params:query {
+  ~queueRequest: 
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {}
+}

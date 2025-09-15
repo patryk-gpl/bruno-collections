@@ -1,0 +1,26 @@
+meta {
+  name: Get a custom page
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_identifier/custom_pages/:identifier
+  body: none
+  auth: apikey
+}
+
+params:path {
+  identifier: 
+  zone_identifier: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

@@ -1,0 +1,32 @@
+meta {
+  name: Get top target locations of layer 7 attacks
+  type: http
+  seq: 20
+}
+
+get {
+  url: {{baseUrl}}/radar/attacks/layer7/top/locations/target
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~limit: 
+  ~name: 
+  ~dateRange: 
+  ~dateStart: 
+  ~dateEnd: 
+  ~continent: 
+  ~mitigationProduct: 
+  ~format: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

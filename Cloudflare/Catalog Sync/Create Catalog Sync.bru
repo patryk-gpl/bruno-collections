@@ -1,0 +1,36 @@
+meta {
+  name: Create Catalog Sync
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/magic/cloud/catalog-syncs
+  body: json
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+  ~forwarded: 
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "description": "",
+    "destination_type": "",
+    "name": "",
+    "policy": "",
+    "update_mode": ""
+  }
+}

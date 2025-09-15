@@ -1,0 +1,19 @@
+meta {
+  name: Get Smart Tiered Cache setting
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/cache/tiered_cache_smart_topology_enable
+  body: none
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

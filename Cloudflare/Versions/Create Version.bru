@@ -1,0 +1,63 @@
+meta {
+  name: Create Version
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/workers/workers/:worker_id/versions
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  worker_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "annotations": {
+      "workers/message": "",
+      "workers/tag": "",
+      "workers/triggered_by": ""
+    },
+    "assets": {
+      "config": {
+        "html_handling": "",
+        "not_found_handling": "",
+        "run_worker_first": ""
+      },
+      "jwt": ""
+    },
+    "bindings": [
+      {}
+    ],
+    "compatibility_date": "",
+    "compatibility_flags": [],
+    "created_on": "",
+    "id": "",
+    "limits": {
+      "cpu_ms": 0
+    },
+    "main_module": "",
+    "migrations": "",
+    "modules": [
+      {
+        "content_base64": "",
+        "content_type": "",
+        "name": ""
+      }
+    ],
+    "number": 0,
+    "placement": {
+      "mode": ""
+    },
+    "source": "",
+    "usage_model": ""
+  }
+}

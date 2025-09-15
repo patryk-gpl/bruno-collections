@@ -1,0 +1,25 @@
+meta {
+  name: Patch Argo Smart Routing setting
+  type: http
+  seq: 2
+}
+
+patch {
+  url: {{baseUrl}}/zones/:zone_id/argo/smart_routing
+  body: json
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "value": ""
+  }
+}

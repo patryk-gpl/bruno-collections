@@ -1,0 +1,23 @@
+meta {
+  name: Get Zaraz historical configurations by ID(s)
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/settings/zaraz/history/configs
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ids: 
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

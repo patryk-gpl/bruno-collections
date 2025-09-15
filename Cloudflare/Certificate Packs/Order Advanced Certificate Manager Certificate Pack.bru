@@ -1,0 +1,36 @@
+meta {
+  name: Order Advanced Certificate Manager Certificate Pack
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{baseUrl}}/zones/:zone_id/ssl/certificate_packs/order
+  body: json
+  auth: apikey
+}
+
+params:path {
+  zone_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "certificate_authority": "",
+    "cloudflare_branding": false,
+    "hosts": [],
+    "type": "",
+    "validation_method": "",
+    "validity_days": 0
+  }
+}

@@ -1,0 +1,30 @@
+meta {
+  name: Get count of devices targeted
+  type: http
+  seq: 9
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/dex/tests/unique-devices
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~testName: 
+  ~deviceId: 
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

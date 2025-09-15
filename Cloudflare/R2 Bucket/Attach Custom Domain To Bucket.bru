@@ -1,0 +1,34 @@
+meta {
+  name: Attach Custom Domain To Bucket
+  type: http
+  seq: 14
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/r2/buckets/:bucket_name/domains/custom
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  bucket_name: 
+}
+
+headers {
+  ~cf-r2-jurisdiction: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "ciphers": [],
+    "domain": "",
+    "enabled": false,
+    "minTLS": "",
+    "zoneId": ""
+  }
+}

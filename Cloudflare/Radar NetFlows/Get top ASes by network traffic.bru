@@ -1,0 +1,33 @@
+meta {
+  name: Get top ASes by network traffic
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/radar/netflows/top/ases
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~limit: 
+  ~name: 
+  ~dateRange: 
+  ~dateStart: 
+  ~dateEnd: 
+  ~asn: 
+  ~location: 
+  ~continent: 
+  ~format: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

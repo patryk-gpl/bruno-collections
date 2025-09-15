@@ -1,0 +1,19 @@
+meta {
+  name: Publish Zaraz preview configuration
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{baseUrl}}/zones/:zone_id/settings/zaraz/publish
+  body: json
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

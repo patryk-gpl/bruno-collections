@@ -1,0 +1,21 @@
+meta {
+  name: Read the metadata for a key
+  type: http
+  seq: 11
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/storage/kv/namespaces/:namespace_id/metadata/:key_name
+  body: none
+  auth: bearer
+}
+
+params:path {
+  key_name: 
+  namespace_id: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

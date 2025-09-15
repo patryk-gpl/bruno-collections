@@ -1,0 +1,31 @@
+meta {
+  name: List Memberships
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/memberships
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~account.name: 
+  ~page: 
+  ~per_page: 
+  ~order: 
+  ~direction: 
+  ~name: 
+  ~status: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

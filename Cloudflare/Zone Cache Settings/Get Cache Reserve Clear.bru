@@ -1,0 +1,19 @@
+meta {
+  name: Get Cache Reserve Clear
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/cache/cache_reserve_clear
+  body: none
+  auth: bearer
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

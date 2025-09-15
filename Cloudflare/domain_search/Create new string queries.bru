@@ -1,0 +1,15 @@
+meta {
+  name: Create new string queries
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/brand-protection/search
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

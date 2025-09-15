@@ -1,0 +1,26 @@
+meta {
+  name: Role Details
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/roles/:role_id
+  body: none
+  auth: apikey
+}
+
+params:path {
+  role_id: 
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

@@ -1,0 +1,20 @@
+meta {
+  name: Insert Vectors (Deprecated)
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/vectorize/indexes/:index_name/insert
+  body: none
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  index_name: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

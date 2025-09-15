@@ -1,0 +1,39 @@
+meta {
+  name: Get Security Center Issue Counts by Severity
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/intel/attack-surface-report/issues/severity
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~dismissed: 
+  ~issue_class: 
+  ~issue_type: 
+  ~product: 
+  ~severity: 
+  ~subject: 
+  ~issue_class~neq: 
+  ~issue_type~neq: 
+  ~product~neq: 
+  ~severity~neq: 
+  ~subject~neq: 
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

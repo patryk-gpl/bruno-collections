@@ -1,0 +1,50 @@
+meta {
+  name: Update Pipeline
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{baseUrl}}/accounts/:account_id/pipelines/:pipeline_name
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  pipeline_name: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "destination": {
+      "batch": {
+        "max_bytes": 0,
+        "max_duration_s": "",
+        "max_rows": 0
+      },
+      "compression": {
+        "type": ""
+      },
+      "credentials": {
+        "access_key_id": "",
+        "endpoint": "",
+        "secret_access_key": ""
+      },
+      "format": "",
+      "path": {
+        "bucket": "",
+        "filename": "",
+        "filepath": "",
+        "prefix": ""
+      },
+      "type": ""
+    },
+    "name": "",
+    "source": []
+  }
+}

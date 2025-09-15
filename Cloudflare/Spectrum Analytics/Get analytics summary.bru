@@ -1,0 +1,28 @@
+meta {
+  name: Get analytics summary
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/spectrum/analytics/events/summary
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~dimensions: 
+  ~sort: 
+  ~until: 
+  ~metrics: 
+  ~filters: 
+  ~since: 
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

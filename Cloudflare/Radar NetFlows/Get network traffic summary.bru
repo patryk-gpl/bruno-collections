@@ -1,0 +1,32 @@
+meta {
+  name: Get network traffic summary
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/radar/netflows/summary
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~name: 
+  ~dateRange: 
+  ~dateStart: 
+  ~dateEnd: 
+  ~asn: 
+  ~location: 
+  ~continent: 
+  ~format: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

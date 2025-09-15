@@ -1,0 +1,28 @@
+meta {
+  name: Delete Single Certificate And Key For Custom Hostname
+  type: http
+  seq: 6
+}
+
+delete {
+  url: {{baseUrl}}/zones/:zone_id/custom_hostnames/:custom_hostname_id/certificate_pack/:certificate_pack_id/certificates/:certificate_id
+  body: json
+  auth: apikey
+}
+
+params:path {
+  custom_hostname_id: 
+  certificate_pack_id: 
+  certificate_id: 
+  zone_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

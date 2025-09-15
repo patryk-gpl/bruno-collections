@@ -1,0 +1,21 @@
+meta {
+  name: Patch domain
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{baseUrl}}/accounts/:account_id/pages/projects/:project_name/domains/:domain_name
+  body: json
+  auth: bearer
+}
+
+params:path {
+  domain_name: 
+  project_name: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

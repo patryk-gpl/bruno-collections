@@ -1,0 +1,31 @@
+meta {
+  name: Get analytics by Co-locations
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_identifier/analytics/colos
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~until: 
+  ~since: 
+  ~continuous: 
+}
+
+params:path {
+  zone_identifier: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

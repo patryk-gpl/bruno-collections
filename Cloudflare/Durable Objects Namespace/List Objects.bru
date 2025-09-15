@@ -1,0 +1,25 @@
+meta {
+  name: List Objects
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/workers/durable_objects/namespaces/:id/objects
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~limit: 
+  ~cursor: 
+}
+
+params:path {
+  account_id: 
+  id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

@@ -1,0 +1,15 @@
+meta {
+  name: Create new URL submissions
+  type: http
+  seq: 17
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/brand-protection/submit
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

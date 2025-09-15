@@ -1,0 +1,30 @@
+meta {
+  name: Get daily report
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/botnet_feed/asn/:asn_id/day_report
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~date: 
+}
+
+params:path {
+  account_id: 
+  asn_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

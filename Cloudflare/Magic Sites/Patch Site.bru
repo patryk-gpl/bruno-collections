@@ -1,0 +1,39 @@
+meta {
+  name: Patch Site
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{baseUrl}}/accounts/:account_id/magic/sites/:site_id
+  body: json
+  auth: apikey
+}
+
+params:path {
+  site_id: 
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "connector_id": "",
+    "description": "",
+    "location": {
+      "lat": "",
+      "lon": ""
+    },
+    "name": "",
+    "secondary_connector_id": ""
+  }
+}

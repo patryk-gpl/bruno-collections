@@ -1,0 +1,25 @@
+meta {
+  name: Revoke all Access tokens for a user
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/zones/:zone_id/access/organizations/revoke_user
+  body: json
+  auth: apikey
+}
+
+params:path {
+  zone_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

@@ -1,0 +1,23 @@
+meta {
+  name: Get Domain Details
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/intel/domain
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~domain: 
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

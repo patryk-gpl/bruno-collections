@@ -1,0 +1,26 @@
+meta {
+  name: Custom Origin Trust Store Details
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/acm/custom_trust_store/:custom_origin_trust_store_id
+  body: none
+  auth: apikey
+}
+
+params:path {
+  custom_origin_trust_store_id: 
+  zone_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

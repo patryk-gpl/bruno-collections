@@ -1,0 +1,20 @@
+meta {
+  name: Get Endpoint Health Check
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/diagnostics/endpoint-healthchecks/:id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

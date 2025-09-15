@@ -1,0 +1,21 @@
+meta {
+  name: Delete an account ruleset rule
+  type: http
+  seq: 7
+}
+
+delete {
+  url: {{baseUrl}}/accounts/:account_id/rulesets/:ruleset_id/rules/:rule_id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  rule_id: 
+  ruleset_id: 
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

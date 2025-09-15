@@ -1,0 +1,20 @@
+meta {
+  name: Delete Pipeline
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{baseUrl}}/accounts/:account_id/pipelines/:pipeline_name
+  body: none
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  pipeline_name: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

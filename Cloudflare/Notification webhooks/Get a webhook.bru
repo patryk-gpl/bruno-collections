@@ -1,0 +1,20 @@
+meta {
+  name: Get a webhook
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/alerting/v3/destinations/webhooks/:webhook_id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  webhook_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

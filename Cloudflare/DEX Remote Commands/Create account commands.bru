@@ -1,0 +1,44 @@
+meta {
+  name: Create account commands
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/dex/commands
+  body: json
+  auth: apikey
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}
+
+body:json {
+  {
+    "commands": [
+      {
+        "command_args": {
+          "interfaces": [],
+          "max-file-size-mb": "",
+          "packet-size-bytes": "",
+          "test-all-routes": false,
+          "time-limit-min": ""
+        },
+        "command_type": "",
+        "device_id": "",
+        "user_email": ""
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+meta {
+  name: Execute AI model
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/ai/run/:model_name
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  model_name: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {}
+}

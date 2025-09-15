@@ -1,0 +1,29 @@
+meta {
+  name: Get HTML content.
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/browser-rendering/content
+  body: json
+  auth: apikey
+}
+
+params:query {
+  ~cacheTTL: 
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

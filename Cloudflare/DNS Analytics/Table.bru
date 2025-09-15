@@ -1,0 +1,29 @@
+meta {
+  name: Table
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/zones/:zone_id/dns_analytics/report
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~metrics: 
+  ~dimensions: 
+  ~since: 
+  ~until: 
+  ~limit: 
+  ~sort: 
+  ~filters: 
+}
+
+params:path {
+  zone_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

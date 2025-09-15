@@ -1,0 +1,33 @@
+meta {
+  name: Get layer 3 attacks by IP version summary
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/radar/attacks/layer3/summary/ip_version
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~name: 
+  ~dateRange: 
+  ~dateStart: 
+  ~dateEnd: 
+  ~location: 
+  ~continent: 
+  ~protocol: 
+  ~direction: 
+  ~format: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

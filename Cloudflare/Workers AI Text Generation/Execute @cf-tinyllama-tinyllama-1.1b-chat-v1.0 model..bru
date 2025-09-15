@@ -1,0 +1,27 @@
+meta {
+  name: Execute @cf/tinyllama/tinyllama-1.1b-chat-v1.0 model.
+  type: http
+  seq: 40
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/ai/run/@cf/tinyllama/tinyllama-1.1b-chat-v1.0
+  body: json
+  auth: bearer
+}
+
+params:query {
+  ~queueRequest: 
+}
+
+params:path {
+  account_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {}
+}

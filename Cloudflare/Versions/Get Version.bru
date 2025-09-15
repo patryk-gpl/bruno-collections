@@ -1,0 +1,25 @@
+meta {
+  name: Get Version
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/workers/workers/:worker_id/versions/:version_id
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~include: 
+}
+
+params:path {
+  account_id: 
+  worker_id: 
+  version_id: 
+}
+
+auth:bearer {
+  token: {{token}}
+}

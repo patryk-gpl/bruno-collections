@@ -1,0 +1,32 @@
+meta {
+  name: List On-ramps
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/accounts/:account_id/magic/cloud/onramps
+  body: none
+  auth: apikey
+}
+
+params:query {
+  ~order_by: 
+  ~desc: 
+  ~status: 
+  ~vpcs: 
+}
+
+params:path {
+  account_id: 
+}
+
+headers {
+  X-Auth-Email: {{apiKey}}
+}
+
+auth:apikey {
+  key: X-Auth-Email
+  value: {{apiKey}}
+  placement: header
+}

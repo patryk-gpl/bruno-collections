@@ -1,0 +1,27 @@
+meta {
+  name: Create Assets Upload Session
+  type: http
+  seq: 12
+}
+
+post {
+  url: {{baseUrl}}/accounts/:account_id/workers/dispatch/namespaces/:dispatch_namespace/scripts/:script_name/assets-upload-session
+  body: json
+  auth: bearer
+}
+
+params:path {
+  account_id: 
+  dispatch_namespace: 
+  script_name: 
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "manifest": {}
+  }
+}
